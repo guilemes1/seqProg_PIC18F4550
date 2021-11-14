@@ -7,24 +7,24 @@
  * -------------------------------------------------
  *          MAPA DE ENTRADAS E SAIDAS
  * -------------------------------------------------
- *  Pinos   |n�     | Conexao
+ *  Pinos   |nº     | Conexao
  * ---------|-------|-------------------------------
  *  RA0     |2      | OUT : Output
  *  RA1     |3      | IN : Input 
  *  RA3     |5      | SHLD : Shift / Load
  *  RA2     |4      | CLK : Clock
  
- *  RC3     |18     | MCP4725_SCL
- *  RC4     |23     | MCP4725_SDA
  *  RC6     |25     | ESP01_TX
  *  RC7     |26     | ESP01_RX
 
- *  RB0     |33     | LCD_D4
- *  RB1     |34     | LCD_D5
- *  RB2     |35     | LCD_D6
- *  RB3     |36     | LCD_D7
- *  RB4     |37     | LCD_RS
- *  RB5     |38     | LCD_EN
+ *  RB0     |33     | MCP4725_SDA
+ *  RB1     |34     | MCP4725_SCL 
+ *  RB2     |35     | LCD_D4
+ *  RB3     |36     | LCD_D5
+ *  RB4     |37     | LCD_D6
+ *  RB5     |38     | LCD_D7
+ *  RB6     |39     | LCD_RS
+ *  RB7     |40     | LCD_EN
  
  *  RD0     |19     | TECLADO_L0
  *  RD1     |20     | TECLADO_L1
@@ -79,7 +79,7 @@ void main(void)
     char estado = INICIO;
     char atuador;
     char vetor_aux[16];              //Vetor criado para buscar as sequencias salvas na memoria
-    char init_cond = 0;              //Variavel que salvara as condi��es iniciais dos atuadores
+    char init_cond = 0;              //Variavel que salvara as condições iniciais dos atuadores
     char *pt;                        //Ponteiro auxiliar utilizado para varrer o "vetor_aux"
 //    char lin2[17] = "                ";
     char contPassos = 0;
@@ -253,7 +253,7 @@ void main(void)
                                     delay(10);
                                 }
                             }
-                            dispLCD(1, 0, "       DELETED      ");         //EXIBE A MENSAGEM NA 1ª LINHA DO DISPLAY
+                            dispLCD(1, 0, "       DELETED      ");         //EXIBE A MENSAGEM NA 1Âª LINHA DO DISPLAY
                             dispLCD(2, 0, "        MEMORY      ");
                             
                             setT1(1000);                                   //INICIA A CONTAGEM DO TEMPO DE 1seg
@@ -269,7 +269,7 @@ void main(void)
                             IHM.clr();
                             IHM.print(" ESCOLHA A MEMORIA \n"  
                                       "QUE DESEJA EXECUTAR\n"
-                                      " 0   1   2   3   4 \n"          //NESSA ETAPA SERIA DESEJAVEL QUE APARECESSE APENAS OS ESPAÇOS DISPONIVEIS
+                                      " 0   1   2   3   4 \n"          //NESSA ETAPA SERIA DESEJAVEL QUE APARECESSE APENAS OS ESPAÃOS DISPONIVEIS
                                       " 5   6   7   8   9 \n");
                             estado = TELA_CARREGA_SEQUENCIA;
                             
@@ -287,13 +287,13 @@ void main(void)
                                 case '7':
                                 case '8': 
                                 case '9':
-                                           buscar_dado(10, tecla % 0x30, &init_cond);       //Busca o endere�o de memoria onde foi salvo a condicao inicial dos atuadores e guarda na variavel "init_cond"                                         
-                                           manipula_atuadores_init(init_cond);              //Realiza a manipula��o dos atuadores conforme as condicoes iniciais da sequencia expressa pela variavel "init_cond"
+                                           buscar_dado(10, tecla % 0x30, &init_cond);       //Busca o endereço de memoria onde foi salvo a condicao inicial dos atuadores e guarda na variavel "init_cond"                                         
+                                           manipula_atuadores_init(init_cond);              //Realiza a manipulação dos atuadores conforme as condicoes iniciais da sequencia expressa pela variavel "init_cond"
                                            
                                            EEPROM.buscar(tecla % 0x30, vetor_aux);         //Busca a receita pressionada pelo usuario e insere em "vetor_aux"                                     
                                            pt = vetor_aux;
                                            
-                                           if(*pt == 0xFF)                                  //Verifica se o primeiro byte do endere�o de memoria esta no padrao defalt (0xFF) 
+                                           if(*pt == 0xFF)                                  //Verifica se o primeiro byte do endereço de memoria esta no padrao defalt (0xFF) 
                                            {
                                                EEPROM.deletar(tecla % 0x30);
                                                vetor_aux[0] = 0;
@@ -351,7 +351,7 @@ void main(void)
                          
             case TELA_DISPLAY_ATUADORES:                        
                             IHM.printpos(3,0,"   A   B   C   D    ");                               
-                            dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-');    //Inserido para pegar o status atual dos atuadores ap�s retornar da tela posterior (TELA_CONTAR_PASSOS)
+                            dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-');    //Inserido para pegar o status atual dos atuadores após retornar da tela posterior (TELA_CONTAR_PASSOS)
                             dispLCD_lincol(3, 8);dispLCD_dataReg(ler_atuador('B') ? '+' : '-');
                             dispLCD_lincol(3, 12);dispLCD_dataReg(ler_atuador('C') ? '+' : '-');
                             dispLCD_lincol(3, 16);dispLCD_dataReg(ler_atuador('D') ? '+' : '-');
@@ -371,7 +371,7 @@ void main(void)
                             }
                             break;
 
-                    // TELA DE EDIÇAO
+                    // TELA DE EDIÃAO
 
             case TELA_INSERIR_PASSOS:
                             init_cond = salva_atuadores_init();	         //Guarda as condicoes iniciais dos atuares na variavel "init_cond"
@@ -429,8 +429,8 @@ void main(void)
                     
              case TELA_CONTAR_PASSOS:
                             IHM.printpos(3,0,"<  /  >");                         
-                            IHM.printv(3, 1,( fifo_indice()-2 ), 2);           //EXIBE A MENSAGEM "0" NA  2� LINHA DO DISPLAY - fifo_indice = 2, logo 2-2 = 0
-                            IHM.printv(3, 4,( fifo_tam()-2 ), 2);              //EXIBE A MENSAGEM "18" NA 2� LINHA DO DISPLAY - fifo_tam = 18, logo 18-2 = 16
+                            IHM.printv(3, 1,( fifo_indice()-2 ), 2);           //EXIBE A MENSAGEM "0" NA  2ª LINHA DO DISPLAY - fifo_indice = 2, logo 2-2 = 0
+                            IHM.printv(3, 4,( fifo_tam()-2 ), 2);              //EXIBE A MENSAGEM "18" NA 2ª LINHA DO DISPLAY - fifo_tam = 18, logo 18-2 = 16
                             estado = TELA_EDITAR_PASSOS;                       
                             break;
                     
@@ -593,7 +593,7 @@ void main(void)
                             IHM.clr();
                             IHM.print(" ESCOLHA A MEMORIA\n"
                                       " QUE DESEJA SALVAR\n"
-                                      " 0   1   2   3   4\n"         //NESSA ETAPA SERIA DESEJAVEL QUE APARECESSE APENAS OS ESPAÇOS DISPONIVEIS
+                                      " 0   1   2   3   4\n"         //NESSA ETAPA SERIA DESEJAVEL QUE APARECESSE APENAS OS ESPAÃOS DISPONIVEIS
                                       " 5   6   7   8   9  ");  
                             estado = ESPERA_TECLA_SALVAR_SEQUENCIA;
                             
@@ -639,7 +639,7 @@ void main(void)
                                     delay(10);
                                 }
                             }
-                            IHM.printpos(1, 0, "      SEQUENCIA     ");          //EXIBE A MENSAGEM NA 1ª LINHA DO DISPLAY
+                            IHM.printpos(1, 0, "      SEQUENCIA     ");          //EXIBE A MENSAGEM NA 1Âª LINHA DO DISPLAY
                             IHM.printpos(2, 0, "        SALVA       ");
                             
                             setT1(1000);                                   //INICIA A CONTAGEM DO TEMPO DE 1seg
