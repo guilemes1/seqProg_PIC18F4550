@@ -40,6 +40,9 @@
  * 01/11/2021 - Criação de funções, e adaptação da biblioteca fifo.c para interpretação dos diferentes dados que serão salvos na memória
  *
  * 08/11/2021 - Inicio da reestruturação e organização da maquina de estados através de um novo método
+ * 
+ * 08/11/2021 - Guilherme - Inclusão da biblioteca I2C e MCP4725 ao programa principal 
+ *                        - Desenvolvido a possibilidade de realizar o acionamento da saída analógica conforme porcentagem de controle definida pelo usuário
  *
  * 
  * 12/11/2021 - Guilherme - Realizado a troca do microcontrolador PIC16F887 pelo microcontrolador PIC18F4550, de modo a dispor de mais memória para execução do programa
