@@ -5922,9 +5922,62 @@ void main(void)
                             {
                                 case '1': estado = 3; break;
                                 case '2': estado = 72; break;
-                                case '3': break;
+                                case '3': estado = 100; break;
                                 case '4': estado = 80; break;
                             }
+                            break;
+
+             case 100:
+
+                            buscar_dado(10, 10, &init_cond);
+                            manipula_atuadores_init(init_cond);
+
+                            EEPROM.buscar(11, vetor_aux);
+                            pt = vetor_aux;
+
+                            if(*pt == 0xFF)
+                            {
+                                EEPROM.deletar(tecla % 0x30);
+                                vetor_aux[0] = 0;
+                            }
+
+
+                            for(char *ptr = vetor_aux; *ptr != 0; ptr++)
+                            {
+                                if(*ptr <= 0x64 || *ptr == 0xFE)
+                                {
+                                    decodifica(&*ptr);
+                                    fifo_add_control(*ptr);
+                                }
+                                else if (*ptr > 0x64 && *ptr <= 0xDC)
+                                {
+                                    decodifica(&*ptr);
+                                    fifo_add_tempo(*ptr);
+                                }
+                                else
+                                {
+                                    decodifica(&*ptr);
+                                    switch( *ptr )
+                                    {
+                                        case 'A':
+                                        case 'B':
+                                        case 'C':
+                                        case 'D':
+                                        case 'a':
+                                        case 'b':
+                                        case 'c':
+                                        case 'd':
+                                                *ptr &= ~0x20;
+                                                break;
+                                        }
+                                        alt_atuador(*ptr);
+                                        fifo_add( ler_atuador(*ptr) ? *ptr : *ptr|0x20 );
+                                    }
+                                fifo_print();
+                            }
+
+                            dispLCD_clr();
+                            estado = 16;
                             break;
 
              case 80:
@@ -6243,7 +6296,7 @@ void main(void)
                             IHM.clr();
                             estado = 16;
                             break;
-# 542 "main.c"
+# 595 "main.c"
              case 52:
                             tecla = teclado_borda();
                             if(tecla >= '0' && tecla <= '9')
@@ -6282,6 +6335,8 @@ void main(void)
                             break;
 
              case 74:
+                            salvar_dado(10, 10, init_cond);
+                            EEPROM.salvar(11, fifo_adrs() + 2);
                             IHM.print("    DESEJA SALVAR   \n"
                                       "     SEQUENCIA ?  \n\n"
                                       "# - SIM      * - NAO");

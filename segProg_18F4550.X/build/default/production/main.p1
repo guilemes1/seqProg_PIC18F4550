@@ -1158,8 +1158,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _estado -> -> 72 `i `uc ]
 [e $U 402  ]
 "192
-[; ;main.c: 192:                                 case '3': break;
+[; ;main.c: 192:                                 case '3': estado = 100; break;
 [e :U 406 ]
+[e = _estado -> -> 100 `i `uc ]
 [e $U 402  ]
 "193
 [; ;main.c: 193:                                 case '4': estado = 80; break;
@@ -1181,1464 +1182,1635 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 195:                             break;
 [e $U 376  ]
 "197
-[; ;main.c: 197:              case 80:
+[; ;main.c: 197:              case 100:
 [e :U 408 ]
-"198
-[; ;main.c: 198:                             dispLCD_clr();
-[e ( _dispLCD_clr ..  ]
 "199
-[; ;main.c: 199:                             dispLCD(0,0,"1: VERIFICAR MEMORIA");
-[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 5C ]
+[; ;main.c: 199:                             buscar_dado(10, 10, &init_cond);
+[e ( _buscar_dado (3 , , -> -> 10 `i `uc -> -> 10 `i `uc -> &U _init_cond `*uc ]
 "200
-[; ;main.c: 200:                             dispLCD(1,0,"2: LIMPAR MEMORIA   ");
-[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 6C ]
-"202
-[; ;main.c: 202:                             setT1(1000);
-[e ( _setT1 (1 -> -> -> 1000 `i `l `ul ]
-"203
-[; ;main.c: 203:                             estado = 81;
-[e = _estado -> -> 81 `i `uc ]
-"204
-[; ;main.c: 204:                             break;
-[e $U 376  ]
-"206
-[; ;main.c: 206:              case 81:
-[e :U 409 ]
-"207
-[; ;main.c: 207:                             if(!statusT1())
-[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 410  ]
-"208
-[; ;main.c: 208:                                 estado = 82;
-[e = _estado -> -> 82 `i `uc ]
-[e :U 410 ]
-"209
-[; ;main.c: 209:                             break;
-[e $U 376  ]
-"211
-[; ;main.c: 211:              case 82:
-[e :U 411 ]
-"212
-[; ;main.c: 212:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"213
-[; ;main.c: 213:                             switch(tecla)
-[e $U 413  ]
-"214
-[; ;main.c: 214:                             {
-{
-"215
-[; ;main.c: 215:                                 case '1': estado = 83; break;
-[e :U 414 ]
-[e = _estado -> -> 83 `i `uc ]
-[e $U 412  ]
-"216
-[; ;main.c: 216:                                 case '2': estado = 84; break;
-[e :U 415 ]
-[e = _estado -> -> 84 `i `uc ]
-[e $U 412  ]
-"217
-[; ;main.c: 217:                                 case '*': estado = 8; break;
-[e :U 416 ]
-[e = _estado -> -> 8 `i `uc ]
-[e $U 412  ]
-"218
-[; ;main.c: 218:                             }
-}
-[e $U 412  ]
-[e :U 413 ]
-[e [\ -> _tecla `i , $ -> -> 49 `ui `i 414
- , $ -> -> 50 `ui `i 415
- , $ -> -> 42 `ui `i 416
- 412 ]
-[e :U 412 ]
-"219
-[; ;main.c: 219:                             break;
-[e $U 376  ]
-"221
-[; ;main.c: 221:              case 84:
-[e :U 417 ]
-"222
-[; ;main.c: 222:                             dispLCD(0, 0, " CERTEZA QUE DESEJA ");
-[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
-"223
-[; ;main.c: 223:                             dispLCD(1, 0, "   DELETAR TODA A   ");
-[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 8C ]
-"224
-[; ;main.c: 224:                             dispLCD(2, 0, "      MEMORIA ?     ");
-[e ( _dispLCD (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 9C ]
-"225
-[; ;main.c: 225:                             dispLCD(3, 0, "# - SIM      * - NAO");
-[e ( _dispLCD (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 10C ]
-"227
-[; ;main.c: 227:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"228
-[; ;main.c: 228:                             switch(tecla)
-[e $U 419  ]
-"229
-[; ;main.c: 229:                             {
-{
-"230
-[; ;main.c: 230:                                 case '#': estado = 85; break;
-[e :U 420 ]
-[e = _estado -> -> 85 `i `uc ]
-[e $U 418  ]
-"232
-[; ;main.c: 232:                                 case '*': dispLCD_clr(); estado = 80; break;
-[e :U 421 ]
-[e ( _dispLCD_clr ..  ]
-[e = _estado -> -> 80 `i `uc ]
-[e $U 418  ]
-"233
-[; ;main.c: 233:                             }
-}
-[e $U 418  ]
-[e :U 419 ]
-[e [\ -> _tecla `i , $ -> -> 35 `ui `i 420
- , $ -> -> 42 `ui `i 421
- 418 ]
-[e :U 418 ]
-"234
-[; ;main.c: 234:                             break;
-[e $U 376  ]
-"236
-[; ;main.c: 236:              case 85:
-[e :U 422 ]
-"237
-[; ;main.c: 237:                             EEPROM.formatar();
-[e ( *U . _EEPROM 4 ..  ]
-"238
-[; ;main.c: 238:                             dispLCD_clr();
-[e ( _dispLCD_clr ..  ]
-"239
-[; ;main.c: 239:                             for(char i = 0; i <= 3; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 423  ]
-[e $U 424  ]
-[e :U 423 ]
-"240
-[; ;main.c: 240:                             {
-{
-"241
-[; ;main.c: 241:                                 for(char j = 0; j <= 19; j++)
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 426  ]
-[e $U 427  ]
-[e :U 426 ]
-"242
-[; ;main.c: 242:                                 {
-{
-"243
-[; ;main.c: 243:                                     dispLCD(i, j, "\377");
-[e ( _dispLCD (3 , , -> _i `uc -> _j `uc :s 11C ]
-"244
-[; ;main.c: 244:                                     delay(10);
-[e ( _delay (1 -> -> 10 `i `ui ]
-"245
-[; ;main.c: 245:                                 }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 426  ]
-[e :U 427 ]
-}
-"246
-[; ;main.c: 246:                             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 423  ]
-[e :U 424 ]
-}
-"248
-[; ;main.c: 248:                             for(char i = 0; i <= 3; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 429  ]
-[e $U 430  ]
-[e :U 429 ]
-"249
-[; ;main.c: 249:                             {
-{
-"250
-[; ;main.c: 250:                                 for(char j = 0; j <= 19; j++)
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 432  ]
-[e $U 433  ]
-[e :U 432 ]
-"251
-[; ;main.c: 251:                                 {
-{
-"252
-[; ;main.c: 252:                                     dispLCD(i, j, " ");
-[e ( _dispLCD (3 , , -> _i `uc -> _j `uc :s 12C ]
-"253
-[; ;main.c: 253:                                     delay(10);
-[e ( _delay (1 -> -> 10 `i `ui ]
-"254
-[; ;main.c: 254:                                 }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 432  ]
-[e :U 433 ]
-}
-"255
-[; ;main.c: 255:                             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 429  ]
-[e :U 430 ]
-}
-"256
-[; ;main.c: 256:                             dispLCD(1, 0, "       DELETED      ");
-[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 13C ]
-"257
-[; ;main.c: 257:                             dispLCD(2, 0, "        MEMORY      ");
-[e ( _dispLCD (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 14C ]
-"259
-[; ;main.c: 259:                             setT1(1000);
-[e ( _setT1 (1 -> -> -> 1000 `i `l `ul ]
-"260
-[; ;main.c: 260:                             estado = 86;
-[e = _estado -> -> 86 `i `uc ]
-"261
-[; ;main.c: 261:                             break;
-[e $U 376  ]
-"263
-[; ;main.c: 263:              case 86:
-[e :U 435 ]
-"264
-[; ;main.c: 264:                             if(!statusT1())
-[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 436  ]
-"265
-[; ;main.c: 265:                                 estado = 80;
-[e = _estado -> -> 80 `i `uc ]
-[e :U 436 ]
-"266
-[; ;main.c: 266:                             break;
-[e $U 376  ]
-"268
-[; ;main.c: 268:              case 72:
-[e :U 437 ]
-"269
-[; ;main.c: 269:                             IHM.clr();
-[e ( *U . _IHM 4 ..  ]
-"270
-[; ;main.c: 270:                             IHM.print(" ESCOLHA A MEMORIA \n"
-[e ( *U . _IHM 1 (1 :s 15C ]
-"274
-[; ;main.c: 274:                             estado = 73;
-[e = _estado -> -> 73 `i `uc ]
-"276
-[; ;main.c: 276:              case 73:
-[e :U 438 ]
-"277
-[; ;main.c: 277:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"278
-[; ;main.c: 278:                             switch(tecla)
-[e $U 440  ]
-"279
-[; ;main.c: 279:                             {
-{
-"280
-[; ;main.c: 280:                                 case '0':
-[e :U 441 ]
-"281
-[; ;main.c: 281:                                 case '1':
-[e :U 442 ]
-"282
-[; ;main.c: 282:                                 case '2':
-[e :U 443 ]
-"283
-[; ;main.c: 283:                                 case '3':
-[e :U 444 ]
-"284
-[; ;main.c: 284:                                 case '4':
-[e :U 445 ]
-"285
-[; ;main.c: 285:                                 case '5':
-[e :U 446 ]
-"286
-[; ;main.c: 286:                                 case '6':
-[e :U 447 ]
-"287
-[; ;main.c: 287:                                 case '7':
-[e :U 448 ]
-"288
-[; ;main.c: 288:                                 case '8':
-[e :U 449 ]
-"289
-[; ;main.c: 289:                                 case '9':
-[e :U 450 ]
-"290
-[; ;main.c: 290:                                            buscar_dado(10, tecla % 0x30, &init_cond);
-[e ( _buscar_dado (3 , , -> -> 10 `i `uc -> % -> _tecla `i -> 48 `i `uc -> &U _init_cond `*uc ]
-"291
-[; ;main.c: 291:                                            manipula_atuadores_init(init_cond);
+[; ;main.c: 200:                             manipula_atuadores_init(init_cond);
 [e ( _manipula_atuadores_init (1 _init_cond ]
-"293
-[; ;main.c: 293:                                            EEPROM.buscar(tecla % 0x30, vetor_aux);
-[e ( *U . _EEPROM 1 (2 , -> % -> _tecla `i -> 48 `i `uc -> &U _vetor_aux `*uc ]
-"294
-[; ;main.c: 294:                                            pt = vetor_aux;
+"202
+[; ;main.c: 202:                             EEPROM.buscar(11, vetor_aux);
+[e ( *U . _EEPROM 1 (2 , -> -> 11 `i `uc -> &U _vetor_aux `*uc ]
+"203
+[; ;main.c: 203:                             pt = vetor_aux;
 [e = _pt &U _vetor_aux ]
-"296
-[; ;main.c: 296:                                            if(*pt == 0xFF)
-[e $ ! == -> *U _pt `i -> 255 `i 451  ]
-"297
-[; ;main.c: 297:                                            {
+"205
+[; ;main.c: 205:                             if(*pt == 0xFF)
+[e $ ! == -> *U _pt `i -> 255 `i 409  ]
+"206
+[; ;main.c: 206:                             {
 {
-"298
-[; ;main.c: 298:                                                EEPROM.deletar(tecla % 0x30);
+"207
+[; ;main.c: 207:                                 EEPROM.deletar(tecla % 0x30);
 [e ( *U . _EEPROM 2 (1 -> % -> _tecla `i -> 48 `i `uc ]
-"299
-[; ;main.c: 299:                                                vetor_aux[0] = 0;
+"208
+[; ;main.c: 208:                                 vetor_aux[0] = 0;
 [e = *U + &U _vetor_aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _vetor_aux `ui `ux -> -> 0 `i `uc ]
-"300
-[; ;main.c: 300:                                            }
+"209
+[; ;main.c: 209:                             }
 }
-[e :U 451 ]
-"303
-[; ;main.c: 303:                                            for(char *ptr = vetor_aux; *ptr != 0; ptr++)
+[e :U 409 ]
+"212
+[; ;main.c: 212:                             for(char *ptr = vetor_aux; *ptr != 0; ptr++)
 {
 [v _ptr `*uc ~T0 @X0 1 a ]
 [e = _ptr &U _vetor_aux ]
-[e $U 455  ]
-[e :U 452 ]
-"304
-[; ;main.c: 304:                                            {
+[e $U 413  ]
+[e :U 410 ]
+"213
+[; ;main.c: 213:                             {
 {
-"305
-[; ;main.c: 305:                                                 if(*ptr <= 0x64 || *ptr == 0xFE)
-[e $ ! || <= -> *U _ptr `i -> 100 `i == -> *U _ptr `i -> 254 `i 456  ]
-"306
-[; ;main.c: 306:                                                 {
+"214
+[; ;main.c: 214:                                 if(*ptr <= 0x64 || *ptr == 0xFE)
+[e $ ! || <= -> *U _ptr `i -> 100 `i == -> *U _ptr `i -> 254 `i 414  ]
+"215
+[; ;main.c: 215:                                 {
 {
-"307
-[; ;main.c: 307:                                                     decodifica(&*ptr);
+"216
+[; ;main.c: 216:                                     decodifica(&*ptr);
 [e ( _decodifica (1 -> &U *U _ptr `*uc ]
-"308
-[; ;main.c: 308:                                                     fifo_add_control(*ptr);
+"217
+[; ;main.c: 217:                                     fifo_add_control(*ptr);
 [e ( _fifo_add_control (1 *U _ptr ]
-"309
-[; ;main.c: 309:                                                 }
+"218
+[; ;main.c: 218:                                 }
 }
-[e $U 457  ]
-"310
-[; ;main.c: 310:                                                 else if (*ptr > 0x64 && *ptr <= 0xDC)
-[e :U 456 ]
-[e $ ! && > -> *U _ptr `i -> 100 `i <= -> *U _ptr `i -> 220 `i 458  ]
-"311
-[; ;main.c: 311:                                                 {
+[e $U 415  ]
+"219
+[; ;main.c: 219:                                 else if (*ptr > 0x64 && *ptr <= 0xDC)
+[e :U 414 ]
+[e $ ! && > -> *U _ptr `i -> 100 `i <= -> *U _ptr `i -> 220 `i 416  ]
+"220
+[; ;main.c: 220:                                 {
 {
-"312
-[; ;main.c: 312:                                                     decodifica(&*ptr);
+"221
+[; ;main.c: 221:                                     decodifica(&*ptr);
 [e ( _decodifica (1 -> &U *U _ptr `*uc ]
-"313
-[; ;main.c: 313:                                                     fifo_add_tempo(*ptr);
+"222
+[; ;main.c: 222:                                     fifo_add_tempo(*ptr);
 [e ( _fifo_add_tempo (1 *U _ptr ]
-"314
-[; ;main.c: 314:                                                 }
+"223
+[; ;main.c: 223:                                 }
 }
-[e $U 459  ]
-"315
-[; ;main.c: 315:                                                 else
-[e :U 458 ]
-"316
-[; ;main.c: 316:                                                 {
+[e $U 417  ]
+"224
+[; ;main.c: 224:                                 else
+[e :U 416 ]
+"225
+[; ;main.c: 225:                                 {
 {
-"317
-[; ;main.c: 317:                                                     decodifica(&*ptr);
+"226
+[; ;main.c: 226:                                     decodifica(&*ptr);
 [e ( _decodifica (1 -> &U *U _ptr `*uc ]
-"318
-[; ;main.c: 318:                                                     switch( *ptr )
-[e $U 461  ]
-"319
-[; ;main.c: 319:                                                     {
+"227
+[; ;main.c: 227:                                     switch( *ptr )
+[e $U 419  ]
+"228
+[; ;main.c: 228:                                     {
 {
-"320
-[; ;main.c: 320:                                                         case 'A':
-[e :U 462 ]
-"321
-[; ;main.c: 321:                                                         case 'B':
-[e :U 463 ]
-"322
-[; ;main.c: 322:                                                         case 'C':
-[e :U 464 ]
-"323
-[; ;main.c: 323:                                                         case 'D':
-[e :U 465 ]
-"324
-[; ;main.c: 324:                                                         case 'a':
-[e :U 466 ]
-"325
-[; ;main.c: 325:                                                         case 'b':
-[e :U 467 ]
-"326
-[; ;main.c: 326:                                                         case 'c':
-[e :U 468 ]
-"327
-[; ;main.c: 327:                                                         case 'd':
-[e :U 469 ]
-"328
-[; ;main.c: 328:                                                                 *ptr &= ~0x20;
+"229
+[; ;main.c: 229:                                         case 'A':
+[e :U 420 ]
+"230
+[; ;main.c: 230:                                         case 'B':
+[e :U 421 ]
+"231
+[; ;main.c: 231:                                         case 'C':
+[e :U 422 ]
+"232
+[; ;main.c: 232:                                         case 'D':
+[e :U 423 ]
+"233
+[; ;main.c: 233:                                         case 'a':
+[e :U 424 ]
+"234
+[; ;main.c: 234:                                         case 'b':
+[e :U 425 ]
+"235
+[; ;main.c: 235:                                         case 'c':
+[e :U 426 ]
+"236
+[; ;main.c: 236:                                         case 'd':
+[e :U 427 ]
+"237
+[; ;main.c: 237:                                                 *ptr &= ~0x20;
 [e =& *U _ptr -> ~ -> 32 `i `uc ]
-"329
-[; ;main.c: 329:                                                                 break;
-[e $U 460  ]
-"330
-[; ;main.c: 330:                                                     }
+"238
+[; ;main.c: 238:                                                 break;
+[e $U 418  ]
+"239
+[; ;main.c: 239:                                         }
 }
-[e $U 460  ]
-[e :U 461 ]
-[e [\ -> *U _ptr `i , $ -> -> 65 `ui `i 462
- , $ -> -> 66 `ui `i 463
- , $ -> -> 67 `ui `i 464
- , $ -> -> 68 `ui `i 465
- , $ -> -> 97 `ui `i 466
- , $ -> -> 98 `ui `i 467
- , $ -> -> 99 `ui `i 468
- , $ -> -> 100 `ui `i 469
- 460 ]
-[e :U 460 ]
-"331
-[; ;main.c: 331:                                                     alt_atuador(*ptr);
+[e $U 418  ]
+[e :U 419 ]
+[e [\ -> *U _ptr `i , $ -> -> 65 `ui `i 420
+ , $ -> -> 66 `ui `i 421
+ , $ -> -> 67 `ui `i 422
+ , $ -> -> 68 `ui `i 423
+ , $ -> -> 97 `ui `i 424
+ , $ -> -> 98 `ui `i 425
+ , $ -> -> 99 `ui `i 426
+ , $ -> -> 100 `ui `i 427
+ 418 ]
+[e :U 418 ]
+"240
+[; ;main.c: 240:                                         alt_atuador(*ptr);
 [e ( _alt_atuador (1 *U _ptr ]
-"332
-[; ;main.c: 332:                                                     fifo_add( ler_atuador(*ptr) ? *ptr : *ptr|0x20 );
+"241
+[; ;main.c: 241:                                         fifo_add( ler_atuador(*ptr) ? *ptr : *ptr|0x20 );
 [e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 *U _ptr `i -> 0 `i : -> *U _ptr `i | -> *U _ptr `i -> 32 `i `uc ]
-"333
-[; ;main.c: 333:                                                 }
+"242
+[; ;main.c: 242:                                     }
 }
-[e :U 459 ]
-[e :U 457 ]
-"334
-[; ;main.c: 334:                                                 fifo_print();
+[e :U 417 ]
+[e :U 415 ]
+"243
+[; ;main.c: 243:                                 fifo_print();
 [e ( _fifo_print ..  ]
-"335
-[; ;main.c: 335:                                            }
+"244
+[; ;main.c: 244:                             }
 }
 [e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
-[e :U 455 ]
-[e $ != -> *U _ptr `i -> 0 `i 452  ]
+[e :U 413 ]
+[e $ != -> *U _ptr `i -> 0 `i 410  ]
+[e :U 411 ]
+}
+"246
+[; ;main.c: 246:                             dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"247
+[; ;main.c: 247:                             estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"248
+[; ;main.c: 248:                             break;
+[e $U 376  ]
+"250
+[; ;main.c: 250:              case 80:
+[e :U 428 ]
+"251
+[; ;main.c: 251:                             dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"252
+[; ;main.c: 252:                             dispLCD(0,0,"1: VERIFICAR MEMORIA");
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 5C ]
+"253
+[; ;main.c: 253:                             dispLCD(1,0,"2: LIMPAR MEMORIA   ");
+[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 6C ]
+"255
+[; ;main.c: 255:                             setT1(1000);
+[e ( _setT1 (1 -> -> -> 1000 `i `l `ul ]
+"256
+[; ;main.c: 256:                             estado = 81;
+[e = _estado -> -> 81 `i `uc ]
+"257
+[; ;main.c: 257:                             break;
+[e $U 376  ]
+"259
+[; ;main.c: 259:              case 81:
+[e :U 429 ]
+"260
+[; ;main.c: 260:                             if(!statusT1())
+[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 430  ]
+"261
+[; ;main.c: 261:                                 estado = 82;
+[e = _estado -> -> 82 `i `uc ]
+[e :U 430 ]
+"262
+[; ;main.c: 262:                             break;
+[e $U 376  ]
+"264
+[; ;main.c: 264:              case 82:
+[e :U 431 ]
+"265
+[; ;main.c: 265:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"266
+[; ;main.c: 266:                             switch(tecla)
+[e $U 433  ]
+"267
+[; ;main.c: 267:                             {
+{
+"268
+[; ;main.c: 268:                                 case '1': estado = 83; break;
+[e :U 434 ]
+[e = _estado -> -> 83 `i `uc ]
+[e $U 432  ]
+"269
+[; ;main.c: 269:                                 case '2': estado = 84; break;
+[e :U 435 ]
+[e = _estado -> -> 84 `i `uc ]
+[e $U 432  ]
+"270
+[; ;main.c: 270:                                 case '*': estado = 8; break;
+[e :U 436 ]
+[e = _estado -> -> 8 `i `uc ]
+[e $U 432  ]
+"271
+[; ;main.c: 271:                             }
+}
+[e $U 432  ]
+[e :U 433 ]
+[e [\ -> _tecla `i , $ -> -> 49 `ui `i 434
+ , $ -> -> 50 `ui `i 435
+ , $ -> -> 42 `ui `i 436
+ 432 ]
+[e :U 432 ]
+"272
+[; ;main.c: 272:                             break;
+[e $U 376  ]
+"274
+[; ;main.c: 274:              case 84:
+[e :U 437 ]
+"275
+[; ;main.c: 275:                             dispLCD(0, 0, " CERTEZA QUE DESEJA ");
+[e ( _dispLCD (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 7C ]
+"276
+[; ;main.c: 276:                             dispLCD(1, 0, "   DELETAR TODA A   ");
+[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 8C ]
+"277
+[; ;main.c: 277:                             dispLCD(2, 0, "      MEMORIA ?     ");
+[e ( _dispLCD (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 9C ]
+"278
+[; ;main.c: 278:                             dispLCD(3, 0, "# - SIM      * - NAO");
+[e ( _dispLCD (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 10C ]
+"280
+[; ;main.c: 280:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"281
+[; ;main.c: 281:                             switch(tecla)
+[e $U 439  ]
+"282
+[; ;main.c: 282:                             {
+{
+"283
+[; ;main.c: 283:                                 case '#': estado = 85; break;
+[e :U 440 ]
+[e = _estado -> -> 85 `i `uc ]
+[e $U 438  ]
+"285
+[; ;main.c: 285:                                 case '*': dispLCD_clr(); estado = 80; break;
+[e :U 441 ]
+[e ( _dispLCD_clr ..  ]
+[e = _estado -> -> 80 `i `uc ]
+[e $U 438  ]
+"286
+[; ;main.c: 286:                             }
+}
+[e $U 438  ]
+[e :U 439 ]
+[e [\ -> _tecla `i , $ -> -> 35 `ui `i 440
+ , $ -> -> 42 `ui `i 441
+ 438 ]
+[e :U 438 ]
+"287
+[; ;main.c: 287:                             break;
+[e $U 376  ]
+"289
+[; ;main.c: 289:              case 85:
+[e :U 442 ]
+"290
+[; ;main.c: 290:                             EEPROM.formatar();
+[e ( *U . _EEPROM 4 ..  ]
+"291
+[; ;main.c: 291:                             dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"292
+[; ;main.c: 292:                             for(char i = 0; i <= 3; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 443  ]
+[e $U 444  ]
+[e :U 443 ]
+"293
+[; ;main.c: 293:                             {
+{
+"294
+[; ;main.c: 294:                                 for(char j = 0; j <= 19; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 446  ]
+[e $U 447  ]
+[e :U 446 ]
+"295
+[; ;main.c: 295:                                 {
+{
+"296
+[; ;main.c: 296:                                     dispLCD(i, j, "\377");
+[e ( _dispLCD (3 , , -> _i `uc -> _j `uc :s 11C ]
+"297
+[; ;main.c: 297:                                     delay(10);
+[e ( _delay (1 -> -> 10 `i `ui ]
+"298
+[; ;main.c: 298:                                 }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 446  ]
+[e :U 447 ]
+}
+"299
+[; ;main.c: 299:                             }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 443  ]
+[e :U 444 ]
+}
+"301
+[; ;main.c: 301:                             for(char i = 0; i <= 3; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 449  ]
+[e $U 450  ]
+[e :U 449 ]
+"302
+[; ;main.c: 302:                             {
+{
+"303
+[; ;main.c: 303:                                 for(char j = 0; j <= 19; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 452  ]
+[e $U 453  ]
+[e :U 452 ]
+"304
+[; ;main.c: 304:                                 {
+{
+"305
+[; ;main.c: 305:                                     dispLCD(i, j, " ");
+[e ( _dispLCD (3 , , -> _i `uc -> _j `uc :s 12C ]
+"306
+[; ;main.c: 306:                                     delay(10);
+[e ( _delay (1 -> -> 10 `i `ui ]
+"307
+[; ;main.c: 307:                                 }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 452  ]
 [e :U 453 ]
 }
-"337
-[; ;main.c: 337:                                            dispLCD_clr();
-[e ( _dispLCD_clr ..  ]
-"338
-[; ;main.c: 338:                                            estado = 16;
-[e = _estado -> -> 16 `i `uc ]
-"339
-[; ;main.c: 339:                                            break;
-[e $U 439  ]
-"341
-[; ;main.c: 341:                                 case '*': estado = 8; break;
-[e :U 470 ]
-[e = _estado -> -> 8 `i `uc ]
-[e $U 439  ]
-"342
-[; ;main.c: 342:                             }
+"308
+[; ;main.c: 308:                             }
 }
-[e $U 439  ]
-[e :U 440 ]
-[e [\ -> _tecla `i , $ -> -> 48 `ui `i 441
- , $ -> -> 49 `ui `i 442
- , $ -> -> 50 `ui `i 443
- , $ -> -> 51 `ui `i 444
- , $ -> -> 52 `ui `i 445
- , $ -> -> 53 `ui `i 446
- , $ -> -> 54 `ui `i 447
- , $ -> -> 55 `ui `i 448
- , $ -> -> 56 `ui `i 449
- , $ -> -> 57 `ui `i 450
- , $ -> -> 42 `ui `i 470
- 439 ]
-[e :U 439 ]
-"343
-[; ;main.c: 343:                             break;
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 449  ]
+[e :U 450 ]
+}
+"309
+[; ;main.c: 309:                             dispLCD(1, 0, "       DELETED      ");
+[e ( _dispLCD (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 13C ]
+"310
+[; ;main.c: 310:                             dispLCD(2, 0, "        MEMORY      ");
+[e ( _dispLCD (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 14C ]
+"312
+[; ;main.c: 312:                             setT1(1000);
+[e ( _setT1 (1 -> -> -> 1000 `i `l `ul ]
+"313
+[; ;main.c: 313:                             estado = 86;
+[e = _estado -> -> 86 `i `uc ]
+"314
+[; ;main.c: 314:                             break;
 [e $U 376  ]
-"345
-[; ;main.c: 345:              case 3:
-[e :U 471 ]
-"346
-[; ;main.c: 346:                             IHM.clr();
+"316
+[; ;main.c: 316:              case 86:
+[e :U 455 ]
+"317
+[; ;main.c: 317:                             if(!statusT1())
+[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 456  ]
+"318
+[; ;main.c: 318:                                 estado = 80;
+[e = _estado -> -> 80 `i `uc ]
+[e :U 456 ]
+"319
+[; ;main.c: 319:                             break;
+[e $U 376  ]
+"321
+[; ;main.c: 321:              case 72:
+[e :U 457 ]
+"322
+[; ;main.c: 322:                             IHM.clr();
 [e ( *U . _IHM 4 ..  ]
-"347
-[; ;main.c: 347:                             IHM.printpos(0, 0, "   AJUSTE O INICIO  ");
-[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 16C ]
-"348
-[; ;main.c: 348:                             IHM.printpos(1, 0, "     DO SISTEMA     ");
-[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 17C ]
-"349
-[; ;main.c: 349:                             estado = 6;
-[e = _estado -> -> 6 `i `uc ]
-"350
-[; ;main.c: 350:                             break;
-[e $U 376  ]
-"352
-[; ;main.c: 352:             case 6:
-[e :U 472 ]
-"353
-[; ;main.c: 353:                             IHM.printpos(3,0,"   A   B   C   D    ");
-[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 18C ]
-"354
-[; ;main.c: 354:                             dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-');
-[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
-[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 65 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-"355
-[; ;main.c: 355:                             dispLCD_lincol(3, 8);dispLCD_dataReg(ler_atuador('B') ? '+' : '-');
-[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
-[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 66 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-"356
-[; ;main.c: 356:                             dispLCD_lincol(3, 12);dispLCD_dataReg(ler_atuador('C') ? '+' : '-');
-[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
-[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 67 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-"357
-[; ;main.c: 357:                             dispLCD_lincol(3, 16);dispLCD_dataReg(ler_atuador('D') ? '+' : '-');
-[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 16 `i `uc ]
-[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 68 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-"358
-[; ;main.c: 358:                             estado = 7;
-[e = _estado -> -> 7 `i `uc ]
-"359
-[; ;main.c: 359:                             break;
-[e $U 376  ]
-"361
-[; ;main.c: 361:             case 7:
-[e :U 473 ]
-"362
-[; ;main.c: 362:                             tecla = teclado_borda();
+"323
+[; ;main.c: 323:                             IHM.print(" ESCOLHA A MEMORIA \n"
+[e ( *U . _IHM 1 (1 :s 15C ]
+"327
+[; ;main.c: 327:                             estado = 73;
+[e = _estado -> -> 73 `i `uc ]
+"329
+[; ;main.c: 329:              case 73:
+[e :U 458 ]
+"330
+[; ;main.c: 330:                             tecla = teclado_borda();
 [e = _tecla -> ( _teclado_borda ..  `uc ]
-"363
-[; ;main.c: 363:                             switch(tecla)
+"331
+[; ;main.c: 331:                             switch(tecla)
+[e $U 460  ]
+"332
+[; ;main.c: 332:                             {
+{
+"333
+[; ;main.c: 333:                                 case '0':
+[e :U 461 ]
+"334
+[; ;main.c: 334:                                 case '1':
+[e :U 462 ]
+"335
+[; ;main.c: 335:                                 case '2':
+[e :U 463 ]
+"336
+[; ;main.c: 336:                                 case '3':
+[e :U 464 ]
+"337
+[; ;main.c: 337:                                 case '4':
+[e :U 465 ]
+"338
+[; ;main.c: 338:                                 case '5':
+[e :U 466 ]
+"339
+[; ;main.c: 339:                                 case '6':
+[e :U 467 ]
+"340
+[; ;main.c: 340:                                 case '7':
+[e :U 468 ]
+"341
+[; ;main.c: 341:                                 case '8':
+[e :U 469 ]
+"342
+[; ;main.c: 342:                                 case '9':
+[e :U 470 ]
+"343
+[; ;main.c: 343:                                            buscar_dado(10, tecla % 0x30, &init_cond);
+[e ( _buscar_dado (3 , , -> -> 10 `i `uc -> % -> _tecla `i -> 48 `i `uc -> &U _init_cond `*uc ]
+"344
+[; ;main.c: 344:                                            manipula_atuadores_init(init_cond);
+[e ( _manipula_atuadores_init (1 _init_cond ]
+"346
+[; ;main.c: 346:                                            EEPROM.buscar(tecla % 0x30, vetor_aux);
+[e ( *U . _EEPROM 1 (2 , -> % -> _tecla `i -> 48 `i `uc -> &U _vetor_aux `*uc ]
+"347
+[; ;main.c: 347:                                            pt = vetor_aux;
+[e = _pt &U _vetor_aux ]
+"349
+[; ;main.c: 349:                                            if(*pt == 0xFF)
+[e $ ! == -> *U _pt `i -> 255 `i 471  ]
+"350
+[; ;main.c: 350:                                            {
+{
+"351
+[; ;main.c: 351:                                                EEPROM.deletar(tecla % 0x30);
+[e ( *U . _EEPROM 2 (1 -> % -> _tecla `i -> 48 `i `uc ]
+"352
+[; ;main.c: 352:                                                vetor_aux[0] = 0;
+[e = *U + &U _vetor_aux * -> -> -> 0 `i `ui `ux -> -> # *U &U _vetor_aux `ui `ux -> -> 0 `i `uc ]
+"353
+[; ;main.c: 353:                                            }
+}
+[e :U 471 ]
+"356
+[; ;main.c: 356:                                            for(char *ptr = vetor_aux; *ptr != 0; ptr++)
+{
+[v _ptr `*uc ~T0 @X0 1 a ]
+[e = _ptr &U _vetor_aux ]
 [e $U 475  ]
+[e :U 472 ]
+"357
+[; ;main.c: 357:                                            {
+{
+"358
+[; ;main.c: 358:                                                 if(*ptr <= 0x64 || *ptr == 0xFE)
+[e $ ! || <= -> *U _ptr `i -> 100 `i == -> *U _ptr `i -> 254 `i 476  ]
+"359
+[; ;main.c: 359:                                                 {
+{
+"360
+[; ;main.c: 360:                                                     decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"361
+[; ;main.c: 361:                                                     fifo_add_control(*ptr);
+[e ( _fifo_add_control (1 *U _ptr ]
+"362
+[; ;main.c: 362:                                                 }
+}
+[e $U 477  ]
+"363
+[; ;main.c: 363:                                                 else if (*ptr > 0x64 && *ptr <= 0xDC)
+[e :U 476 ]
+[e $ ! && > -> *U _ptr `i -> 100 `i <= -> *U _ptr `i -> 220 `i 478  ]
 "364
-[; ;main.c: 364:                             {
+[; ;main.c: 364:                                                 {
 {
 "365
-[; ;main.c: 365:                                 case 'A': alt_atuador(tecla); dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-'); break;
-[e :U 476 ]
+[; ;main.c: 365:                                                     decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"366
+[; ;main.c: 366:                                                     fifo_add_tempo(*ptr);
+[e ( _fifo_add_tempo (1 *U _ptr ]
+"367
+[; ;main.c: 367:                                                 }
+}
+[e $U 479  ]
+"368
+[; ;main.c: 368:                                                 else
+[e :U 478 ]
+"369
+[; ;main.c: 369:                                                 {
+{
+"370
+[; ;main.c: 370:                                                     decodifica(&*ptr);
+[e ( _decodifica (1 -> &U *U _ptr `*uc ]
+"371
+[; ;main.c: 371:                                                     switch( *ptr )
+[e $U 481  ]
+"372
+[; ;main.c: 372:                                                     {
+{
+"373
+[; ;main.c: 373:                                                         case 'A':
+[e :U 482 ]
+"374
+[; ;main.c: 374:                                                         case 'B':
+[e :U 483 ]
+"375
+[; ;main.c: 375:                                                         case 'C':
+[e :U 484 ]
+"376
+[; ;main.c: 376:                                                         case 'D':
+[e :U 485 ]
+"377
+[; ;main.c: 377:                                                         case 'a':
+[e :U 486 ]
+"378
+[; ;main.c: 378:                                                         case 'b':
+[e :U 487 ]
+"379
+[; ;main.c: 379:                                                         case 'c':
+[e :U 488 ]
+"380
+[; ;main.c: 380:                                                         case 'd':
+[e :U 489 ]
+"381
+[; ;main.c: 381:                                                                 *ptr &= ~0x20;
+[e =& *U _ptr -> ~ -> 32 `i `uc ]
+"382
+[; ;main.c: 382:                                                                 break;
+[e $U 480  ]
+"383
+[; ;main.c: 383:                                                     }
+}
+[e $U 480  ]
+[e :U 481 ]
+[e [\ -> *U _ptr `i , $ -> -> 65 `ui `i 482
+ , $ -> -> 66 `ui `i 483
+ , $ -> -> 67 `ui `i 484
+ , $ -> -> 68 `ui `i 485
+ , $ -> -> 97 `ui `i 486
+ , $ -> -> 98 `ui `i 487
+ , $ -> -> 99 `ui `i 488
+ , $ -> -> 100 `ui `i 489
+ 480 ]
+[e :U 480 ]
+"384
+[; ;main.c: 384:                                                     alt_atuador(*ptr);
+[e ( _alt_atuador (1 *U _ptr ]
+"385
+[; ;main.c: 385:                                                     fifo_add( ler_atuador(*ptr) ? *ptr : *ptr|0x20 );
+[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 *U _ptr `i -> 0 `i : -> *U _ptr `i | -> *U _ptr `i -> 32 `i `uc ]
+"386
+[; ;main.c: 386:                                                 }
+}
+[e :U 479 ]
+[e :U 477 ]
+"387
+[; ;main.c: 387:                                                 fifo_print();
+[e ( _fifo_print ..  ]
+"388
+[; ;main.c: 388:                                            }
+}
+[e ++ _ptr * -> -> 1 `i `x -> -> # *U _ptr `i `x ]
+[e :U 475 ]
+[e $ != -> *U _ptr `i -> 0 `i 472  ]
+[e :U 473 ]
+}
+"390
+[; ;main.c: 390:                                            dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
+"391
+[; ;main.c: 391:                                            estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"392
+[; ;main.c: 392:                                            break;
+[e $U 459  ]
+"394
+[; ;main.c: 394:                                 case '*': estado = 8; break;
+[e :U 490 ]
+[e = _estado -> -> 8 `i `uc ]
+[e $U 459  ]
+"395
+[; ;main.c: 395:                             }
+}
+[e $U 459  ]
+[e :U 460 ]
+[e [\ -> _tecla `i , $ -> -> 48 `ui `i 461
+ , $ -> -> 49 `ui `i 462
+ , $ -> -> 50 `ui `i 463
+ , $ -> -> 51 `ui `i 464
+ , $ -> -> 52 `ui `i 465
+ , $ -> -> 53 `ui `i 466
+ , $ -> -> 54 `ui `i 467
+ , $ -> -> 55 `ui `i 468
+ , $ -> -> 56 `ui `i 469
+ , $ -> -> 57 `ui `i 470
+ , $ -> -> 42 `ui `i 490
+ 459 ]
+[e :U 459 ]
+"396
+[; ;main.c: 396:                             break;
+[e $U 376  ]
+"398
+[; ;main.c: 398:              case 3:
+[e :U 491 ]
+"399
+[; ;main.c: 399:                             IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"400
+[; ;main.c: 400:                             IHM.printpos(0, 0, "   AJUSTE O INICIO  ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 16C ]
+"401
+[; ;main.c: 401:                             IHM.printpos(1, 0, "     DO SISTEMA     ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 17C ]
+"402
+[; ;main.c: 402:                             estado = 6;
+[e = _estado -> -> 6 `i `uc ]
+"403
+[; ;main.c: 403:                             break;
+[e $U 376  ]
+"405
+[; ;main.c: 405:             case 6:
+[e :U 492 ]
+"406
+[; ;main.c: 406:                             IHM.printpos(3,0,"   A   B   C   D    ");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 18C ]
+"407
+[; ;main.c: 407:                             dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 65 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"408
+[; ;main.c: 408:                             dispLCD_lincol(3, 8);dispLCD_dataReg(ler_atuador('B') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 66 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"409
+[; ;main.c: 409:                             dispLCD_lincol(3, 12);dispLCD_dataReg(ler_atuador('C') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 67 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"410
+[; ;main.c: 410:                             dispLCD_lincol(3, 16);dispLCD_dataReg(ler_atuador('D') ? '+' : '-');
+[e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 16 `i `uc ]
+[e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 68 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
+"411
+[; ;main.c: 411:                             estado = 7;
+[e = _estado -> -> 7 `i `uc ]
+"412
+[; ;main.c: 412:                             break;
+[e $U 376  ]
+"414
+[; ;main.c: 414:             case 7:
+[e :U 493 ]
+"415
+[; ;main.c: 415:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"416
+[; ;main.c: 416:                             switch(tecla)
+[e $U 495  ]
+"417
+[; ;main.c: 417:                             {
+{
+"418
+[; ;main.c: 418:                                 case 'A': alt_atuador(tecla); dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-'); break;
+[e :U 496 ]
 [e ( _alt_atuador (1 _tecla ]
 [e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
 [e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 65 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-[e $U 474  ]
-"366
-[; ;main.c: 366:                                 case 'B': alt_atuador(tecla); dispLCD_lincol(3, 8); dispLCD_dataReg(ler_atuador('B') ? '+' : '-'); break;
-[e :U 477 ]
+[e $U 494  ]
+"419
+[; ;main.c: 419:                                 case 'B': alt_atuador(tecla); dispLCD_lincol(3, 8); dispLCD_dataReg(ler_atuador('B') ? '+' : '-'); break;
+[e :U 497 ]
 [e ( _alt_atuador (1 _tecla ]
 [e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
 [e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 66 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-[e $U 474  ]
-"367
-[; ;main.c: 367:                                 case 'C': alt_atuador(tecla); dispLCD_lincol(3,12); dispLCD_dataReg(ler_atuador('C') ? '+' : '-'); break;
-[e :U 478 ]
+[e $U 494  ]
+"420
+[; ;main.c: 420:                                 case 'C': alt_atuador(tecla); dispLCD_lincol(3,12); dispLCD_dataReg(ler_atuador('C') ? '+' : '-'); break;
+[e :U 498 ]
 [e ( _alt_atuador (1 _tecla ]
 [e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 12 `i `uc ]
 [e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 67 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-[e $U 474  ]
-"368
-[; ;main.c: 368:                                 case 'D': alt_atuador(tecla); dispLCD_lincol(3,16); dispLCD_dataReg(ler_atuador('D') ? '+' : '-'); break;
-[e :U 479 ]
+[e $U 494  ]
+"421
+[; ;main.c: 421:                                 case 'D': alt_atuador(tecla); dispLCD_lincol(3,16); dispLCD_dataReg(ler_atuador('D') ? '+' : '-'); break;
+[e :U 499 ]
 [e ( _alt_atuador (1 _tecla ]
 [e ( _dispLCD_lincol (2 , -> -> 3 `i `uc -> -> 16 `i `uc ]
 [e ( _dispLCD_dataReg (1 -> ? != -> ( _ler_atuador (1 -> -> 68 `ui `uc `i -> 0 `i : -> 43 `ui -> 45 `ui `uc ]
-[e $U 474  ]
-"369
-[; ;main.c: 369:                                 case '#': estado = 10; break;
-[e :U 480 ]
-[e = _estado -> -> 10 `i `uc ]
-[e $U 474  ]
-"370
-[; ;main.c: 370:                                 case '*': estado = 8; break;
-[e :U 481 ]
-[e = _estado -> -> 8 `i `uc ]
-[e $U 474  ]
-"371
-[; ;main.c: 371:                             }
-}
-[e $U 474  ]
-[e :U 475 ]
-[e [\ -> _tecla `i , $ -> -> 65 `ui `i 476
- , $ -> -> 66 `ui `i 477
- , $ -> -> 67 `ui `i 478
- , $ -> -> 68 `ui `i 479
- , $ -> -> 35 `ui `i 480
- , $ -> -> 42 `ui `i 481
- 474 ]
-[e :U 474 ]
-"372
-[; ;main.c: 372:                             break;
-[e $U 376  ]
-"376
-[; ;main.c: 376:             case 10:
-[e :U 482 ]
-"377
-[; ;main.c: 377:                             init_cond = salva_atuadores_init();
-[e = _init_cond ( _salva_atuadores_init ..  ]
-"378
-[; ;main.c: 378:                             IHM.clr();
-[e ( *U . _IHM 4 ..  ]
-"379
-[; ;main.c: 379:                             IHM.printpos(0, 0, "  INSIRA OS PASSOS  ");
-[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 19C ]
-"380
-[; ;main.c: 380:                             estado = 14;
-[e = _estado -> -> 14 `i `uc ]
-"381
-[; ;main.c: 381:                             break;
-[e $U 376  ]
-"383
-[; ;main.c: 383:              case 11:
-[e :U 483 ]
-"384
-[; ;main.c: 384:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"385
-[; ;main.c: 385:                             switch( tecla )
-[e $U 485  ]
-"386
-[; ;main.c: 386:                             {
-{
-"387
-[; ;main.c: 387:                                 case 'A':
-[e :U 486 ]
-"388
-[; ;main.c: 388:                                 case 'B':
-[e :U 487 ]
-"389
-[; ;main.c: 389:                                 case 'C':
-[e :U 488 ]
-"390
-[; ;main.c: 390:                                 case 'D':
-[e :U 489 ]
-"391
-[; ;main.c: 391:                                             if( fifo_disponivel() )
-[e $ ! != -> ( _fifo_disponivel ..  `i -> 0 `i 490  ]
-"392
-[; ;main.c: 392:                                             {
-{
-"393
-[; ;main.c: 393:                                                 alt_atuador(tecla);
-[e ( _alt_atuador (1 _tecla ]
-"394
-[; ;main.c: 394:                                                 fifo_add( ler_atuador(tecla) ? tecla : tecla|0x20 );
-[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 _tecla `i -> 0 `i : -> _tecla `i | -> _tecla `i -> 32 `i `uc ]
-"395
-[; ;main.c: 395:                                                 estado = 16;
-[e = _estado -> -> 16 `i `uc ]
-"396
-[; ;main.c: 396:                                             }
-}
-[e :U 490 ]
-"397
-[; ;main.c: 397:                                             break;
-[e $U 484  ]
-"398
-[; ;main.c: 398:                                 case '6':
-[e :U 491 ]
-"399
-[; ;main.c: 399:                                             fifo_indicePrint_inc();
-[e ( _fifo_indicePrint_inc ..  ]
-"400
-[; ;main.c: 400:                                             estado = 16;
-[e = _estado -> -> 16 `i `uc ]
-"401
-[; ;main.c: 401:                                             break;
-[e $U 484  ]
-"402
-[; ;main.c: 402:                                 case '4':
-[e :U 492 ]
-"403
-[; ;main.c: 403:                                             fifo_indicePrint_dec();
-[e ( _fifo_indicePrint_dec ..  ]
-"404
-[; ;main.c: 404:                                             estado = 16;
-[e = _estado -> -> 16 `i `uc ]
-"405
-[; ;main.c: 405:                                             break;
-[e $U 484  ]
-"407
-[; ;main.c: 407:                                 case '*':
-[e :U 493 ]
-"408
-[; ;main.c: 408:                                             if(fifo_indice() == 2 )
-[e $ ! == -> ( _fifo_indice ..  `i -> 2 `i 494  ]
-"409
-[; ;main.c: 409:                                                 estado = 3;
-[e = _estado -> -> 3 `i `uc ]
-[e $U 495  ]
-"410
-[; ;main.c: 410:                                             else
-[e :U 494 ]
-"411
-[; ;main.c: 411:                                             {
-{
-"412
-[; ;main.c: 412:                                                 fifo_delete();
-[e ( _fifo_delete ..  ]
-"413
-[; ;main.c: 413:                                                 estado = 16;
-[e = _estado -> -> 16 `i `uc ]
-"414
-[; ;main.c: 414:                                             }
-}
-[e :U 495 ]
-"415
-[; ;main.c: 415:                                             break;
-[e $U 484  ]
-"417
-[; ;main.c: 417:                                 case '#': estado = 74; break;
-[e :U 496 ]
-[e = _estado -> -> 74 `i `uc ]
-[e $U 484  ]
-"419
-[; ;main.c: 419:                                 case '0': estado = 41; break;
-[e :U 497 ]
-[e = _estado -> -> 41 `i `uc ]
-[e $U 484  ]
-"421
-[; ;main.c: 421:                                 case '9': estado = 90; break;
-[e :U 498 ]
-[e = _estado -> -> 90 `i `uc ]
-[e $U 484  ]
+[e $U 494  ]
 "422
-[; ;main.c: 422:                             }
-}
-[e $U 484  ]
-[e :U 485 ]
-[e [\ -> _tecla `i , $ -> -> 65 `ui `i 486
- , $ -> -> 66 `ui `i 487
- , $ -> -> 67 `ui `i 488
- , $ -> -> 68 `ui `i 489
- , $ -> -> 54 `ui `i 491
- , $ -> -> 52 `ui `i 492
- , $ -> -> 42 `ui `i 493
- , $ -> -> 35 `ui `i 496
- , $ -> -> 48 `ui `i 497
- , $ -> -> 57 `ui `i 498
- 484 ]
-[e :U 484 ]
-"423
-[; ;main.c: 423:                             break;
-[e $U 376  ]
-"425
-[; ;main.c: 425:              case 16:
-[e :U 499 ]
-"426
-[; ;main.c: 426:                             fifo_print();
-[e ( _fifo_print ..  ]
-"427
-[; ;main.c: 427:                             estado = 14;
-[e = _estado -> -> 14 `i `uc ]
-"428
-[; ;main.c: 428:                             break;
-[e $U 376  ]
-"430
-[; ;main.c: 430:              case 14:
+[; ;main.c: 422:                                 case '#': estado = 10; break;
 [e :U 500 ]
-"431
-[; ;main.c: 431:                             IHM.printpos(3,0,"<  /  >");
-[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 20C ]
-"432
-[; ;main.c: 432:                             IHM.printv(3, 1,( fifo_indice()-2 ), 2);
-[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 1 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
-"433
-[; ;main.c: 433:                             IHM.printv(3, 4,( fifo_tam()-2 ), 2);
-[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 4 `i `uc - -> ( _fifo_tam ..  `i -> 2 `i -> -> 2 `i `uc ]
-"434
-[; ;main.c: 434:                             estado = 11;
-[e = _estado -> -> 11 `i `uc ]
-"435
-[; ;main.c: 435:                             break;
-[e $U 376  ]
-"437
-[; ;main.c: 437:              case 30:
+[e = _estado -> -> 10 `i `uc ]
+[e $U 494  ]
+"423
+[; ;main.c: 423:                                 case '*': estado = 8; break;
 [e :U 501 ]
-"439
-[; ;main.c: 439:                             estado = 70;
-[e = _estado -> -> 70 `i `uc ]
-"440
-[; ;main.c: 440:                             meAtuadores = 1;
-[e = _meAtuadores -> -> 1 `i `uc ]
-"441
-[; ;main.c: 441:                             break;
+[e = _estado -> -> 8 `i `uc ]
+[e $U 494  ]
+"424
+[; ;main.c: 424:                             }
+}
+[e $U 494  ]
+[e :U 495 ]
+[e [\ -> _tecla `i , $ -> -> 65 `ui `i 496
+ , $ -> -> 66 `ui `i 497
+ , $ -> -> 67 `ui `i 498
+ , $ -> -> 68 `ui `i 499
+ , $ -> -> 35 `ui `i 500
+ , $ -> -> 42 `ui `i 501
+ 494 ]
+[e :U 494 ]
+"425
+[; ;main.c: 425:                             break;
 [e $U 376  ]
-"443
-[; ;main.c: 443:              case 70:
+"429
+[; ;main.c: 429:             case 10:
 [e :U 502 ]
+"430
+[; ;main.c: 430:                             init_cond = salva_atuadores_init();
+[e = _init_cond ( _salva_atuadores_init ..  ]
+"431
+[; ;main.c: 431:                             IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"432
+[; ;main.c: 432:                             IHM.printpos(0, 0, "  INSIRA OS PASSOS  ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 19C ]
+"433
+[; ;main.c: 433:                             estado = 14;
+[e = _estado -> -> 14 `i `uc ]
+"434
+[; ;main.c: 434:                             break;
+[e $U 376  ]
+"436
+[; ;main.c: 436:              case 11:
+[e :U 503 ]
+"437
+[; ;main.c: 437:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"438
+[; ;main.c: 438:                             switch( tecla )
+[e $U 505  ]
+"439
+[; ;main.c: 439:                             {
+{
+"440
+[; ;main.c: 440:                                 case 'A':
+[e :U 506 ]
+"441
+[; ;main.c: 441:                                 case 'B':
+[e :U 507 ]
+"442
+[; ;main.c: 442:                                 case 'C':
+[e :U 508 ]
+"443
+[; ;main.c: 443:                                 case 'D':
+[e :U 509 ]
 "444
-[; ;main.c: 444:                             if( meAtuadores == 3 && botao != 2 )
-[e $ ! && == -> _meAtuadores `i -> 3 `i != -> _botao `i -> 2 `i 503  ]
+[; ;main.c: 444:                                             if( fifo_disponivel() )
+[e $ ! != -> ( _fifo_disponivel ..  `i -> 0 `i 510  ]
 "445
-[; ;main.c: 445:                             {
+[; ;main.c: 445:                                             {
 {
 "446
-[; ;main.c: 446:                                 IHM.printpos(0, 0, "       [    ]       ");
-[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 21C ]
+[; ;main.c: 446:                                                 alt_atuador(tecla);
+[e ( _alt_atuador (1 _tecla ]
 "447
-[; ;main.c: 447:                                 printExec(1, -1);
-[e ( _printExec (2 , -> -> 1 `i `uc -> -U -> 1 `i `uc ]
+[; ;main.c: 447:                                                 fifo_add( ler_atuador(tecla) ? tecla : tecla|0x20 );
+[e ( _fifo_add (1 -> ? != -> ( _ler_atuador (1 _tecla `i -> 0 `i : -> _tecla `i | -> _tecla `i -> 32 `i `uc ]
 "448
-[; ;main.c: 448:                                 printExec(9, 0);
-[e ( _printExec (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
-"449
-[; ;main.c: 449:                                 printExec(14, 1);
-[e ( _printExec (2 , -> -> 14 `i `uc -> -> 1 `i `uc ]
-"450
-[; ;main.c: 450:                                 IHM.printpos(2, 0, "<  /  > c:          ");
-[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 22C ]
-"451
-[; ;main.c: 451:                                 IHM.printv(2, 4,( fifo_indice() - 2 ), 2);
-[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 4 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
-"452
-[; ;main.c: 452:                                 IHM.printv(2, 1, ( getIndicePassos() - 1 ), 2);
-[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 1 `i `uc - -> ( _getIndicePassos ..  `i -> 1 `i -> -> 2 `i `uc ]
-"453
-[; ;main.c: 453:                                 IHM.printv(2, 11, ( getContCiclos() + 1 ), 5);
-[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 11 `i `uc -> + ( _getContCiclos ..  -> -> 1 `i `ui `i -> -> 5 `i `uc ]
-"455
-[; ;main.c: 455:                             }
-}
-[e :U 503 ]
-"456
-[; ;main.c: 456:                             if(meAtuadores == 0)
-[e $ ! == -> _meAtuadores `i -> 0 `i 504  ]
-"457
-[; ;main.c: 457:                             {
-{
-"458
-[; ;main.c: 458:                                 estado = 16;
+[; ;main.c: 448:                                                 estado = 16;
 [e = _estado -> -> 16 `i `uc ]
-"459
-[; ;main.c: 459:                                 IHM.clr();
-[e ( *U . _IHM 4 ..  ]
-"460
-[; ;main.c: 460:                             }
+"449
+[; ;main.c: 449:                                             }
 }
-[e :U 504 ]
-"461
-[; ;main.c: 461:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"462
-[; ;main.c: 462:                             switch(tecla)
-[e $U 506  ]
-"463
-[; ;main.c: 463:                             {
-{
-"464
-[; ;main.c: 464:                                 case '#':
-[e :U 507 ]
-"465
-[; ;main.c: 465:                                     botao = 1;
-[e = _botao -> -> 1 `i `uc ]
-"466
-[; ;main.c: 466:                                     break;
-[e $U 505  ]
-"468
-[; ;main.c: 468:                                 case '5':
-[e :U 508 ]
-"469
-[; ;main.c: 469:                                     botao = 2;
-[e = _botao -> -> 2 `i `uc ]
-"470
-[; ;main.c: 470:                                     break;
-[e $U 505  ]
-"472
-[; ;main.c: 472:                                 case '0':
-[e :U 509 ]
-"473
-[; ;main.c: 473:                                     botao = 0;
-[e = _botao -> -> 0 `i `uc ]
-"474
-[; ;main.c: 474:                                     break;
-[e $U 505  ]
-"476
-[; ;main.c: 476:                                 case '1':
 [e :U 510 ]
-"477
-[; ;main.c: 477:                                     if(botao == 2)
-[e $ ! == -> _botao `i -> 2 `i 511  ]
-"478
-[; ;main.c: 478:                                         botao = 3;
-[e = _botao -> -> 3 `i `uc ]
+"450
+[; ;main.c: 450:                                             break;
+[e $U 504  ]
+"451
+[; ;main.c: 451:                                 case '6':
 [e :U 511 ]
-"479
-[; ;main.c: 479:                                     break;
-[e $U 505  ]
-"480
-[; ;main.c: 480:                             }
+"452
+[; ;main.c: 452:                                             fifo_indicePrint_inc();
+[e ( _fifo_indicePrint_inc ..  ]
+"453
+[; ;main.c: 453:                                             estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"454
+[; ;main.c: 454:                                             break;
+[e $U 504  ]
+"455
+[; ;main.c: 455:                                 case '4':
+[e :U 512 ]
+"456
+[; ;main.c: 456:                                             fifo_indicePrint_dec();
+[e ( _fifo_indicePrint_dec ..  ]
+"457
+[; ;main.c: 457:                                             estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"458
+[; ;main.c: 458:                                             break;
+[e $U 504  ]
+"460
+[; ;main.c: 460:                                 case '*':
+[e :U 513 ]
+"461
+[; ;main.c: 461:                                             if(fifo_indice() == 2 )
+[e $ ! == -> ( _fifo_indice ..  `i -> 2 `i 514  ]
+"462
+[; ;main.c: 462:                                                 estado = 3;
+[e = _estado -> -> 3 `i `uc ]
+[e $U 515  ]
+"463
+[; ;main.c: 463:                                             else
+[e :U 514 ]
+"464
+[; ;main.c: 464:                                             {
+{
+"465
+[; ;main.c: 465:                                                 fifo_delete();
+[e ( _fifo_delete ..  ]
+"466
+[; ;main.c: 466:                                                 estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"467
+[; ;main.c: 467:                                             }
 }
-[e $U 505  ]
-[e :U 506 ]
-[e [\ -> _tecla `i , $ -> -> 35 `ui `i 507
- , $ -> -> 53 `ui `i 508
- , $ -> -> 48 `ui `i 509
- , $ -> -> 49 `ui `i 510
- 505 ]
+[e :U 515 ]
+"468
+[; ;main.c: 468:                                             break;
+[e $U 504  ]
+"470
+[; ;main.c: 470:                                 case '#': estado = 74; break;
+[e :U 516 ]
+[e = _estado -> -> 74 `i `uc ]
+[e $U 504  ]
+"472
+[; ;main.c: 472:                                 case '0': estado = 41; break;
+[e :U 517 ]
+[e = _estado -> -> 41 `i `uc ]
+[e $U 504  ]
+"474
+[; ;main.c: 474:                                 case '9': estado = 90; break;
+[e :U 518 ]
+[e = _estado -> -> 90 `i `uc ]
+[e $U 504  ]
+"475
+[; ;main.c: 475:                             }
+}
+[e $U 504  ]
 [e :U 505 ]
+[e [\ -> _tecla `i , $ -> -> 65 `ui `i 506
+ , $ -> -> 66 `ui `i 507
+ , $ -> -> 67 `ui `i 508
+ , $ -> -> 68 `ui `i 509
+ , $ -> -> 54 `ui `i 511
+ , $ -> -> 52 `ui `i 512
+ , $ -> -> 42 `ui `i 513
+ , $ -> -> 35 `ui `i 516
+ , $ -> -> 48 `ui `i 517
+ , $ -> -> 57 `ui `i 518
+ 504 ]
+[e :U 504 ]
+"476
+[; ;main.c: 476:                             break;
+[e $U 376  ]
+"478
+[; ;main.c: 478:              case 16:
+[e :U 519 ]
+"479
+[; ;main.c: 479:                             fifo_print();
+[e ( _fifo_print ..  ]
+"480
+[; ;main.c: 480:                             estado = 14;
+[e = _estado -> -> 14 `i `uc ]
 "481
 [; ;main.c: 481:                             break;
 [e $U 376  ]
 "483
-[; ;main.c: 483:              case 40:
-[e :U 512 ]
+[; ;main.c: 483:              case 14:
+[e :U 520 ]
 "484
-[; ;main.c: 484:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
+[; ;main.c: 484:                             IHM.printpos(3,0,"<  /  >");
+[e ( *U . _IHM 2 (3 , , -> -> 3 `i `uc -> -> 0 `i `uc :s 20C ]
 "485
-[; ;main.c: 485:                             if(tecla >= '0' && tecla <= '9')
-[e $ ! && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 513  ]
+[; ;main.c: 485:                             IHM.printv(3, 1,( fifo_indice()-2 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 1 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
 "486
-[; ;main.c: 486:                             {
-{
+[; ;main.c: 486:                             IHM.printv(3, 4,( fifo_tam()-2 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 3 `i `uc -> -> 4 `i `uc - -> ( _fifo_tam ..  `i -> 2 `i -> -> 2 `i `uc ]
 "487
-[; ;main.c: 487:                                 dignum_conc(tecla, &num);
-[e ( _dignum_conc (2 , _tecla &U _num ]
+[; ;main.c: 487:                             estado = 11;
+[e = _estado -> -> 11 `i `uc ]
 "488
-[; ;main.c: 488:                                 if(num > 120)
-[e $ ! > _num -> -> 120 `i `ui 514  ]
-"489
-[; ;main.c: 489:                                     num = 120;
-[e = _num -> -> 120 `i `ui ]
-[e :U 514 ]
+[; ;main.c: 488:                             break;
+[e $U 376  ]
 "490
-[; ;main.c: 490:                                 estado = 41;
-[e = _estado -> -> 41 `i `uc ]
-"491
-[; ;main.c: 491:                             }
-}
-[e :U 513 ]
+[; ;main.c: 490:              case 30:
+[e :U 521 ]
 "492
-[; ;main.c: 492:                             if(tecla == '*')
-[e $ ! == -> _tecla `ui -> 42 `ui 515  ]
+[; ;main.c: 492:                             estado = 70;
+[e = _estado -> -> 70 `i `uc ]
 "493
-[; ;main.c: 493:                             {
-{
+[; ;main.c: 493:                             meAtuadores = 1;
+[e = _meAtuadores -> -> 1 `i `uc ]
 "494
-[; ;main.c: 494:                                 dignum_apagar(&num);
-[e ( _dignum_apagar (1 &U _num ]
-"495
-[; ;main.c: 495:                                 estado = 41;
-[e = _estado -> -> 41 `i `uc ]
+[; ;main.c: 494:                             break;
+[e $U 376  ]
 "496
-[; ;main.c: 496:                             }
-}
-[e :U 515 ]
+[; ;main.c: 496:              case 70:
+[e :U 522 ]
 "497
-[; ;main.c: 497:                             if(tecla == '#')
-[e $ ! == -> _tecla `ui -> 35 `ui 516  ]
+[; ;main.c: 497:                             if( meAtuadores == 3 && botao != 2 )
+[e $ ! && == -> _meAtuadores `i -> 3 `i != -> _botao `i -> 2 `i 523  ]
 "498
-[; ;main.c: 498:                                 estado = 42;
-[e = _estado -> -> 42 `i `uc ]
-[e :U 516 ]
+[; ;main.c: 498:                             {
+{
 "499
-[; ;main.c: 499:                             break;
-[e $U 376  ]
+[; ;main.c: 499:                                 IHM.printpos(0, 0, "       [    ]       ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 21C ]
+"500
+[; ;main.c: 500:                                 printExec(1, -1);
+[e ( _printExec (2 , -> -> 1 `i `uc -> -U -> 1 `i `uc ]
 "501
-[; ;main.c: 501:              case 41:
-[e :U 517 ]
+[; ;main.c: 501:                                 printExec(9, 0);
+[e ( _printExec (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
+"502
+[; ;main.c: 502:                                 printExec(14, 1);
+[e ( _printExec (2 , -> -> 14 `i `uc -> -> 1 `i `uc ]
 "503
-[; ;main.c: 503:                             IHM.printpos(2, 0, "config tempo:      s");
-[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 23C ]
+[; ;main.c: 503:                                 IHM.printpos(2, 0, "<  /  > c:          ");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 22C ]
 "504
-[; ;main.c: 504:                             IHM.printv(2, 15, num, 3);
-[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 15 `i `uc -> _num `i -> -> 3 `i `uc ]
+[; ;main.c: 504:                                 IHM.printv(2, 4,( fifo_indice() - 2 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 4 `i `uc - -> ( _fifo_indice ..  `i -> 2 `i -> -> 2 `i `uc ]
 "505
-[; ;main.c: 505:                             estado = 40;
-[e = _estado -> -> 40 `i `uc ]
+[; ;main.c: 505:                                 IHM.printv(2, 1, ( getIndicePassos() - 1 ), 2);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 1 `i `uc - -> ( _getIndicePassos ..  `i -> 1 `i -> -> 2 `i `uc ]
 "506
-[; ;main.c: 506:                             break;
-[e $U 376  ]
+[; ;main.c: 506:                                 IHM.printv(2, 11, ( getContCiclos() + 1 ), 5);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 11 `i `uc -> + ( _getContCiclos ..  -> -> 1 `i `ui `i -> -> 5 `i `uc ]
 "508
-[; ;main.c: 508:              case 42:
-[e :U 518 ]
+[; ;main.c: 508:                             }
+}
+[e :U 523 ]
 "509
-[; ;main.c: 509:                             fifo_add_tempo(num);
-[e ( _fifo_add_tempo (1 -> _num `uc ]
+[; ;main.c: 509:                             if(meAtuadores == 0)
+[e $ ! == -> _meAtuadores `i -> 0 `i 524  ]
 "510
-[; ;main.c: 510:                             IHM.clr();
-[e ( *U . _IHM 4 ..  ]
+[; ;main.c: 510:                             {
+{
 "511
-[; ;main.c: 511:                             estado = 16;
+[; ;main.c: 511:                                 estado = 16;
 [e = _estado -> -> 16 `i `uc ]
 "512
-[; ;main.c: 512:                             break;
-[e $U 376  ]
-"542
-[; ;main.c: 542:              case 52:
-[e :U 519 ]
-"543
-[; ;main.c: 543:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"544
-[; ;main.c: 544:                             if(tecla >= '0' && tecla <= '9')
-[e $ ! && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 520  ]
-"545
-[; ;main.c: 545:                                {
-{
-"546
-[; ;main.c: 546:                                 dignum_conc(tecla, &ciclos);
-[e ( _dignum_conc (2 , _tecla &U _ciclos ]
-"547
-[; ;main.c: 547:                                 if(ciclos > 10000)
-[e $ ! > _ciclos -> -> 10000 `i `ui 521  ]
-"548
-[; ;main.c: 548:                                     ciclos = 10000;
-[e = _ciclos -> -> 10000 `i `ui ]
-[e :U 521 ]
-"549
-[; ;main.c: 549:                                 estado = 53;
-[e = _estado -> -> 53 `i `uc ]
-"550
-[; ;main.c: 550:                                 break;
-[e $U 376  ]
-"551
-[; ;main.c: 551:                                }
+[; ;main.c: 512:                                 IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"513
+[; ;main.c: 513:                             }
 }
-[e :U 520 ]
-"552
-[; ;main.c: 552:                             switch(tecla)
-[e $U 523  ]
-"553
-[; ;main.c: 553:                                {
-{
-"554
-[; ;main.c: 554:                                    case 'A':
 [e :U 524 ]
-"555
-[; ;main.c: 555:                                    case 'B':
-[e :U 525 ]
-"556
-[; ;main.c: 556:                                    case 'C':
-[e :U 526 ]
-"557
-[; ;main.c: 557:                                    case 'D':
+"514
+[; ;main.c: 514:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"515
+[; ;main.c: 515:                             switch(tecla)
+[e $U 526  ]
+"516
+[; ;main.c: 516:                             {
+{
+"517
+[; ;main.c: 517:                                 case '#':
 [e :U 527 ]
-"558
-[; ;main.c: 558:                                        dispLCD_clr();
-[e ( _dispLCD_clr ..  ]
-"559
-[; ;main.c: 559:                                        estado = 16;
-[e = _estado -> -> 16 `i `uc ]
-"560
-[; ;main.c: 560:                                        break;
-[e $U 522  ]
-"561
-[; ;main.c: 561:                                    case '#':
+"518
+[; ;main.c: 518:                                     botao = 1;
+[e = _botao -> -> 1 `i `uc ]
+"519
+[; ;main.c: 519:                                     break;
+[e $U 525  ]
+"521
+[; ;main.c: 521:                                 case '5':
 [e :U 528 ]
-"562
-[; ;main.c: 562:                                        estado = 54;
-[e = _estado -> -> 54 `i `uc ]
-"563
-[; ;main.c: 563:                                        break;
-[e $U 522  ]
-"564
-[; ;main.c: 564:                                    case '*':
+"522
+[; ;main.c: 522:                                     botao = 2;
+[e = _botao -> -> 2 `i `uc ]
+"523
+[; ;main.c: 523:                                     break;
+[e $U 525  ]
+"525
+[; ;main.c: 525:                                 case '0':
 [e :U 529 ]
-"565
-[; ;main.c: 565:                                        dignum_apagar(&ciclos);
-[e ( _dignum_apagar (1 &U _ciclos ]
-"566
-[; ;main.c: 566:                                        estado = 53;
-[e = _estado -> -> 53 `i `uc ]
-"567
-[; ;main.c: 567:                                        break;
-[e $U 522  ]
-"568
-[; ;main.c: 568:                                }
-}
-[e $U 522  ]
-[e :U 523 ]
-[e [\ -> _tecla `i , $ -> -> 65 `ui `i 524
- , $ -> -> 66 `ui `i 525
- , $ -> -> 67 `ui `i 526
- , $ -> -> 68 `ui `i 527
- , $ -> -> 35 `ui `i 528
- , $ -> -> 42 `ui `i 529
- 522 ]
-[e :U 522 ]
-"569
-[; ;main.c: 569:                             break;
-[e $U 376  ]
-"571
-[; ;main.c: 571:              case 53:
+"526
+[; ;main.c: 526:                                     botao = 0;
+[e = _botao -> -> 0 `i `uc ]
+"527
+[; ;main.c: 527:                                     break;
+[e $U 525  ]
+"529
+[; ;main.c: 529:                                 case '1':
 [e :U 530 ]
-"572
-[; ;main.c: 572:                             IHM.clr();
-[e ( *U . _IHM 4 ..  ]
-"573
-[; ;main.c: 573:                             IHM.printpos(0, 0, "Ciclos:             ");
-[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 24C ]
-"574
-[; ;main.c: 574:                             IHM.printv(0, 15, ciclos, 5);
-[e ( *U . _IHM 3 (4 , , , -> -> 0 `i `uc -> -> 15 `i `uc -> _ciclos `i -> -> 5 `i `uc ]
-"575
-[; ;main.c: 575:                             IHM.printpos(2, 0, "0 - Ciclo continuo  ");
-[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 25C ]
-"576
-[; ;main.c: 576:                             estado = 52;
-[e = _estado -> -> 52 `i `uc ]
-"577
-[; ;main.c: 577:                             break;
-[e $U 376  ]
-"579
-[; ;main.c: 579:              case 74:
+"530
+[; ;main.c: 530:                                     if(botao == 2)
+[e $ ! == -> _botao `i -> 2 `i 531  ]
+"531
+[; ;main.c: 531:                                         botao = 3;
+[e = _botao -> -> 3 `i `uc ]
 [e :U 531 ]
-"580
-[; ;main.c: 580:                             IHM.print("    DESEJA SALVAR   \n"
-[e ( *U . _IHM 1 (1 :s 26C ]
-"584
-[; ;main.c: 584:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"585
-[; ;main.c: 585:                             switch(tecla)
-[e $U 533  ]
-"586
-[; ;main.c: 586:                             {
-{
-"587
-[; ;main.c: 587:                                 case '#': estado = 75; break;
-[e :U 534 ]
-[e = _estado -> -> 75 `i `uc ]
-[e $U 532  ]
-"588
-[; ;main.c: 588:                                 case '*': dispLCD_clr(); estado = 53; break;
-[e :U 535 ]
-[e ( _dispLCD_clr ..  ]
-[e = _estado -> -> 53 `i `uc ]
-[e $U 532  ]
-"589
-[; ;main.c: 589:                             }
+"532
+[; ;main.c: 532:                                     break;
+[e $U 525  ]
+"533
+[; ;main.c: 533:                             }
 }
-[e $U 532  ]
-[e :U 533 ]
-[e [\ -> _tecla `i , $ -> -> 35 `ui `i 534
- , $ -> -> 42 `ui `i 535
- 532 ]
-[e :U 532 ]
-"590
-[; ;main.c: 590:                             break;
+[e $U 525  ]
+[e :U 526 ]
+[e [\ -> _tecla `i , $ -> -> 35 `ui `i 527
+ , $ -> -> 53 `ui `i 528
+ , $ -> -> 48 `ui `i 529
+ , $ -> -> 49 `ui `i 530
+ 525 ]
+[e :U 525 ]
+"534
+[; ;main.c: 534:                             break;
 [e $U 376  ]
-"592
-[; ;main.c: 592:              case 75:
-[e :U 536 ]
-"593
-[; ;main.c: 593:                             IHM.clr();
-[e ( *U . _IHM 4 ..  ]
-"594
-[; ;main.c: 594:                             IHM.print(" ESCOLHA A MEMORIA\n"
-[e ( *U . _IHM 1 (1 :s 27C ]
-"598
-[; ;main.c: 598:                             estado = 76;
-[e = _estado -> -> 76 `i `uc ]
-"600
-[; ;main.c: 600:              case 76:
-[e :U 537 ]
-"601
-[; ;main.c: 601:                             tecla = teclado_borda();
+"536
+[; ;main.c: 536:              case 40:
+[e :U 532 ]
+"537
+[; ;main.c: 537:                             tecla = teclado_borda();
 [e = _tecla -> ( _teclado_borda ..  `uc ]
-"602
-[; ;main.c: 602:                             switch(tecla)
-[e $U 539  ]
-"603
-[; ;main.c: 603:                             {
+"538
+[; ;main.c: 538:                             if(tecla >= '0' && tecla <= '9')
+[e $ ! && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 533  ]
+"539
+[; ;main.c: 539:                             {
 {
+"540
+[; ;main.c: 540:                                 dignum_conc(tecla, &num);
+[e ( _dignum_conc (2 , _tecla &U _num ]
+"541
+[; ;main.c: 541:                                 if(num > 120)
+[e $ ! > _num -> -> 120 `i `ui 534  ]
+"542
+[; ;main.c: 542:                                     num = 120;
+[e = _num -> -> 120 `i `ui ]
+[e :U 534 ]
+"543
+[; ;main.c: 543:                                 estado = 41;
+[e = _estado -> -> 41 `i `uc ]
+"544
+[; ;main.c: 544:                             }
+}
+[e :U 533 ]
+"545
+[; ;main.c: 545:                             if(tecla == '*')
+[e $ ! == -> _tecla `ui -> 42 `ui 535  ]
+"546
+[; ;main.c: 546:                             {
+{
+"547
+[; ;main.c: 547:                                 dignum_apagar(&num);
+[e ( _dignum_apagar (1 &U _num ]
+"548
+[; ;main.c: 548:                                 estado = 41;
+[e = _estado -> -> 41 `i `uc ]
+"549
+[; ;main.c: 549:                             }
+}
+[e :U 535 ]
+"550
+[; ;main.c: 550:                             if(tecla == '#')
+[e $ ! == -> _tecla `ui -> 35 `ui 536  ]
+"551
+[; ;main.c: 551:                                 estado = 42;
+[e = _estado -> -> 42 `i `uc ]
+[e :U 536 ]
+"552
+[; ;main.c: 552:                             break;
+[e $U 376  ]
+"554
+[; ;main.c: 554:              case 41:
+[e :U 537 ]
+"556
+[; ;main.c: 556:                             IHM.printpos(2, 0, "config tempo:      s");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 23C ]
+"557
+[; ;main.c: 557:                             IHM.printv(2, 15, num, 3);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 15 `i `uc -> _num `i -> -> 3 `i `uc ]
+"558
+[; ;main.c: 558:                             estado = 40;
+[e = _estado -> -> 40 `i `uc ]
+"559
+[; ;main.c: 559:                             break;
+[e $U 376  ]
+"561
+[; ;main.c: 561:              case 42:
+[e :U 538 ]
+"562
+[; ;main.c: 562:                             fifo_add_tempo(num);
+[e ( _fifo_add_tempo (1 -> _num `uc ]
+"563
+[; ;main.c: 563:                             IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"564
+[; ;main.c: 564:                             estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"565
+[; ;main.c: 565:                             break;
+[e $U 376  ]
+"595
+[; ;main.c: 595:              case 52:
+[e :U 539 ]
+"596
+[; ;main.c: 596:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"597
+[; ;main.c: 597:                             if(tecla >= '0' && tecla <= '9')
+[e $ ! && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 540  ]
+"598
+[; ;main.c: 598:                                {
+{
+"599
+[; ;main.c: 599:                                 dignum_conc(tecla, &ciclos);
+[e ( _dignum_conc (2 , _tecla &U _ciclos ]
+"600
+[; ;main.c: 600:                                 if(ciclos > 10000)
+[e $ ! > _ciclos -> -> 10000 `i `ui 541  ]
+"601
+[; ;main.c: 601:                                     ciclos = 10000;
+[e = _ciclos -> -> 10000 `i `ui ]
+[e :U 541 ]
+"602
+[; ;main.c: 602:                                 estado = 53;
+[e = _estado -> -> 53 `i `uc ]
+"603
+[; ;main.c: 603:                                 break;
+[e $U 376  ]
 "604
-[; ;main.c: 604:                                 case '0':
+[; ;main.c: 604:                                }
+}
 [e :U 540 ]
 "605
-[; ;main.c: 605:                                 case '1':
-[e :U 541 ]
+[; ;main.c: 605:                             switch(tecla)
+[e $U 543  ]
 "606
-[; ;main.c: 606:                                 case '2':
-[e :U 542 ]
+[; ;main.c: 606:                                {
+{
 "607
-[; ;main.c: 607:                                 case '3':
-[e :U 543 ]
-"608
-[; ;main.c: 608:                                 case '4':
+[; ;main.c: 607:                                    case 'A':
 [e :U 544 ]
-"609
-[; ;main.c: 609:                                 case '5':
+"608
+[; ;main.c: 608:                                    case 'B':
 [e :U 545 ]
-"610
-[; ;main.c: 610:                                 case '6':
+"609
+[; ;main.c: 609:                                    case 'C':
 [e :U 546 ]
-"611
-[; ;main.c: 611:                                 case '7':
+"610
+[; ;main.c: 610:                                    case 'D':
 [e :U 547 ]
+"611
+[; ;main.c: 611:                                        dispLCD_clr();
+[e ( _dispLCD_clr ..  ]
 "612
-[; ;main.c: 612:                                 case '8':
-[e :U 548 ]
+[; ;main.c: 612:                                        estado = 16;
+[e = _estado -> -> 16 `i `uc ]
 "613
-[; ;main.c: 613:                                 case '9':
-[e :U 549 ]
+[; ;main.c: 613:                                        break;
+[e $U 542  ]
 "614
-[; ;main.c: 614:                                            salvar_dado(10, tecla % 0x30, init_cond);
-[e ( _salvar_dado (3 , , -> -> 10 `i `uc -> % -> _tecla `i -> 48 `i `uc -> _init_cond `uc ]
+[; ;main.c: 614:                                    case '#':
+[e :U 548 ]
 "615
-[; ;main.c: 615:                                            EEPROM.salvar(tecla % 0x30, fifo_adrs() + 2);
-[e ( *U . _EEPROM 0 (2 , -> % -> _tecla `i -> 48 `i `uc -> + ( _fifo_adrs ..  * -> -> 2 `i `x -> -> # *U ( _fifo_adrs ..  `i `x `*uc ]
+[; ;main.c: 615:                                        estado = 54;
+[e = _estado -> -> 54 `i `uc ]
 "616
-[; ;main.c: 616:                                            estado = 77;
-[e = _estado -> -> 77 `i `uc ]
+[; ;main.c: 616:                                        break;
+[e $U 542  ]
 "617
-[; ;main.c: 617:                                            break;
-[e $U 538  ]
+[; ;main.c: 617:                                    case '*':
+[e :U 549 ]
+"618
+[; ;main.c: 618:                                        dignum_apagar(&ciclos);
+[e ( _dignum_apagar (1 &U _ciclos ]
 "619
-[; ;main.c: 619:                                 case '*': IHM.clr(); estado = 74; break;
+[; ;main.c: 619:                                        estado = 53;
+[e = _estado -> -> 53 `i `uc ]
+"620
+[; ;main.c: 620:                                        break;
+[e $U 542  ]
+"621
+[; ;main.c: 621:                                }
+}
+[e $U 542  ]
+[e :U 543 ]
+[e [\ -> _tecla `i , $ -> -> 65 `ui `i 544
+ , $ -> -> 66 `ui `i 545
+ , $ -> -> 67 `ui `i 546
+ , $ -> -> 68 `ui `i 547
+ , $ -> -> 35 `ui `i 548
+ , $ -> -> 42 `ui `i 549
+ 542 ]
+[e :U 542 ]
+"622
+[; ;main.c: 622:                             break;
+[e $U 376  ]
+"624
+[; ;main.c: 624:              case 53:
 [e :U 550 ]
+"625
+[; ;main.c: 625:                             IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"626
+[; ;main.c: 626:                             IHM.printpos(0, 0, "Ciclos:             ");
+[e ( *U . _IHM 2 (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 24C ]
+"627
+[; ;main.c: 627:                             IHM.printv(0, 15, ciclos, 5);
+[e ( *U . _IHM 3 (4 , , , -> -> 0 `i `uc -> -> 15 `i `uc -> _ciclos `i -> -> 5 `i `uc ]
+"628
+[; ;main.c: 628:                             IHM.printpos(2, 0, "0 - Ciclo continuo  ");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 25C ]
+"629
+[; ;main.c: 629:                             estado = 52;
+[e = _estado -> -> 52 `i `uc ]
+"630
+[; ;main.c: 630:                             break;
+[e $U 376  ]
+"632
+[; ;main.c: 632:              case 74:
+[e :U 551 ]
+"633
+[; ;main.c: 633:                             salvar_dado(10, 10, init_cond);
+[e ( _salvar_dado (3 , , -> -> 10 `i `uc -> -> 10 `i `uc -> _init_cond `uc ]
+"634
+[; ;main.c: 634:                             EEPROM.salvar(11, fifo_adrs() + 2);
+[e ( *U . _EEPROM 0 (2 , -> -> 11 `i `uc -> + ( _fifo_adrs ..  * -> -> 2 `i `x -> -> # *U ( _fifo_adrs ..  `i `x `*uc ]
+"635
+[; ;main.c: 635:                             IHM.print("    DESEJA SALVAR   \n"
+[e ( *U . _IHM 1 (1 :s 26C ]
+"639
+[; ;main.c: 639:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"640
+[; ;main.c: 640:                             switch(tecla)
+[e $U 553  ]
+"641
+[; ;main.c: 641:                             {
+{
+"642
+[; ;main.c: 642:                                 case '#': estado = 75; break;
+[e :U 554 ]
+[e = _estado -> -> 75 `i `uc ]
+[e $U 552  ]
+"643
+[; ;main.c: 643:                                 case '*': dispLCD_clr(); estado = 53; break;
+[e :U 555 ]
+[e ( _dispLCD_clr ..  ]
+[e = _estado -> -> 53 `i `uc ]
+[e $U 552  ]
+"644
+[; ;main.c: 644:                             }
+}
+[e $U 552  ]
+[e :U 553 ]
+[e [\ -> _tecla `i , $ -> -> 35 `ui `i 554
+ , $ -> -> 42 `ui `i 555
+ 552 ]
+[e :U 552 ]
+"645
+[; ;main.c: 645:                             break;
+[e $U 376  ]
+"647
+[; ;main.c: 647:              case 75:
+[e :U 556 ]
+"648
+[; ;main.c: 648:                             IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"649
+[; ;main.c: 649:                             IHM.print(" ESCOLHA A MEMORIA\n"
+[e ( *U . _IHM 1 (1 :s 27C ]
+"653
+[; ;main.c: 653:                             estado = 76;
+[e = _estado -> -> 76 `i `uc ]
+"655
+[; ;main.c: 655:              case 76:
+[e :U 557 ]
+"656
+[; ;main.c: 656:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"657
+[; ;main.c: 657:                             switch(tecla)
+[e $U 559  ]
+"658
+[; ;main.c: 658:                             {
+{
+"659
+[; ;main.c: 659:                                 case '0':
+[e :U 560 ]
+"660
+[; ;main.c: 660:                                 case '1':
+[e :U 561 ]
+"661
+[; ;main.c: 661:                                 case '2':
+[e :U 562 ]
+"662
+[; ;main.c: 662:                                 case '3':
+[e :U 563 ]
+"663
+[; ;main.c: 663:                                 case '4':
+[e :U 564 ]
+"664
+[; ;main.c: 664:                                 case '5':
+[e :U 565 ]
+"665
+[; ;main.c: 665:                                 case '6':
+[e :U 566 ]
+"666
+[; ;main.c: 666:                                 case '7':
+[e :U 567 ]
+"667
+[; ;main.c: 667:                                 case '8':
+[e :U 568 ]
+"668
+[; ;main.c: 668:                                 case '9':
+[e :U 569 ]
+"669
+[; ;main.c: 669:                                            salvar_dado(10, tecla % 0x30, init_cond);
+[e ( _salvar_dado (3 , , -> -> 10 `i `uc -> % -> _tecla `i -> 48 `i `uc -> _init_cond `uc ]
+"670
+[; ;main.c: 670:                                            EEPROM.salvar(tecla % 0x30, fifo_adrs() + 2);
+[e ( *U . _EEPROM 0 (2 , -> % -> _tecla `i -> 48 `i `uc -> + ( _fifo_adrs ..  * -> -> 2 `i `x -> -> # *U ( _fifo_adrs ..  `i `x `*uc ]
+"671
+[; ;main.c: 671:                                            estado = 77;
+[e = _estado -> -> 77 `i `uc ]
+"672
+[; ;main.c: 672:                                            break;
+[e $U 558  ]
+"674
+[; ;main.c: 674:                                 case '*': IHM.clr(); estado = 74; break;
+[e :U 570 ]
 [e ( *U . _IHM 4 ..  ]
 [e = _estado -> -> 74 `i `uc ]
-[e $U 538  ]
-"620
-[; ;main.c: 620:                             }
-}
-[e $U 538  ]
-[e :U 539 ]
-[e [\ -> _tecla `i , $ -> -> 48 `ui `i 540
- , $ -> -> 49 `ui `i 541
- , $ -> -> 50 `ui `i 542
- , $ -> -> 51 `ui `i 543
- , $ -> -> 52 `ui `i 544
- , $ -> -> 53 `ui `i 545
- , $ -> -> 54 `ui `i 546
- , $ -> -> 55 `ui `i 547
- , $ -> -> 56 `ui `i 548
- , $ -> -> 57 `ui `i 549
- , $ -> -> 42 `ui `i 550
- 538 ]
-[e :U 538 ]
-"621
-[; ;main.c: 621:                             break;
-[e $U 376  ]
-"623
-[; ;main.c: 623:              case 77:
-[e :U 551 ]
-"624
-[; ;main.c: 624:                             IHM.clr();
-[e ( *U . _IHM 4 ..  ]
-"625
-[; ;main.c: 625:                             for(char i = 0; i <= 3; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 552  ]
-[e $U 553  ]
-[e :U 552 ]
-"626
-[; ;main.c: 626:                             {
-{
-"627
-[; ;main.c: 627:                                 for(char j = 0; j <= 19; j++)
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 555  ]
-[e $U 556  ]
-[e :U 555 ]
-"628
-[; ;main.c: 628:                                 {
-{
-"629
-[; ;main.c: 629:                                     IHM.printpos(i, j, "\377");
-[e ( *U . _IHM 2 (3 , , -> _i `uc -> _j `uc :s 28C ]
-"630
-[; ;main.c: 630:                                     delay(10);
-[e ( _delay (1 -> -> 10 `i `ui ]
-"631
-[; ;main.c: 631:                                 }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 555  ]
-[e :U 556 ]
-}
-"632
-[; ;main.c: 632:                             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 552  ]
-[e :U 553 ]
-}
-"634
-[; ;main.c: 634:                             for(char i = 0; i <= 3; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 558  ]
-[e $U 559  ]
-[e :U 558 ]
-"635
-[; ;main.c: 635:                             {
-{
-"636
-[; ;main.c: 636:                                 for(char j = 0; j <= 19; j++)
-{
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 561  ]
-[e $U 562  ]
-[e :U 561 ]
-"637
-[; ;main.c: 637:                                 {
-{
-"638
-[; ;main.c: 638:                                     IHM.printpos(i, j, " ");
-[e ( *U . _IHM 2 (3 , , -> _i `uc -> _j `uc :s 29C ]
-"639
-[; ;main.c: 639:                                     delay(10);
-[e ( _delay (1 -> -> 10 `i `ui ]
-"640
-[; ;main.c: 640:                                 }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e $ <= -> _j `i -> 19 `i 561  ]
-[e :U 562 ]
-}
-"641
-[; ;main.c: 641:                             }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ <= -> _i `i -> 3 `i 558  ]
-[e :U 559 ]
-}
-"642
-[; ;main.c: 642:                             IHM.printpos(1, 0, "      SEQUENCIA     ");
-[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 30C ]
-"643
-[; ;main.c: 643:                             IHM.printpos(2, 0, "        SALVA       ");
-[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 31C ]
-"645
-[; ;main.c: 645:                             setT1(1000);
-[e ( _setT1 (1 -> -> -> 1000 `i `l `ul ]
-"646
-[; ;main.c: 646:                             estado = 78;
-[e = _estado -> -> 78 `i `uc ]
-"647
-[; ;main.c: 647:                             break;
-[e $U 376  ]
-"649
-[; ;main.c: 649:              case 78:
-[e :U 564 ]
-"650
-[; ;main.c: 650:                             if(!statusT1())
-[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 565  ]
-"651
-[; ;main.c: 651:                                 estado = 53;
-[e = _estado -> -> 53 `i `uc ]
-[e :U 565 ]
-"652
-[; ;main.c: 652:                             break;
-[e $U 376  ]
-"654
-[; ;main.c: 654:              case 90:
-[e :U 566 ]
-"655
-[; ;main.c: 655:                             IHM.printpos(2, 0, "config contrl:     %");
-[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 32C ]
-"656
-[; ;main.c: 656:                             IHM.printv(2, 15, num, 3);
-[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 15 `i `uc -> _num `i -> -> 3 `i `uc ]
-"657
-[; ;main.c: 657:                             estado = 91;
-[e = _estado -> -> 91 `i `uc ]
-"658
-[; ;main.c: 658:                             break;
-[e $U 376  ]
-"660
-[; ;main.c: 660:              case 91:
-[e :U 567 ]
-"661
-[; ;main.c: 661:                             tecla = teclado_borda();
-[e = _tecla -> ( _teclado_borda ..  `uc ]
-"662
-[; ;main.c: 662:                             if(tecla >= '0' && tecla <= '9')
-[e $ ! && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 568  ]
-"663
-[; ;main.c: 663:                             {
-{
-"664
-[; ;main.c: 664:                                 dignum_conc(tecla, &num);
-[e ( _dignum_conc (2 , _tecla &U _num ]
-"665
-[; ;main.c: 665:                                 if(num > 100)
-[e $ ! > _num -> -> 100 `i `ui 569  ]
-"666
-[; ;main.c: 666:                                     num = 100;
-[e = _num -> -> 100 `i `ui ]
-[e :U 569 ]
-"667
-[; ;main.c: 667:                                 estado = 90;
-[e = _estado -> -> 90 `i `uc ]
-"668
-[; ;main.c: 668:                             }
-}
-[e :U 568 ]
-"669
-[; ;main.c: 669:                             if(tecla == '*')
-[e $ ! == -> _tecla `ui -> 42 `ui 570  ]
-"670
-[; ;main.c: 670:                             {
-{
-"671
-[; ;main.c: 671:                                 dignum_apagar(&num);
-[e ( _dignum_apagar (1 &U _num ]
-"672
-[; ;main.c: 672:                                 estado = 90;
-[e = _estado -> -> 90 `i `uc ]
-"673
-[; ;main.c: 673:                             }
-}
-[e :U 570 ]
-"674
-[; ;main.c: 674:                             if(tecla == '#')
-[e $ ! == -> _tecla `ui -> 35 `ui 571  ]
+[e $U 558  ]
 "675
-[; ;main.c: 675:                                 estado = 92;
-[e = _estado -> -> 92 `i `uc ]
-[e :U 571 ]
+[; ;main.c: 675:                             }
+}
+[e $U 558  ]
+[e :U 559 ]
+[e [\ -> _tecla `i , $ -> -> 48 `ui `i 560
+ , $ -> -> 49 `ui `i 561
+ , $ -> -> 50 `ui `i 562
+ , $ -> -> 51 `ui `i 563
+ , $ -> -> 52 `ui `i 564
+ , $ -> -> 53 `ui `i 565
+ , $ -> -> 54 `ui `i 566
+ , $ -> -> 55 `ui `i 567
+ , $ -> -> 56 `ui `i 568
+ , $ -> -> 57 `ui `i 569
+ , $ -> -> 42 `ui `i 570
+ 558 ]
+[e :U 558 ]
 "676
 [; ;main.c: 676:                             break;
 [e $U 376  ]
 "678
-[; ;main.c: 678:              case 92:
-[e :U 572 ]
+[; ;main.c: 678:              case 77:
+[e :U 571 ]
 "679
-[; ;main.c: 679:                             fifo_add_control(num);
-[e ( _fifo_add_control (1 -> _num `uc ]
-"680
-[; ;main.c: 680:                             IHM.clr();
+[; ;main.c: 679:                             IHM.clr();
 [e ( *U . _IHM 4 ..  ]
+"680
+[; ;main.c: 680:                             for(char i = 0; i <= 3; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 572  ]
+[e $U 573  ]
+[e :U 572 ]
 "681
-[; ;main.c: 681:                             estado = 16;
-[e = _estado -> -> 16 `i `uc ]
+[; ;main.c: 681:                             {
+{
 "682
-[; ;main.c: 682:                             break;
-[e $U 376  ]
+[; ;main.c: 682:                                 for(char j = 0; j <= 19; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 575  ]
+[e $U 576  ]
+[e :U 575 ]
+"683
+[; ;main.c: 683:                                 {
+{
 "684
-[; ;main.c: 684:              case 54:
-[e :U 573 ]
+[; ;main.c: 684:                                     IHM.printpos(i, j, "\377");
+[e ( *U . _IHM 2 (3 , , -> _i `uc -> _j `uc :s 28C ]
 "685
-[; ;main.c: 685:                             fifo_add_ciclo(ciclos);
-[e ( _fifo_add_ciclo (1 _ciclos ]
+[; ;main.c: 685:                                     delay(10);
+[e ( _delay (1 -> -> 10 `i `ui ]
 "686
-[; ;main.c: 686:                             estado = 30;
-[e = _estado -> -> 30 `i `uc ]
+[; ;main.c: 686:                                 }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 575  ]
+[e :U 576 ]
+}
 "687
-[; ;main.c: 687:                             botao = 1;
-[e = _botao -> -> 1 `i `uc ]
-"688
-[; ;main.c: 688:                             break;
-[e $U 376  ]
+[; ;main.c: 687:                             }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 572  ]
+[e :U 573 ]
+}
 "689
-[; ;main.c: 689:         }
+[; ;main.c: 689:                             for(char i = 0; i <= 3; i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 578  ]
+[e $U 579  ]
+[e :U 578 ]
+"690
+[; ;main.c: 690:                             {
+{
+"691
+[; ;main.c: 691:                                 for(char j = 0; j <= 19; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 581  ]
+[e $U 582  ]
+[e :U 581 ]
+"692
+[; ;main.c: 692:                                 {
+{
+"693
+[; ;main.c: 693:                                     IHM.printpos(i, j, " ");
+[e ( *U . _IHM 2 (3 , , -> _i `uc -> _j `uc :s 29C ]
+"694
+[; ;main.c: 694:                                     delay(10);
+[e ( _delay (1 -> -> 10 `i `ui ]
+"695
+[; ;main.c: 695:                                 }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ <= -> _j `i -> 19 `i 581  ]
+[e :U 582 ]
+}
+"696
+[; ;main.c: 696:                             }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ <= -> _i `i -> 3 `i 578  ]
+[e :U 579 ]
+}
+"697
+[; ;main.c: 697:                             IHM.printpos(1, 0, "      SEQUENCIA     ");
+[e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 30C ]
+"698
+[; ;main.c: 698:                             IHM.printpos(2, 0, "        SALVA       ");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 31C ]
+"700
+[; ;main.c: 700:                             setT1(1000);
+[e ( _setT1 (1 -> -> -> 1000 `i `l `ul ]
+"701
+[; ;main.c: 701:                             estado = 78;
+[e = _estado -> -> 78 `i `uc ]
+"702
+[; ;main.c: 702:                             break;
+[e $U 376  ]
+"704
+[; ;main.c: 704:              case 78:
+[e :U 584 ]
+"705
+[; ;main.c: 705:                             if(!statusT1())
+[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 585  ]
+"706
+[; ;main.c: 706:                                 estado = 53;
+[e = _estado -> -> 53 `i `uc ]
+[e :U 585 ]
+"707
+[; ;main.c: 707:                             break;
+[e $U 376  ]
+"709
+[; ;main.c: 709:              case 90:
+[e :U 586 ]
+"710
+[; ;main.c: 710:                             IHM.printpos(2, 0, "config contrl:     %");
+[e ( *U . _IHM 2 (3 , , -> -> 2 `i `uc -> -> 0 `i `uc :s 32C ]
+"711
+[; ;main.c: 711:                             IHM.printv(2, 15, num, 3);
+[e ( *U . _IHM 3 (4 , , , -> -> 2 `i `uc -> -> 15 `i `uc -> _num `i -> -> 3 `i `uc ]
+"712
+[; ;main.c: 712:                             estado = 91;
+[e = _estado -> -> 91 `i `uc ]
+"713
+[; ;main.c: 713:                             break;
+[e $U 376  ]
+"715
+[; ;main.c: 715:              case 91:
+[e :U 587 ]
+"716
+[; ;main.c: 716:                             tecla = teclado_borda();
+[e = _tecla -> ( _teclado_borda ..  `uc ]
+"717
+[; ;main.c: 717:                             if(tecla >= '0' && tecla <= '9')
+[e $ ! && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 588  ]
+"718
+[; ;main.c: 718:                             {
+{
+"719
+[; ;main.c: 719:                                 dignum_conc(tecla, &num);
+[e ( _dignum_conc (2 , _tecla &U _num ]
+"720
+[; ;main.c: 720:                                 if(num > 100)
+[e $ ! > _num -> -> 100 `i `ui 589  ]
+"721
+[; ;main.c: 721:                                     num = 100;
+[e = _num -> -> 100 `i `ui ]
+[e :U 589 ]
+"722
+[; ;main.c: 722:                                 estado = 90;
+[e = _estado -> -> 90 `i `uc ]
+"723
+[; ;main.c: 723:                             }
+}
+[e :U 588 ]
+"724
+[; ;main.c: 724:                             if(tecla == '*')
+[e $ ! == -> _tecla `ui -> 42 `ui 590  ]
+"725
+[; ;main.c: 725:                             {
+{
+"726
+[; ;main.c: 726:                                 dignum_apagar(&num);
+[e ( _dignum_apagar (1 &U _num ]
+"727
+[; ;main.c: 727:                                 estado = 90;
+[e = _estado -> -> 90 `i `uc ]
+"728
+[; ;main.c: 728:                             }
+}
+[e :U 590 ]
+"729
+[; ;main.c: 729:                             if(tecla == '#')
+[e $ ! == -> _tecla `ui -> 35 `ui 591  ]
+"730
+[; ;main.c: 730:                                 estado = 92;
+[e = _estado -> -> 92 `i `uc ]
+[e :U 591 ]
+"731
+[; ;main.c: 731:                             break;
+[e $U 376  ]
+"733
+[; ;main.c: 733:              case 92:
+[e :U 592 ]
+"734
+[; ;main.c: 734:                             fifo_add_control(num);
+[e ( _fifo_add_control (1 -> _num `uc ]
+"735
+[; ;main.c: 735:                             IHM.clr();
+[e ( *U . _IHM 4 ..  ]
+"736
+[; ;main.c: 736:                             estado = 16;
+[e = _estado -> -> 16 `i `uc ]
+"737
+[; ;main.c: 737:                             break;
+[e $U 376  ]
+"739
+[; ;main.c: 739:              case 54:
+[e :U 593 ]
+"740
+[; ;main.c: 740:                             fifo_add_ciclo(ciclos);
+[e ( _fifo_add_ciclo (1 _ciclos ]
+"741
+[; ;main.c: 741:                             estado = 30;
+[e = _estado -> -> 30 `i `uc ]
+"742
+[; ;main.c: 742:                             botao = 1;
+[e = _botao -> -> 1 `i `uc ]
+"743
+[; ;main.c: 743:                             break;
+[e $U 376  ]
+"744
+[; ;main.c: 744:         }
 }
 [e $U 376  ]
 [e :U 377 ]
@@ -2648,290 +2820,291 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 8 `i 398
  , $ -> 9 `i 399
  , $ -> 71 `i 401
- , $ -> 80 `i 408
- , $ -> 81 `i 409
- , $ -> 82 `i 411
- , $ -> 84 `i 417
- , $ -> 85 `i 422
- , $ -> 86 `i 435
- , $ -> 72 `i 437
- , $ -> 73 `i 438
- , $ -> 3 `i 471
- , $ -> 6 `i 472
- , $ -> 7 `i 473
- , $ -> 10 `i 482
- , $ -> 11 `i 483
- , $ -> 16 `i 499
- , $ -> 14 `i 500
- , $ -> 30 `i 501
- , $ -> 70 `i 502
- , $ -> 40 `i 512
- , $ -> 41 `i 517
- , $ -> 42 `i 518
- , $ -> 52 `i 519
- , $ -> 53 `i 530
- , $ -> 74 `i 531
- , $ -> 75 `i 536
- , $ -> 76 `i 537
- , $ -> 77 `i 551
- , $ -> 78 `i 564
- , $ -> 90 `i 566
- , $ -> 91 `i 567
- , $ -> 92 `i 572
- , $ -> 54 `i 573
+ , $ -> 100 `i 408
+ , $ -> 80 `i 428
+ , $ -> 81 `i 429
+ , $ -> 82 `i 431
+ , $ -> 84 `i 437
+ , $ -> 85 `i 442
+ , $ -> 86 `i 455
+ , $ -> 72 `i 457
+ , $ -> 73 `i 458
+ , $ -> 3 `i 491
+ , $ -> 6 `i 492
+ , $ -> 7 `i 493
+ , $ -> 10 `i 502
+ , $ -> 11 `i 503
+ , $ -> 16 `i 519
+ , $ -> 14 `i 520
+ , $ -> 30 `i 521
+ , $ -> 70 `i 522
+ , $ -> 40 `i 532
+ , $ -> 41 `i 537
+ , $ -> 42 `i 538
+ , $ -> 52 `i 539
+ , $ -> 53 `i 550
+ , $ -> 74 `i 551
+ , $ -> 75 `i 556
+ , $ -> 76 `i 557
+ , $ -> 77 `i 571
+ , $ -> 78 `i 584
+ , $ -> 90 `i 586
+ , $ -> 91 `i 587
+ , $ -> 92 `i 592
+ , $ -> 54 `i 593
  376 ]
 [e :U 376 ]
-"691
-[; ;main.c: 691:         serialIOscan();
-[e ( _serialIOscan ..  ]
-"693
-[; ;main.c: 693:         switch(meAtuadores)
-[e $U 575  ]
-"694
-[; ;main.c: 694:         {
-{
-"695
-[; ;main.c: 695:             case 0: break;
-[e :U 576 ]
-[e $U 574  ]
-"697
-[; ;main.c: 697:             case 1:
-[e :U 577 ]
-"698
-[; ;main.c: 698:                             resetIndicePassos();
-[e ( _resetIndicePassos ..  ]
-"699
-[; ;main.c: 699:                             resetContCiclos();
-[e ( _resetContCiclos ..  ]
-"700
-[; ;main.c: 700:                             meAtuadores = 2;
-[e = _meAtuadores -> -> 2 `i `uc ]
-"701
-[; ;main.c: 701:                             break;
-[e $U 574  ]
-"703
-[; ;main.c: 703:             case 2:
-[e :U 578 ]
-"704
-[; ;main.c: 704:                             auxPasso = fifo_lerPos(getIndicePassos());
-[e = _auxPasso ( _fifo_lerPos (1 -> ( _getIndicePassos ..  `uc ]
-"706
-[; ;main.c: 706:                             if(botao == 1 || botao == 3 || botao == 0)
-[e $ ! || || == -> _botao `i -> 1 `i == -> _botao `i -> 3 `i == -> _botao `i -> 0 `i 579  ]
-"707
-[; ;main.c: 707:                                 meAtuadores = 3;
-[e = _meAtuadores -> -> 3 `i `uc ]
-[e :U 579 ]
-"708
-[; ;main.c: 708:                             break;
-[e $U 574  ]
-"710
-[; ;main.c: 710:             case 3:
-[e :U 580 ]
-"711
-[; ;main.c: 711:                             if(auxPasso <= 0x64 || auxPasso == 0xFE)
-[e $ ! || <= -> _auxPasso `i -> 100 `i == -> _auxPasso `i -> 254 `i 581  ]
-"712
-[; ;main.c: 712:                             {
-{
-"713
-[; ;main.c: 713:                                 decodifica(&auxPasso);
-[e ( _decodifica (1 -> &U _auxPasso `*uc ]
-"714
-[; ;main.c: 714:                                 MCP4725((long)((4095L * auxPasso)/100));
-[e ( _MCP4725 (1 -> / * -> 4095 `l -> _auxPasso `l -> -> 100 `i `l `ui ]
-"715
-[; ;main.c: 715:                                 meAtuadores = 6;
-[e = _meAtuadores -> -> 6 `i `uc ]
-"716
-[; ;main.c: 716:                             }
-}
-[e $U 582  ]
-"717
-[; ;main.c: 717:                             else if( auxPasso > 0x64 && auxPasso <= 0xDC )
-[e :U 581 ]
-[e $ ! && > -> _auxPasso `i -> 100 `i <= -> _auxPasso `i -> 220 `i 583  ]
-"718
-[; ;main.c: 718:                             {
-{
-"719
-[; ;main.c: 719:                                 auxPasso -= 0x64;
-[e =- _auxPasso -> -> 100 `i `uc ]
-"720
-[; ;main.c: 720:                                 setT1(auxPasso * 1000 );
-[e ( _setT1 (1 -> -> * -> _auxPasso `i -> 1000 `i `l `ul ]
-"721
-[; ;main.c: 721:                                 meAtuadores = 4;
-[e = _meAtuadores -> -> 4 `i `uc ]
-"722
-[; ;main.c: 722:                             }
-}
-[e $U 584  ]
-"723
-[; ;main.c: 723:                             else
-[e :U 583 ]
-"724
-[; ;main.c: 724:                             {
-{
-"725
-[; ;main.c: 725:                                 decodifica(&auxPasso);
-[e ( _decodifica (1 -> &U _auxPasso `*uc ]
-"726
-[; ;main.c: 726:                                 set_passo(auxPasso, vetorOut);
-[e ( _set_passo (2 , _auxPasso &U _vetorOut ]
-"727
-[; ;main.c: 727:                                 meAtuadores = 5;
-[e = _meAtuadores -> -> 5 `i `uc ]
-"728
-[; ;main.c: 728:                             }
-}
-[e :U 584 ]
-[e :U 582 ]
-"729
-[; ;main.c: 729:                             break;
-[e $U 574  ]
-"731
-[; ;main.c: 731:             case 4:
-[e :U 585 ]
-"732
-[; ;main.c: 732:                             if(!statusT1())
-[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 586  ]
-"733
-[; ;main.c: 733:                                 meAtuadores = 6;
-[e = _meAtuadores -> -> 6 `i `uc ]
-[e :U 586 ]
-"734
-[; ;main.c: 734:                             break;
-[e $U 574  ]
-"736
-[; ;main.c: 736:             case 5:
-[e :U 587 ]
-"737
-[; ;main.c: 737:                             if(ler_sensor(auxPasso, vetorIn))
-[e $ ! != -> ( _ler_sensor (2 , _auxPasso &U _vetorIn `i -> 0 `i 588  ]
-"738
-[; ;main.c: 738:                                 meAtuadores = 6;
-[e = _meAtuadores -> -> 6 `i `uc ]
-[e :U 588 ]
-"739
-[; ;main.c: 739:                             break;
-[e $U 574  ]
-"741
-[; ;main.c: 741:             case 6:
-[e :U 589 ]
-"742
-[; ;main.c: 742:                             if(botao == 3)
-[e $ ! == -> _botao `i -> 3 `i 590  ]
-"743
-[; ;main.c: 743:                             {
-{
-"744
-[; ;main.c: 744:                                 botao = 2;
-[e = _botao -> -> 2 `i `uc ]
-"745
-[; ;main.c: 745:                             }
-}
-[e :U 590 ]
 "746
-[; ;main.c: 746:                             meAtuadores = 7;
-[e = _meAtuadores -> -> 7 `i `uc ]
+[; ;main.c: 746:         serialIOscan();
+[e ( _serialIOscan ..  ]
 "748
-[; ;main.c: 748:                             break;
-[e $U 574  ]
+[; ;main.c: 748:         switch(meAtuadores)
+[e $U 595  ]
+"749
+[; ;main.c: 749:         {
+{
 "750
-[; ;main.c: 750:             case 7:
-[e :U 591 ]
-"751
-[; ;main.c: 751:                             addIndicePassos();
-[e ( _addIndicePassos ..  ]
-"752
-[; ;main.c: 752:                             if(getIndicePassos() < fifo_indice())
-[e $ ! < -> ( _getIndicePassos ..  `i -> ( _fifo_indice ..  `i 592  ]
-"753
-[; ;main.c: 753:                                 meAtuadores = 2;
-[e = _meAtuadores -> -> 2 `i `uc ]
-[e $U 593  ]
-"754
-[; ;main.c: 754:                             else
-[e :U 592 ]
-"755
-[; ;main.c: 755:                             {
-{
-"756
-[; ;main.c: 756:                                 addContCiclos();
-[e ( _addContCiclos ..  ]
-"757
-[; ;main.c: 757:                                 meAtuadores = 8;
-[e = _meAtuadores -> -> 8 `i `uc ]
-"758
-[; ;main.c: 758:                             }
-}
-[e :U 593 ]
-"759
-[; ;main.c: 759:                             break;
-[e $U 574  ]
-"761
-[; ;main.c: 761:             case 8:
-[e :U 594 ]
-"762
-[; ;main.c: 762:                             if((botao != 0) && ((getContCiclos() < getCiclos()) || (getCiclos() == 0)))
-[e $ ! && != -> _botao `i -> 0 `i || < ( _getContCiclos ..  ( _getCiclos ..  == ( _getCiclos ..  -> -> 0 `i `ui 595  ]
-"763
-[; ;main.c: 763:                             {
-{
-"764
-[; ;main.c: 764:                                 resetIndicePassos();
-[e ( _resetIndicePassos ..  ]
-"765
-[; ;main.c: 765:                                 meAtuadores = 2;
-[e = _meAtuadores -> -> 2 `i `uc ]
-"766
-[; ;main.c: 766:                             }
-}
-[e $U 596  ]
-"767
-[; ;main.c: 767:                             else
-[e :U 595 ]
-"768
-[; ;main.c: 768:                             {
-{
-"769
-[; ;main.c: 769:                                 meAtuadores = 0;
-[e = _meAtuadores -> -> 0 `i `uc ]
-"770
-[; ;main.c: 770:                             }
-}
+[; ;main.c: 750:             case 0: break;
 [e :U 596 ]
+[e $U 594  ]
+"752
+[; ;main.c: 752:             case 1:
+[e :U 597 ]
+"753
+[; ;main.c: 753:                             resetIndicePassos();
+[e ( _resetIndicePassos ..  ]
+"754
+[; ;main.c: 754:                             resetContCiclos();
+[e ( _resetContCiclos ..  ]
+"755
+[; ;main.c: 755:                             meAtuadores = 2;
+[e = _meAtuadores -> -> 2 `i `uc ]
+"756
+[; ;main.c: 756:                             break;
+[e $U 594  ]
+"758
+[; ;main.c: 758:             case 2:
+[e :U 598 ]
+"759
+[; ;main.c: 759:                             auxPasso = fifo_lerPos(getIndicePassos());
+[e = _auxPasso ( _fifo_lerPos (1 -> ( _getIndicePassos ..  `uc ]
+"761
+[; ;main.c: 761:                             if(botao == 1 || botao == 3 || botao == 0)
+[e $ ! || || == -> _botao `i -> 1 `i == -> _botao `i -> 3 `i == -> _botao `i -> 0 `i 599  ]
+"762
+[; ;main.c: 762:                                 meAtuadores = 3;
+[e = _meAtuadores -> -> 3 `i `uc ]
+[e :U 599 ]
+"763
+[; ;main.c: 763:                             break;
+[e $U 594  ]
+"765
+[; ;main.c: 765:             case 3:
+[e :U 600 ]
+"766
+[; ;main.c: 766:                             if(auxPasso <= 0x64 || auxPasso == 0xFE)
+[e $ ! || <= -> _auxPasso `i -> 100 `i == -> _auxPasso `i -> 254 `i 601  ]
+"767
+[; ;main.c: 767:                             {
+{
+"768
+[; ;main.c: 768:                                 decodifica(&auxPasso);
+[e ( _decodifica (1 -> &U _auxPasso `*uc ]
+"769
+[; ;main.c: 769:                                 MCP4725((long)((4095L * auxPasso)/100));
+[e ( _MCP4725 (1 -> / * -> 4095 `l -> _auxPasso `l -> -> 100 `i `l `ui ]
+"770
+[; ;main.c: 770:                                 meAtuadores = 6;
+[e = _meAtuadores -> -> 6 `i `uc ]
 "771
-[; ;main.c: 771:                             break;
-[e $U 574  ]
-"772
-[; ;main.c: 772:         }
+[; ;main.c: 771:                             }
 }
-[e $U 574  ]
-[e :U 575 ]
-[e [\ -> _meAtuadores `i , $ -> 0 `i 576
- , $ -> 1 `i 577
- , $ -> 2 `i 578
- , $ -> 3 `i 580
- , $ -> 4 `i 585
- , $ -> 5 `i 587
- , $ -> 6 `i 589
- , $ -> 7 `i 591
- , $ -> 8 `i 594
- 574 ]
-[e :U 574 ]
+[e $U 602  ]
+"772
+[; ;main.c: 772:                             else if( auxPasso > 0x64 && auxPasso <= 0xDC )
+[e :U 601 ]
+[e $ ! && > -> _auxPasso `i -> 100 `i <= -> _auxPasso `i -> 220 `i 603  ]
 "773
-[; ;main.c: 773:     }
+[; ;main.c: 773:                             {
+{
+"774
+[; ;main.c: 774:                                 auxPasso -= 0x64;
+[e =- _auxPasso -> -> 100 `i `uc ]
+"775
+[; ;main.c: 775:                                 setT1(auxPasso * 1000 );
+[e ( _setT1 (1 -> -> * -> _auxPasso `i -> 1000 `i `l `ul ]
+"776
+[; ;main.c: 776:                                 meAtuadores = 4;
+[e = _meAtuadores -> -> 4 `i `uc ]
+"777
+[; ;main.c: 777:                             }
+}
+[e $U 604  ]
+"778
+[; ;main.c: 778:                             else
+[e :U 603 ]
+"779
+[; ;main.c: 779:                             {
+{
+"780
+[; ;main.c: 780:                                 decodifica(&auxPasso);
+[e ( _decodifica (1 -> &U _auxPasso `*uc ]
+"781
+[; ;main.c: 781:                                 set_passo(auxPasso, vetorOut);
+[e ( _set_passo (2 , _auxPasso &U _vetorOut ]
+"782
+[; ;main.c: 782:                                 meAtuadores = 5;
+[e = _meAtuadores -> -> 5 `i `uc ]
+"783
+[; ;main.c: 783:                             }
+}
+[e :U 604 ]
+[e :U 602 ]
+"784
+[; ;main.c: 784:                             break;
+[e $U 594  ]
+"786
+[; ;main.c: 786:             case 4:
+[e :U 605 ]
+"787
+[; ;main.c: 787:                             if(!statusT1())
+[e $ ! ! != ( _statusT1 ..  -> -> -> 0 `i `l `ul 606  ]
+"788
+[; ;main.c: 788:                                 meAtuadores = 6;
+[e = _meAtuadores -> -> 6 `i `uc ]
+[e :U 606 ]
+"789
+[; ;main.c: 789:                             break;
+[e $U 594  ]
+"791
+[; ;main.c: 791:             case 5:
+[e :U 607 ]
+"792
+[; ;main.c: 792:                             if(ler_sensor(auxPasso, vetorIn))
+[e $ ! != -> ( _ler_sensor (2 , _auxPasso &U _vetorIn `i -> 0 `i 608  ]
+"793
+[; ;main.c: 793:                                 meAtuadores = 6;
+[e = _meAtuadores -> -> 6 `i `uc ]
+[e :U 608 ]
+"794
+[; ;main.c: 794:                             break;
+[e $U 594  ]
+"796
+[; ;main.c: 796:             case 6:
+[e :U 609 ]
+"797
+[; ;main.c: 797:                             if(botao == 3)
+[e $ ! == -> _botao `i -> 3 `i 610  ]
+"798
+[; ;main.c: 798:                             {
+{
+"799
+[; ;main.c: 799:                                 botao = 2;
+[e = _botao -> -> 2 `i `uc ]
+"800
+[; ;main.c: 800:                             }
+}
+[e :U 610 ]
+"801
+[; ;main.c: 801:                             meAtuadores = 7;
+[e = _meAtuadores -> -> 7 `i `uc ]
+"803
+[; ;main.c: 803:                             break;
+[e $U 594  ]
+"805
+[; ;main.c: 805:             case 7:
+[e :U 611 ]
+"806
+[; ;main.c: 806:                             addIndicePassos();
+[e ( _addIndicePassos ..  ]
+"807
+[; ;main.c: 807:                             if(getIndicePassos() < fifo_indice())
+[e $ ! < -> ( _getIndicePassos ..  `i -> ( _fifo_indice ..  `i 612  ]
+"808
+[; ;main.c: 808:                                 meAtuadores = 2;
+[e = _meAtuadores -> -> 2 `i `uc ]
+[e $U 613  ]
+"809
+[; ;main.c: 809:                             else
+[e :U 612 ]
+"810
+[; ;main.c: 810:                             {
+{
+"811
+[; ;main.c: 811:                                 addContCiclos();
+[e ( _addContCiclos ..  ]
+"812
+[; ;main.c: 812:                                 meAtuadores = 8;
+[e = _meAtuadores -> -> 8 `i `uc ]
+"813
+[; ;main.c: 813:                             }
+}
+[e :U 613 ]
+"814
+[; ;main.c: 814:                             break;
+[e $U 594  ]
+"816
+[; ;main.c: 816:             case 8:
+[e :U 614 ]
+"817
+[; ;main.c: 817:                             if((botao != 0) && ((getContCiclos() < getCiclos()) || (getCiclos() == 0)))
+[e $ ! && != -> _botao `i -> 0 `i || < ( _getContCiclos ..  ( _getCiclos ..  == ( _getCiclos ..  -> -> 0 `i `ui 615  ]
+"818
+[; ;main.c: 818:                             {
+{
+"819
+[; ;main.c: 819:                                 resetIndicePassos();
+[e ( _resetIndicePassos ..  ]
+"820
+[; ;main.c: 820:                                 meAtuadores = 2;
+[e = _meAtuadores -> -> 2 `i `uc ]
+"821
+[; ;main.c: 821:                             }
+}
+[e $U 616  ]
+"822
+[; ;main.c: 822:                             else
+[e :U 615 ]
+"823
+[; ;main.c: 823:                             {
+{
+"824
+[; ;main.c: 824:                                 meAtuadores = 0;
+[e = _meAtuadores -> -> 0 `i `uc ]
+"825
+[; ;main.c: 825:                             }
+}
+[e :U 616 ]
+"826
+[; ;main.c: 826:                             break;
+[e $U 594  ]
+"827
+[; ;main.c: 827:         }
+}
+[e $U 594  ]
+[e :U 595 ]
+[e [\ -> _meAtuadores `i , $ -> 0 `i 596
+ , $ -> 1 `i 597
+ , $ -> 2 `i 598
+ , $ -> 3 `i 600
+ , $ -> 4 `i 605
+ , $ -> 5 `i 607
+ , $ -> 6 `i 609
+ , $ -> 7 `i 611
+ , $ -> 8 `i 614
+ 594 ]
+[e :U 594 ]
+"828
+[; ;main.c: 828:     }
 }
 [e :U 373 ]
 [e $U 374  ]
 [e :U 375 ]
-"774
-[; ;main.c: 774:     return;
+"829
+[; ;main.c: 829:     return;
 [e $UE 372  ]
-"775
-[; ;main.c: 775: }
+"830
+[; ;main.c: 830: }
 [e :UE 372 ]
 }
 [a 23C 99 111 110 102 105 103 32 116 101 109 112 111 58 32 32 32 32 32 32 115 0 ]

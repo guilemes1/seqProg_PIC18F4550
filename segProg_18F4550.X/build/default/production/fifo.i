@@ -22,7 +22,8 @@ void dispLCD( unsigned char lin, unsigned char col, const char * str );
 void dispLCD_num( unsigned char lin, unsigned char col, int num, unsigned char tam );
 void dispLCD_clr( void );
 void dispLCD_str( const char * str );
-# 2 "fifo.c" 2
+# 1 "fifo.c" 2
+
 # 1 "./fifo.h" 1
 # 14 "./fifo.h"
 char ler_atuador(char tecla);
@@ -63,9 +64,11 @@ void manipula_atuadores_init(char aux);
 
 void decodifica( unsigned char *d );
 void codifica( unsigned char tipo, unsigned char *dado );
-# 3 "fifo.c" 2
+# 2 "fifo.c" 2
+
 # 1 "./estados.h" 1
-# 4 "fifo.c" 2
+# 3 "fifo.c" 2
+
 
 
 

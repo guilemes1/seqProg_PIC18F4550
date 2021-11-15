@@ -5624,7 +5624,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 22 "dispLCD4vias.c" 2
+# 21 "dispLCD4vias.c" 2
+
 # 1 "./config.h" 1
 # 27 "./config.h"
 #pragma config PLLDIV = 5
@@ -5676,7 +5677,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config EBTR3 = OFF
 
 #pragma config EBTRB = OFF
-# 23 "dispLCD4vias.c" 2
+# 22 "dispLCD4vias.c" 2
+
 # 1 "./fifo.h" 1
 # 14 "./fifo.h"
 char ler_atuador(char tecla);
@@ -5717,13 +5719,15 @@ void manipula_atuadores_init(char aux);
 
 void decodifica( unsigned char *d );
 void codifica( unsigned char tipo, unsigned char *dado );
-# 24 "dispLCD4vias.c" 2
+# 23 "dispLCD4vias.c" 2
+
 # 1 "./delay.h" 1
 
 
 
 void delay( unsigned int t );
-# 25 "dispLCD4vias.c" 2
+# 24 "dispLCD4vias.c" 2
+
 # 1 "./dispLCD4vias.h" 1
 
 
@@ -5739,15 +5743,8 @@ void dispLCD( unsigned char lin, unsigned char col, const char * str );
 void dispLCD_num( unsigned char lin, unsigned char col, int num, unsigned char tam );
 void dispLCD_clr( void );
 void dispLCD_str( const char * str );
-# 26 "dispLCD4vias.c" 2
-
-
-
-
-
-
-
-
+# 25 "dispLCD4vias.c" 2
+# 34 "dispLCD4vias.c"
 typedef union
 {
     struct

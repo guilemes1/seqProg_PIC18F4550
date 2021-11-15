@@ -5624,12 +5624,14 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 21 "serialIO.c" 2
+# 20 "serialIO.c" 2
+
 # 1 "./serialIO.h" 1
 # 12 "./serialIO.h"
 void initSerialIO( char * ptrIn, char * ptrOut, unsigned char length );
 void serialIOscan( void );
-# 22 "serialIO.c" 2
+# 21 "serialIO.c" 2
+
 
 char * ptrSerialIn;
 char * ptrSerialOut;

@@ -5631,7 +5631,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 10 "eeprom.c" 2
+# 9 "eeprom.c" 2
+
 # 1 "./eeprom.h" 1
 
 
@@ -5661,13 +5662,15 @@ void buscar_dado (char adrs, char col, unsigned char *data);
     void (* livre) (unsigned char * rec);
     void (* formatar) (void);
 } EEPROM = { salvar_receita, buscar_receita, deletar_receita, receita_livre, formatar_receitas };
-# 11 "eeprom.c" 2
+# 10 "eeprom.c" 2
+
 # 1 "./delay.h" 1
 
 
 
 void delay( unsigned int t );
-# 12 "eeprom.c" 2
+# 11 "eeprom.c" 2
+
 
 
 char EEPROM_read( unsigned char addr )

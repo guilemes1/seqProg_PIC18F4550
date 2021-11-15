@@ -5629,7 +5629,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 8 "delay.c" 2
+# 7 "delay.c" 2
+
 # 1 "./config.h" 1
 # 27 "./config.h"
 #pragma config PLLDIV = 5
@@ -5681,7 +5682,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config EBTR3 = OFF
 
 #pragma config EBTRB = OFF
-# 9 "delay.c" 2
+# 8 "delay.c" 2
+
 
 void delay( unsigned int t )
 {

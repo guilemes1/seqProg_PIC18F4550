@@ -47,7 +47,7 @@ void manipula_atuadores_init(char aux);
 
 void decodifica( unsigned char *d );
 void codifica( unsigned char tipo, unsigned char *dado );
-# 2 "atuadores.c" 2
+# 1 "atuadores.c" 2
 # 53 "atuadores.c"
 void set_passo(char passo, char* ptr)
 {

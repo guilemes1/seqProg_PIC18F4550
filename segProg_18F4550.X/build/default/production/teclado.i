@@ -13,7 +13,7 @@ void teclado_init( void );
 unsigned char teclado_scan( void );
 unsigned char teclado_borda(void);
 char altera_tecla(char tecla);
-# 2 "teclado.c" 2
+# 1 "teclado.c" 2
 # 25 "teclado.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
@@ -5631,13 +5631,15 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 26 "teclado.c" 2
+# 25 "teclado.c" 2
+
 # 1 "./delay.h" 1
 
 
 
 void delay( unsigned int t );
-# 27 "teclado.c" 2
+# 26 "teclado.c" 2
+
 
 
 void teclado_init( void )
