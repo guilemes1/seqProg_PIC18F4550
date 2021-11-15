@@ -38,8 +38,11 @@
  * 23/10/2021 -   Pedro   - Finalização da biblioteca I2C - Testes e simulação
  * 
  * 12/11/2021 - Guilherme - Realizado a troca do microcontrolador PIC16F887 pelo microcontrolador PIC18F4550, de modo a dispor de mais memória para execução do programa
- *                          * Realizado readequação das bibliotecas para o novo componente utilizado conforme datasheet  
- * 
+ *                          - Realizado readequação das bibliotecas para o novo componente utilizado conforme datasheet  
+ *                          - Nessa altura do projeto, entre as melhorias aplicadas, o dispositivo: 
+ *                                - Possui uma navegação de telas mais intuitiva para com o usuário 
+ *                                - É capaz de realizar buscas de sequencias salvas na memória
+ *                                - É capaz de realizar o acionamento de uma saída analógica conforme porcentagem de controle definida pelo usuário
  *                          
  
  */
