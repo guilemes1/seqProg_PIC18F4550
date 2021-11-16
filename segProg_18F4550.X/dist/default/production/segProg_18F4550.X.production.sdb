@@ -1,51 +1,51 @@
-[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[p LITE_MODE AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
-"53 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\atuadores.c
+"53 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\atuadores.c
 [v _set_passo set_passo `(v  1 e 1 0 ]
 "68
 [v _ler_sensor ler_sensor `(uc  1 e 1 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\__lldiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awmod.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fleq.c
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\float.c
+"62 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"86 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftadd.c
+"86 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"54 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftdiv.c
+"54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftmul.c
+"62 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"19 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftsub.c
+"19 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"11 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
+"11 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul32.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul64.c
+"91 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"10 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\delay.c
+"10 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]
-"101 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
+"101 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
 [v _dispLCD_instReg dispLCD_instReg `(v  1 e 1 0 ]
 "134
 [v _dispLCD_dataReg dispLCD_dataReg `(v  1 e 1 0 ]
@@ -61,7 +61,7 @@
 [v _dispLCD_clr dispLCD_clr `(v  1 e 1 0 ]
 "250
 [v _dispLCD_str dispLCD_str `(v  1 e 1 0 ]
-"14 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
+"14 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
 [v _EEPROM_read EEPROM_read `(uc  1 e 1 0 ]
 "24
 [v _EEPROM_write EEPROM_write `(v  1 e 1 0 ]
@@ -81,7 +81,23 @@
 [v _receita_livre receita_livre `(v  1 e 1 0 ]
 "100
 [v _formatar_receitas formatar_receitas `(v  1 e 1 0 ]
-"19 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"50 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eusart.c
+[v _rxEUSART rxEUSART `(uc  1 e 1 0 ]
+"62
+[v _rxStatusEUSART rxStatusEUSART `(uc  1 e 1 0 ]
+"76
+[v _rxErrorEUSART rxErrorEUSART `(uc  1 e 1 0 ]
+"92
+[v _rxResetErrorEUSART rxResetErrorEUSART `(v  1 e 1 0 ]
+"115
+[v _txEUSART txEUSART `(v  1 e 1 0 ]
+"126
+[v _txStatusEUSART txStatusEUSART `(uc  1 e 1 0 ]
+"137
+[v _initEUSART initEUSART `(v  1 e 1 0 ]
+"160
+[v _search search `(i  1 e 2 0 ]
+"19 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _addIndicePassos addIndicePassos `(v  1 e 1 0 ]
 "31
 [v _getIndicePassos getIndicePassos `(uc  1 e 1 0 ]
@@ -147,17 +163,17 @@
 [v _posAtual posAtual `(uc  1 e 1 0 ]
 "520
 [v _printExec printExec `(v  1 e 1 0 ]
-"56 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\main.c
+"58 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\main.c
 [v _irq irq `IIH(v  1 e 1 0 ]
-"69
+"71
 [v _main main `(v  1 e 1 0 ]
-"13 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\MCP4725.c
+"13 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\MCP4725.c
 [v _dac_init dac_init `(v  1 e 1 0 ]
 "25
 [v _dac_write dac_write `(v  1 e 1 0 ]
 "35
 [v _MCP4725 MCP4725 `(v  1 e 1 0 ]
-"45 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
+"45 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
 [v _serialIOload serialIOload `(v  1 e 1 0 ]
 "50
 [v _serialIObyteShift serialIObyteShift `(uc  1 e 1 0 ]
@@ -165,7 +181,7 @@
 [v _serialIOscan serialIOscan `(v  1 e 1 0 ]
 "89
 [v _initSerialIO initSerialIO `(v  1 e 1 0 ]
-"12 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\spi_i2c.c
+"12 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\spi_i2c.c
 [v _I2C_init I2C_init `(v  1 e 1 0 ]
 "22
 [v _I2C_start I2C_start `(v  1 e 1 0 ]
@@ -175,13 +191,13 @@
 [v _I2C_stop I2C_stop `(v  1 e 1 0 ]
 "56
 [v _I2C_ack_receive I2C_ack_receive `(v  1 e 1 0 ]
-"29 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\teclado.c
+"29 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\teclado.c
 [v _teclado_init teclado_init `(v  1 e 1 0 ]
 "55
 [v _teclado_scan teclado_scan `(uc  1 e 1 0 ]
 "92
 [v _teclado_borda teclado_borda `(uc  1 e 1 0 ]
-"5 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
+"5 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
 [v _intt1_1ms intt1_1ms `(v  1 e 1 0 ]
 "16
 [v _timer1_init timer1_init `(v  1 e 1 0 ]
@@ -189,13 +205,33 @@
 [v _setT1 setT1 `(v  1 e 1 0 ]
 "38
 [v _statusT1 statusT1 `(ul  1 e 4 0 ]
+"12 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\wifi.c
+[v _wifi_init wifi_init `(v  1 e 1 0 ]
+"18
+[v _wifi_send wifi_send `(v  1 e 1 0 ]
+"28
+[v _wifi_receive wifi_receive `(uc  1 e 1 0 ]
+"47
+[v _Wifi_mode Wifi_mode `(v  1 e 1 0 ]
+"72
+[v _Wifi_connect Wifi_connect `(v  1 e 1 0 ]
+"101
+[v _Wifi_scan Wifi_scan `(v  1 e 1 0 ]
+"106
+[v _Wifi_ip Wifi_ip `(v  1 e 1 0 ]
+"111
+[v _Wifi_autoconnect Wifi_autoconnect `(v  1 e 1 0 ]
+"115
+[v _Wifi_config_servidor Wifi_config_servidor `(v  1 e 1 0 ]
+"122
+[v _Wifi_cipsend Wifi_cipsend `(v  1 e 1 0 ]
 [s S85 . 10 `*.37(v 1 salvar 2 0 `*.37(v 1 buscar 2 2 `*.37(v 1 deletar 2 4 `*.37(v 1 livre 2 6 `*.37(v 1 formatar 2 8 ]
-"28 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X/eeprom.h
+"28 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X/eeprom.h
 [v _EEPROM EEPROM `S85  1 e 10 0 ]
 [s S29 . 10 `*.37(v 1 init 2 0 `*.37(v 1 print 2 2 `*.37(v 1 printpos 2 4 `*.37(v 1 printv 2 6 `*.37(v 1 clr 2 8 ]
-"14 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X/ihm.h
+"14 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X/ihm.h
 [v _IHM IHM `S29  1 e 10 0 ]
-[s S1006 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1106 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -203,8 +239,8 @@
 `uc 1 RA5 1 0 :1:5 
 `uc 1 RA6 1 0 :1:6 
 ]
-"2353 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[s S1014 . 1 `uc 1 AN0 1 0 :1:0 
+"2353 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
+[s S1114 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
@@ -212,22 +248,22 @@
 `uc 1 AN4 1 0 :1:5 
 `uc 1 OSC2 1 0 :1:6 
 ]
-[s S1022 . 1 `uc 1 . 1 0 :2:0 
+[s S1122 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S1028 . 1 `uc 1 . 1 0 :5:0 
+[s S1128 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S1031 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S1131 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S1033 . 1 `S1006 1 . 1 0 `S1014 1 . 1 0 `S1022 1 . 1 0 `S1028 1 . 1 0 `S1031 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1033  1 e 1 @3968 ]
+[u S1133 . 1 `S1106 1 . 1 0 `S1114 1 . 1 0 `S1122 1 . 1 0 `S1128 1 . 1 0 `S1131 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1133  1 e 1 @3968 ]
 "2705
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
-[s S1067 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S1167 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -236,9 +272,9 @@
 `uc 1 TRISA6 1 0 :1:6 
 ]
 "3457
-[u S1083 . 1 `S1067 1 . 1 0 `S1006 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES1083  1 e 1 @3986 ]
-[s S620 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S1183 . 1 `S1167 1 . 1 0 `S1106 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES1183  1 e 1 @3986 ]
+[s S720 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -248,7 +284,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "3657
-[s S629 . 1 `uc 1 RB0 1 0 :1:0 
+[s S729 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -257,11 +293,11 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S638 . 1 `S620 1 . 1 0 `S629 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES638  1 e 1 @3987 ]
+[u S738 . 1 `S720 1 . 1 0 `S729 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES738  1 e 1 @3987 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S218 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S306 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -271,15 +307,15 @@
 `uc 1 SPPIE 1 0 :1:7 
 ]
 "4408
-[s S227 . 1 `uc 1 . 1 0 :4:0 
+[s S315 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PSPIE 1 0 :1:7 
 ]
-[u S233 . 1 `S218 1 . 1 0 `S227 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES233  1 e 1 @3997 ]
-[s S184 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S321 . 1 `S306 1 . 1 0 `S315 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES321  1 e 1 @3997 ]
+[s S272 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -289,15 +325,15 @@
 `uc 1 SPPIF 1 0 :1:7 
 ]
 "4492
-[s S193 . 1 `uc 1 . 1 0 :4:0 
+[s S281 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PSPIF 1 0 :1:7 
 ]
-[u S199 . 1 `S184 1 . 1 0 `S193 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES199  1 e 1 @3998 ]
-[s S742 . 1 `uc 1 RD 1 0 :1:0 
+[u S287 . 1 `S272 1 . 1 0 `S281 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES287  1 e 1 @3998 ]
+[s S842 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -307,20 +343,99 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "4870
-[s S751 . 1 `uc 1 . 1 0 :6:0 
+[s S851 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S754 . 1 `S742 1 . 1 0 `S751 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES754  1 e 1 @4006 ]
+[u S854 . 1 `S842 1 . 1 0 `S851 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES854  1 e 1 @4006 ]
 "4915
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "4922
 [v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
 "4929
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
+[s S1726 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4977
+[s S1735 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S1738 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[s S1741 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S1744 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S1747 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[u S1749 . 1 `S1726 1 . 1 0 `S1735 1 . 1 0 `S1738 1 . 1 0 `S1741 1 . 1 0 `S1744 1 . 1 0 `S1747 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES1749  1 e 1 @4011 ]
+[s S1783 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"5185
+[s S1792 . 1 `uc 1 TX9D1 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+`uc 1 BRGH1 1 0 :1:2 
+`uc 1 SENDB1 1 0 :1:3 
+`uc 1 SYNC1 1 0 :1:4 
+`uc 1 TXEN1 1 0 :1:5 
+`uc 1 TX91 1 0 :1:6 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S1801 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S1804 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[u S1806 . 1 `S1783 1 . 1 0 `S1792 1 . 1 0 `S1801 1 . 1 0 `S1804 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES1806  1 e 1 @4012 ]
+"5402
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"5414
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+[s S1876 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 TXCKP 1 0 :1:4 
+`uc 1 RXDTP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"6182
+[s S1885 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 RCMT 1 0 :1:6 
+]
+[s S1890 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXCKP 1 0 :1:5 
+]
+[s S1893 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 W4E 1 0 :1:1 
+]
+[u S1896 . 1 `S1876 1 . 1 0 `S1885 1 . 1 0 `S1890 1 . 1 0 `S1893 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES1896  1 e 1 @4024 ]
 "6581
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
-[s S1336 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1436 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -330,30 +445,30 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "6823
-[u S1345 . 1 `S1336 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES1345  1 e 1 @4037 ]
-[s S1168 . 1 `uc 1 SSPM 1 0 :4:0 
+[u S1445 . 1 `S1436 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES1445  1 e 1 @4037 ]
+[s S1268 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "6888
-[s S1174 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1274 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S1179 . 1 `S1168 1 . 1 0 `S1174 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES1179  1 e 1 @4038 ]
-[s S1195 . 1 `uc 1 . 1 0 :2:0 
+[u S1279 . 1 `S1268 1 . 1 0 `S1274 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES1279  1 e 1 @4038 ]
+[s S1295 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "7021
-[s S1198 . 1 `uc 1 . 1 0 :5:0 
+[s S1298 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
-[s S1201 . 1 `uc 1 BF 1 0 :1:0 
+[s S1301 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -362,65 +477,65 @@
 `uc 1 CKE 1 0 :1:6 
 `uc 1 SMP 1 0 :1:7 
 ]
-[s S1210 . 1 `uc 1 . 1 0 :2:0 
+[s S1310 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S1215 . 1 `uc 1 . 1 0 :2:0 
+[s S1315 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S1221 . 1 `uc 1 . 1 0 :2:0 
+[s S1321 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S1226 . 1 `uc 1 . 1 0 :2:0 
+[s S1326 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
-[s S1229 . 1 `uc 1 . 1 0 :5:0 
+[s S1329 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
-[s S1232 . 1 `uc 1 . 1 0 :2:0 
+[s S1332 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S1237 . 1 `uc 1 . 1 0 :2:0 
+[s S1337 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S1242 . 1 `uc 1 . 1 0 :2:0 
+[s S1342 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S1247 . 1 `uc 1 . 1 0 :2:0 
+[s S1347 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S1253 . 1 `uc 1 . 1 0 :2:0 
+[s S1353 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 NOT_A 1 0 :1:5 
 ]
-[u S1258 . 1 `S1195 1 . 1 0 `S1198 1 . 1 0 `S1201 1 . 1 0 `S1210 1 . 1 0 `S1215 1 . 1 0 `S1221 1 . 1 0 `S1226 1 . 1 0 `S1229 1 . 1 0 `S1232 1 . 1 0 `S1237 1 . 1 0 `S1242 1 . 1 0 `S1247 1 . 1 0 `S1253 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES1258  1 e 1 @4039 ]
+[u S1358 . 1 `S1295 1 . 1 0 `S1298 1 . 1 0 `S1301 1 . 1 0 `S1310 1 . 1 0 `S1315 1 . 1 0 `S1321 1 . 1 0 `S1326 1 . 1 0 `S1329 1 . 1 0 `S1332 1 . 1 0 `S1337 1 . 1 0 `S1342 1 . 1 0 `S1347 1 . 1 0 `S1353 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES1358  1 e 1 @4039 ]
 "7186
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "7193
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
-[s S1431 . 1 `uc 1 . 1 0 :2:0 
+[s S1531 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
 "7448
-[s S1434 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S1534 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -428,24 +543,24 @@
 `uc 1 T1RUN 1 0 :1:6 
 `uc 1 RD16 1 0 :1:7 
 ]
-[s S1442 . 1 `uc 1 . 1 0 :2:0 
+[s S1542 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S1448 . 1 `uc 1 . 1 0 :3:0 
+[s S1548 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SOSCEN 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 T1RD16 1 0 :1:7 
 ]
-[u S1453 . 1 `S1431 1 . 1 0 `S1434 1 . 1 0 `S1442 1 . 1 0 `S1448 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES1453  1 e 1 @4045 ]
+[u S1553 . 1 `S1531 1 . 1 0 `S1534 1 . 1 0 `S1542 1 . 1 0 `S1548 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES1553  1 e 1 @4045 ]
 "7525
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "7532
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S135 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S223 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -455,7 +570,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "8614
-[s S144 . 1 `uc 1 . 1 0 :1:0 
+[s S232 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -464,21 +579,29 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S153 . 1 `uc 1 . 1 0 :6:0 
+[s S241 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S157 . 1 `S135 1 . 1 0 `S144 1 . 1 0 `S153 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES157  1 e 1 @4082 ]
-[s S610 . 1 `uc 1 . 1 0 :2:0 
+[u S245 . 1 `S223 1 . 1 0 `S232 1 . 1 0 `S241 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES245  1 e 1 @4082 ]
+[s S710 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 BUS 1 0 :4:2 
 `uc 1 RS 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
-"46 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
-[u S615 . 1 `S610 1 . 1 0 ]
-[v _LCDbits LCDbits `VES615  1 e 1 @3978 ]
-"10 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"46 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
+[u S715 . 1 `S710 1 . 1 0 ]
+[v _LCDbits LCDbits `VES715  1 e 1 @3978 ]
+[s S1648 eusartT 16 `*.37(uc 1 rx 2 0 `*.37(uc 1 rxSTATUS 2 2 `*.37(uc 1 rxERROR 2 4 `*.37(v 1 rxResetERROR 2 6 `*.37(v 1 tx 2 8 `*.37(uc 1 txSTATUS 2 10 `*.37(v 1 init 2 12 `*.37(i 1 search_string 2 14 ]
+"26 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eusart.c
+[v _eusart eusart `S1648  1 e 16 0 ]
+[s S1862 . 2 `uc 1 LO 1 0 `uc 1 HI 1 1 ]
+"41
+[s S1865 . 2 `ui 1 u16 2 0 ]
+[u S1867 . 2 `S1862 1 . 2 0 `S1865 1 . 2 0 ]
+[v _SPBRbits SPBRbits `VES1867  1 e 2 @153 ]
+"10 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _fila fila `[18]uc  1 e 18 0 ]
 "11
 [v _ind_fila ind_fila `uc  1 e 1 0 ]
@@ -488,111 +611,126 @@
 [v _cont_ciclos cont_ciclos `ui  1 e 2 0 ]
 "16
 [v _indice_passos indice_passos `uc  1 e 1 0 ]
-[s S848 . 1 `uc 1 A 1 0 :1:0 
+[s S948 . 1 `uc 1 A 1 0 :1:0 
 `uc 1 B 1 0 :1:1 
 `uc 1 C 1 0 :1:2 
 `uc 1 D 1 0 :1:3 
 `uc 1 . 1 0 :4:4 
 ]
 "74
-[u S854 . 1 `S848 1 . 1 0 ]
-[v _atuador atuador `S854  1 e 1 0 ]
-"23 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
+[u S954 . 1 `S948 1 . 1 0 ]
+[v _atuador atuador `S954  1 e 1 0 ]
+"23 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
 [v _ptrSerialIn ptrSerialIn `*.39uc  1 e 2 0 ]
 "24
 [v _ptrSerialOut ptrSerialOut `*.39uc  1 e 2 0 ]
 "25
 [v _lenSerialIO lenSerialIO `uc  1 e 1 0 ]
-[s S997 . 1 `uc 1 OUT 1 0 :1:0 
+[s S1097 . 1 `uc 1 OUT 1 0 :1:0 
 `uc 1 IN 1 0 :1:1 
 `uc 1 CLK 1 0 :1:2 
 `uc 1 SHLD 1 0 :1:3 
 `uc 1 . 1 0 :4:4 
 ]
 "41
-[u S1003 . 1 `S997 1 . 1 0 ]
-[v _SERIALIO SERIALIO `VES1003  1 e 1 @3968 ]
-"50 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\teclado.c
+[u S1103 . 1 `S1097 1 . 1 0 ]
+[v _SERIALIO SERIALIO `VES1103  1 e 1 @3968 ]
+"50 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\teclado.c
 [v _teclas teclas `[4][4]uc  1 e 16 0 ]
 "91
 [v _teclaAnterior teclaAnterior `uc  1 e 1 0 ]
-"3 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
+"3 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
 [v _t1cont t1cont `ul  1 e 4 0 ]
-"69 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\main.c
+"71 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"691
-[v main@j_591 j `uc  1 a 1 76 ]
-"682
-[v main@j_588 j `uc  1 a 1 74 ]
-"303
-[v main@j_558 j `uc  1 a 1 72 ]
-"294
-[v main@j_555 j `uc  1 a 1 70 ]
-"123
-[v main@j_537 j `uc  1 a 1 68 ]
-"114
+"694
+[v main@j_691 j `uc  1 a 1 76 ]
+"685
+[v main@j_688 j `uc  1 a 1 74 ]
+"306
+[v main@j_658 j `uc  1 a 1 72 ]
+"297
+[v main@j_655 j `uc  1 a 1 70 ]
+"126
+[v main@j_637 j `uc  1 a 1 68 ]
+"117
 [v main@j j `uc  1 a 1 66 ]
-"356
-[v main@ptr_564 ptr `*.39uc  1 a 2 88 ]
-"689
-[v main@i_590 i `uc  1 a 1 75 ]
-"680
-[v main@i_587 i `uc  1 a 1 73 ]
-"301
-[v main@i_557 i `uc  1 a 1 71 ]
-"292
-[v main@i_554 i `uc  1 a 1 69 ]
-"212
-[v main@ptr_545 ptr `*.39uc  1 a 2 86 ]
-"121
-[v main@i_536 i `uc  1 a 1 67 ]
-"112
+"359
+[v main@ptr_664 ptr `*.39uc  1 a 2 88 ]
+"692
+[v main@i_690 i `uc  1 a 1 75 ]
+"683
+[v main@i_687 i `uc  1 a 1 73 ]
+"304
+[v main@i_657 i `uc  1 a 1 71 ]
+"295
+[v main@i_654 i `uc  1 a 1 69 ]
+"215
+[v main@ptr_645 ptr `*.39uc  1 a 2 86 ]
+"124
+[v main@i_636 i `uc  1 a 1 67 ]
+"115
 [v main@i i `uc  1 a 1 65 ]
-"135
+"138
 [v main@lema lema `[20]uc  1 a 20 0 ]
-"137
+"140
 [v main@ptr ptr `*.39uc  1 a 2 63 ]
-"136
-[v main@i_542 i `uc  1 a 1 60 ]
-"81
+"139
+[v main@i_642 i `uc  1 a 1 60 ]
+"84
 [v main@vetor_aux vetor_aux `[16]uc  1 a 16 22 ]
-"92
+"95
 [v main@num num `ui  1 a 2 84 ]
-"93
+"96
 [v main@ciclos ciclos `ui  1 a 2 80 ]
-"83
-[v main@pt pt `*.39uc  1 a 2 61 ]
-"78
-[v main@tecla tecla `uc  1 a 1 92 ]
-"79
-[v main@estado estado `uc  1 a 1 91 ]
-"90
-[v main@auxPasso auxPasso `uc  1 a 1 90 ]
-"94
-[v main@botao botao `uc  1 a 1 83 ]
-"82
-[v main@init_cond init_cond `uc  1 a 1 82 ]
-"89
-[v main@meAtuadores meAtuadores `uc  1 a 1 79 ]
-"87
-[v main@vetorOut vetorOut `[1]uc  1 a 1 78 ]
 "86
-[v main@vetorIn vetorIn `[1]uc  1 a 1 77 ]
-"91
-[v main@aux aux `uc  1 a 1 21 ]
+[v main@pt pt `*.39uc  1 a 2 61 ]
+"81
+[v main@tecla tecla `uc  1 a 1 92 ]
+"82
+[v main@estado estado `uc  1 a 1 91 ]
+"93
+[v main@auxPasso auxPasso `uc  1 a 1 90 ]
+"97
+[v main@botao botao `uc  1 a 1 83 ]
 "85
+[v main@init_cond init_cond `uc  1 a 1 82 ]
+"92
+[v main@meAtuadores meAtuadores `uc  1 a 1 79 ]
+"90
+[v main@vetorOut vetorOut `[1]uc  1 a 1 78 ]
+"89
+[v main@vetorIn vetorIn `[1]uc  1 a 1 77 ]
+"94
+[v main@aux aux `uc  1 a 1 21 ]
+"88
 [v main@contPassos contPassos `uc  1 a 1 20 ]
-"133
-[v main@F3405 F3405 `[20]uc  1 s 20 F3405 ]
-"830
+[v main@F3472 F3472 `[1]uc  1 s 1 F3472 ]
+"89
+[v main@F3474 F3474 `[1]uc  1 s 1 F3474 ]
+"136
+[v main@F3498 F3498 `[20]uc  1 s 20 F3498 ]
+"833
 } 0
-"16 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
+"12 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\wifi.c
+[v _wifi_init wifi_init `(v  1 e 1 0 ]
+{
+[v wifi_init@br br `l  1 p 4 21 ]
+"16
+} 0
+"137 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eusart.c
+[v _initEUSART initEUSART `(v  1 e 1 0 ]
+{
+[v initEUSART@baudRate baudRate `ul  1 p 4 13 ]
+"158
+} 0
+"16 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
 [v _timer1_init timer1_init `(v  1 e 1 0 ]
 {
 "29
 } 0
-"29 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\teclado.c
+"29 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\teclado.c
 [v _teclado_init teclado_init `(v  1 e 1 0 ]
 {
 "34
@@ -616,12 +754,12 @@
 [v teclado_scan@tecla tecla `uc  1 a 1 2 ]
 "89
 } 0
-"38 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
+"38 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
 [v _statusT1 statusT1 `(ul  1 e 4 0 ]
 {
 "41
 } 0
-"53 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\atuadores.c
+"53 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\atuadores.c
 [v _set_passo set_passo `(v  1 e 1 0 ]
 {
 [v set_passo@passo passo `uc  1 a 1 wreg ]
@@ -630,18 +768,18 @@
 [v set_passo@passo passo `uc  1 a 1 4 ]
 "66
 } 0
-"31 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
+"31 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
 [v _setT1 setT1 `(v  1 e 1 0 ]
 {
 [v setT1@c c `ul  1 p 4 6 ]
 "35
 } 0
-"76 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
+"76 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
 [v _serialIOscan serialIOscan `(v  1 e 1 0 ]
 {
 "78
-[v serialIOscan@i i `uc  1 a 1 6 ]
-[v serialIOscan@j j `uc  1 a 1 5 ]
+[v serialIOscan@i i `uc  1 a 1 8 ]
+[v serialIOscan@j j `uc  1 a 1 7 ]
 "86
 } 0
 "45
@@ -663,7 +801,7 @@
 [v serialIObyteShift@dataIn dataIn `uc  1 a 1 0 ]
 "73
 } 0
-"46 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
+"46 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
 [v _salvar_receita salvar_receita `(v  1 e 1 0 ]
 {
 [v salvar_receita@adrs adrs `uc  1 a 1 wreg ]
@@ -692,7 +830,7 @@
 [v salvar_dado@adrs adrs `uc  1 a 1 10 ]
 "68
 } 0
-"117 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"117 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _salva_atuadores_init salva_atuadores_init `(uc  1 e 1 0 ]
 {
 "119
@@ -703,6 +841,8 @@
 [v salva_atuadores_init@mask mask `uc  1 a 1 10 ]
 "122
 [v salva_atuadores_init@dado dado `uc  1 a 1 9 ]
+"118
+[v salva_atuadores_init@F108 F108 `[4]uc  1 s 4 F108 ]
 "135
 } 0
 "80
@@ -744,6 +884,7 @@
 [v posAtual@passo passo `uc  1 a 1 2 ]
 "512
 [v posAtual@ind ind `uc  1 a 1 wreg ]
+"514
 [v posAtual@ind ind `uc  1 a 1 1 ]
 "518
 } 0
@@ -761,7 +902,7 @@
 [v fifo_lerPos@i i `uc  1 a 1 0 ]
 "171
 } 0
-"201 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
+"201 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
 [v _dispLCD_num dispLCD_num `(v  1 e 1 0 ]
 {
 [v dispLCD_num@lin lin `uc  1 a 1 wreg ]
@@ -781,7 +922,7 @@
 [v dispLCD_num@lin lin `uc  1 a 1 20 ]
 "241
 } 0
-"137 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"137 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _manipula_atuadores_init manipula_atuadores_init `(v  1 e 1 0 ]
 {
 [v manipula_atuadores_init@aux aux `uc  1 a 1 wreg ]
@@ -795,7 +936,7 @@
 [v manipula_atuadores_init@aux aux `uc  1 a 1 4 ]
 "157
 } 0
-"68 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\atuadores.c
+"68 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\atuadores.c
 [v _ler_sensor ler_sensor `(uc  1 e 1 0 ]
 {
 [v ler_sensor@passo passo `uc  1 a 1 wreg ]
@@ -804,12 +945,12 @@
 [v ler_sensor@passo passo `uc  1 a 1 4 ]
 "83
 } 0
-"103 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"103 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _init_atuadores init_atuadores `(v  1 e 1 0 ]
 {
 "109
 } 0
-"89 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
+"89 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\serialIO.c
 [v _initSerialIO initSerialIO `(v  1 e 1 0 ]
 {
 [v initSerialIO@ptrIn ptrIn `*.39uc  1 p 2 0 ]
@@ -817,7 +958,7 @@
 [v initSerialIO@length length `uc  1 p 1 4 ]
 "120
 } 0
-"49 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"49 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _getContCiclos getContCiclos `(ui  1 e 2 0 ]
 {
 "52
@@ -829,14 +970,14 @@
 [v getCiclos@aux aux `i  1 a 2 2 ]
 "47
 } 0
-"100 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
+"100 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
 [v _formatar_receitas formatar_receitas `(v  1 e 1 0 ]
 {
 "102
 [v formatar_receitas@i i `uc  1 a 1 2 ]
 "105
 } 0
-"317 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"317 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _fifo_tam fifo_tam `(uc  1 e 1 0 ]
 {
 "320
@@ -856,7 +997,7 @@
 [v fifo_print@completar completar `uc  1 a 1 12 ]
 "458
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awmod.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
@@ -867,7 +1008,7 @@
 [v ___awmod@divisor divisor `i  1 p 2 2 ]
 "34
 } 0
-"322 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"322 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _fifo_indicePrint_inc fifo_indicePrint_inc `(v  1 e 1 0 ]
 {
 "333
@@ -964,7 +1105,7 @@
 [v dignum_tam@num num `i  1 p 2 8 ]
 "480
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
@@ -977,7 +1118,7 @@
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
 } 0
-"200 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"200 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _codifica codifica `(v  1 e 1 0 ]
 {
 [v codifica@tipo tipo `uc  1 a 1 wreg ]
@@ -986,7 +1127,7 @@
 [v codifica@tipo tipo `uc  1 a 1 4 ]
 "226
 } 0
-"250 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
+"250 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\dispLCD4vias.c
 [v _dispLCD_str dispLCD_str `(v  1 e 1 0 ]
 {
 "253
@@ -1052,17 +1193,17 @@
 [v dispLCD_dataReg@d d `uc  1 a 1 1 ]
 "147
 } 0
-"460 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"460 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _dignum_conc dignum_conc `(v  1 e 1 0 ]
 {
 [v dignum_conc@dig dig `uc  1 a 1 wreg ]
 [v dignum_conc@dig dig `uc  1 a 1 wreg ]
 [v dignum_conc@ptrNum ptrNum `*.39ui  1 p 2 6 ]
 "462
-[v dignum_conc@dig dig `uc  1 a 1 10 ]
+[v dignum_conc@dig dig `uc  1 a 1 12 ]
 "463
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -1072,13 +1213,13 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"465 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"465 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _dignum_apagar dignum_apagar `(v  1 e 1 0 ]
 {
 [v dignum_apagar@ptrNum ptrNum `*.39ui  1 p 2 7 ]
 "468
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -1090,7 +1231,7 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"77 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
+"77 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\eeprom.c
 [v _deletar_receita deletar_receita `(v  1 e 1 0 ]
 {
 [v deletar_receita@receita receita `uc  1 a 1 wreg ]
@@ -1158,7 +1299,7 @@
 [v EEPROM_read@addr addr `uc  1 a 1 0 ]
 "22
 } 0
-"19 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
+"19 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\fifo.c
 [v _addIndicePassos addIndicePassos `(v  1 e 1 0 ]
 {
 "23
@@ -1168,7 +1309,7 @@
 {
 "62
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul32.c
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
@@ -1178,7 +1319,7 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
@@ -1191,7 +1332,7 @@
 [v ___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
-"35 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\MCP4725.c
+"35 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\MCP4725.c
 [v _MCP4725 MCP4725 `(v  1 e 1 0 ]
 {
 [v MCP4725@Vout Vout `ui  1 p 2 26 ]
@@ -1208,13 +1349,13 @@
 {
 "23
 } 0
-"10 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\delay.c
+"10 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]
 {
 [v delay@t t `ui  1 p 2 0 ]
 "17
 } 0
-"36 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\spi_i2c.c
+"36 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\spi_i2c.c
 [v _I2C_tx I2C_tx `(v  1 e 1 0 ]
 {
 [v I2C_tx@b b `uc  1 a 1 wreg ]
@@ -1244,7 +1385,7 @@
 [v I2C_init@freq freq `ul  1 p 4 13 ]
 "20
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\__lldiv.c
+"7 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
@@ -1256,12 +1397,12 @@
 [v ___lldiv@divisor divisor `ul  1 p 4 4 ]
 "30
 } 0
-"56 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\main.c
+"58 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\main.c
 [v _irq irq `IIH(v  1 e 1 0 ]
 {
-"66
+"68
 } 0
-"5 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
+"5 Z:\TCC\Firmware\seqProg_PIC18F4550\segProg_18F4550.X\timer1.c
 [v _intt1_1ms intt1_1ms `(v  1 e 1 0 ]
 {
 "14

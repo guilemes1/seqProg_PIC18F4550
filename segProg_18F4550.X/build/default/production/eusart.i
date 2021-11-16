@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "eusart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 42 "main.c"
+# 1 "eusart.c" 2
+# 21 "eusart.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5618,180 +5618,65 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 43 "main.c" 2
+# 22 "eusart.c" 2
+# 1 "./config.h" 1
+# 27 "./config.h"
+#pragma config PLLDIV = 5
+#pragma config CPUDIV = OSC1_PLL2
+#pragma config USBDIV = 1
+
+#pragma config FOSC = HS
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
+
+#pragma config PWRT = ON
+#pragma config BOR = OFF
+#pragma config BORV = 3
+#pragma config VREGEN = OFF
+
+#pragma config WDT = OFF
+#pragma config WDTPS = 32768
+
+#pragma config CCP2MX = ON
+#pragma config PBADEN = OFF
+#pragma config LPT1OSC = OFF
+#pragma config MCLRE = OFF
+
+#pragma config STVREN = OFF
+#pragma config LVP = OFF
+#pragma config ICPRT = OFF
+#pragma config XINST = OFF
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+
+#pragma config EBTRB = OFF
+# 23 "eusart.c" 2
 # 1 "./delay.h" 1
 
 
 
 void delay( unsigned int t );
-# 44 "main.c" 2
-# 1 "./dispLCD4vias.h" 1
-
-
-
-
-
-
-void dispLCD_instReg( unsigned char i );
-void dispLCD_dataReg( unsigned char d );
-void dispLCD_lincol( unsigned char lin, unsigned char col);
-void dispLCD_init( void );
-void dispLCD( unsigned char lin, unsigned char col, const char * str );
-void dispLCD_num( unsigned char lin, unsigned char col, int num, unsigned char tam );
-void dispLCD_clr( void );
-void dispLCD_str( const char * str );
-# 45 "main.c" 2
-# 1 "./teclado.h" 1
-# 15 "./teclado.h"
-void teclado_init( void );
-unsigned char teclado_scan( void );
-unsigned char teclado_borda(void);
-char altera_tecla(char tecla);
-# 46 "main.c" 2
-# 1 "./fifo.h" 1
-# 14 "./fifo.h"
-char ler_atuador(char tecla);
-void alt_atuador( char tecla );
-void init_atuadores(void);
-void fifo_reset(void);
-char fifo_lerPos(char i);
-void fifo_modifica(char pos, char valor);
-char * fifo_adrs(void);
-void fifo_delete(void);
-void fifo_add(const char passo);
-void fifo_add_tempo(const char t);
-char fifo_indice(void);
-char fifo_disponivel( void );
-char fifo_tam(void);
-void fifo_indicePrint_inc( void );
-void fifo_indicePrint_dec( void );
-void fifo_print(void);
-void dignum_conc(char dig, unsigned int * ptrNum );
-void dignum_apagar(unsigned int * ptrNum );
-unsigned char dignum_tam(int num);
-void fifo_add_ciclo(unsigned int ciclos);
-unsigned int getCiclos(void);
-unsigned int getContCiclos(void);
-void resetContCiclos(void);
-void addContCiclos(void);
-void addIndicePassos(void);
-void decIndicePassos(void);
-unsigned char getIndicePassos(void);
-void resetIndicePassos(void);
-void fifo_alinharPrint( void );
-char posAtual(char ind);
-void printExec (char col, char ind);
-
-void fifo_add_control(const char c);
-char salva_atuadores_init( void );
-void manipula_atuadores_init(char aux);
-
-void decodifica( unsigned char *d );
-void codifica( unsigned char tipo, unsigned char *dado );
-# 47 "main.c" 2
-# 1 "./serialIO.h" 1
-# 12 "./serialIO.h"
-void initSerialIO( char * ptrIn, char * ptrOut, unsigned char length );
-void serialIOscan( void );
-# 48 "main.c" 2
-# 1 "./atuadores.h" 1
-
-
-
-
-void set_passo(char passo, char* ptr);
-char ler_sensor(char passo, char* ptr);
-# 49 "main.c" 2
-# 1 "./timer1.h" 1
-# 14 "./timer1.h"
-void intt1_1ms( void );
-void timer1_init(void);
-void setT1( unsigned long int c );
-unsigned long int statusT1( void );
-void stopTimer(void);
-# 50 "main.c" 2
-# 1 "./estados.h" 1
-# 51 "main.c" 2
-# 1 "./ihm.h" 1
-
-
-
-
-
-struct
-{
-    void (* init)(void);
-    void (* print)( const char * str );
-    void (* printpos)( unsigned char lin, unsigned char col, const char * str );
-    void (* printv)( unsigned char lin, unsigned char col, int num, unsigned char tam );
-    void (* clr)( void );
-
-} IHM = { dispLCD_init, dispLCD_str, dispLCD, dispLCD_num, dispLCD_clr };
-# 52 "main.c" 2
-# 1 "./eeprom.h" 1
-
-
-
-
-
-char EEPROM_read( unsigned char addr );
-void EEPROM_write( unsigned char addr, unsigned char data );
-void write (char adrs, unsigned char *data);
-void read ( char adrs , unsigned char * eep );
-void salvar_receita (char adrs,unsigned char *data );
-void buscar_receita (char adrs,unsigned char *data );
-void deletar_receita (char receita);
-void receita_livre ( unsigned char * rec);
-void formatar_receitas (void);
-
-void salvar_dado (char adrs, char col, unsigned char data);
-void buscar_dado (char adrs, char col, unsigned char *data);
-
-
-
- struct
-{
-    void (* salvar) (char adrs,unsigned char *data );
-    void (* buscar) (char adrs,unsigned char *data );
-    void (* deletar) (char receita);
-    void (* livre) (unsigned char * rec);
-    void (* formatar) (void);
-} EEPROM = { salvar_receita, buscar_receita, deletar_receita, receita_livre, formatar_receitas };
-# 53 "main.c" 2
-# 1 "./MCP4725.h" 1
-
-
-
-void dac_init ( void );
-void MCP4725(unsigned int Vout);
-
-
-
-struct MCP4725_t
-{
-    void (*vout)(unsigned int Vout );
-};
-# 54 "main.c" 2
-# 1 "./spi_i2c.h" 1
-
-
-
-void I2C_init( unsigned long freq );
-
-void I2C_start( void );
-
-void I2C_repeatStart( void );
-
-void I2C_tx( unsigned char b );
-
-void I2C_stop( void );
-
-unsigned char I2C_rx( void );
-
-void I2C_ack_receive( void );
-
-void I2C_ack_transmit( unsigned char ack );
-# 55 "main.c" 2
+# 24 "eusart.c" 2
 # 1 "./eusart.h" 1
 
 
@@ -5819,758 +5704,137 @@ struct eusartT
 };
 
 extern struct eusartT eusart;
-# 56 "main.c" 2
-# 1 "./wifi.h" 1
-# 11 "./wifi.h"
-unsigned char d = 0;
+# 25 "eusart.c" 2
 
-void wifi_init( long br );
-void wifi_send( const char * msg );
-unsigned char wifi_receive( unsigned char * rcv );
-void Wifi_mode(unsigned char d );
-void Wifi_connect( const char * ssid, const char * pass );
-void Wifi_ip( void );
-void Wifi_autoconnect( void );
-void Wifi_scan (void);
-void Wifi_config_servidor( void );
-void Wifi_cipsend( void );
+struct eusartT eusart = { rxEUSART, rxStatusEUSART , rxErrorEUSART , rxResetErrorEUSART , txEUSART , txStatusEUSART , initEUSART, search};
 
 
-
-struct
+typedef union
 {
-    void (*init)( long br );
-    void (*send)( const char * msg );
-    unsigned char (*receive)( unsigned char * rcv );
-    void (*mode)(unsigned char d );
-    void (*connect)(const char * ssid, const char * pass);
-    void (*ip)( void );
-    void (*autoconnect)( void );
-    void (*scan) (void);
-    void (*config_servidor)( void );
-    void (*cipsend)( void );
-}wifi = {wifi_init, wifi_send, wifi_receive, Wifi_mode, Wifi_connect, Wifi_ip, Wifi_autoconnect, Wifi_scan, Wifi_config_servidor, Wifi_cipsend};
-# 57 "main.c" 2
-
-void __attribute__((picinterrupt(""))) irq(void)
-{
-    INTCONbits.GIE = 0;
-    if(PIR1bits.TMR1IF && PIE1bits.TMR1IE)
+    struct
     {
-        PIR1bits.TMR1IF = 0;
-
-        intt1_1ms();
-    }
-    INTCONbits.GIE = 1;
+        unsigned char LO;
+        unsigned char HI;
+    };
+    struct
+    {
+        unsigned int u16;
+    };
+} SPBRbits_t;
+extern volatile SPBRbits_t SPBRbits __attribute__((address(0x099)));
+# 50 "eusart.c"
+unsigned char rxEUSART( void )
+{
+    return( RCREG );
+}
+# 62 "eusart.c"
+unsigned char rxStatusEUSART( void )
+{
+    return( PIR1bits.RCIF );
+}
+# 76 "eusart.c"
+unsigned char rxErrorEUSART( void )
+{
+    if( RCSTAbits.FERR )
+        return( 1 );
+    else if( RCSTAbits.OERR )
+        return( 2 );
+    else
+        return( 0 );
 }
 
 
-void main(void)
+
+
+
+
+
+void rxResetErrorEUSART( void )
 {
-    dispLCD_init();
-    teclado_init();
-    timer1_init();
-    I2C_init(20000000);
-    MCP4725(0);
-    wifi_init(115200);
-
-
-    char tecla = 0;
-    char estado = 0;
-    char atuador;
-    char vetor_aux[16];
-    char init_cond = 0;
-    char *pt;
-
-    char contPassos = 0;
-    char vetorIn[1] = { 0 };
-    char vetorOut[1] = { 0 };
-    initSerialIO( vetorIn, vetorOut, 1 );
-    char meAtuadores = -1;
-    char auxPasso = 0;
-    char aux = 2;
-    unsigned int num = 0;
-    unsigned int ciclos = 0;
-    char botao = 0;
-# 110 "main.c"
-    while(1)
+    if( RCSTAbits.FERR )
     {
-         switch(estado)
+        RCSTAbits.SPEN = 0;
+        _delay((unsigned long)((100)*(20000000/4000.0)));
+        RCSTAbits.SPEN = 1;
+    }
+    if( RCSTAbits.OERR )
+    {
+        RCSTAbits.CREN = 0;
+        _delay((unsigned long)((100)*(20000000/4000.0)));
+        RCSTAbits.CREN = 1;
+    }
+}
+# 115 "eusart.c"
+void txEUSART( unsigned char d )
+{
+    TXREG = d;
+}
+
+
+
+
+
+
+
+unsigned char txStatusEUSART( void )
+{
+    return( !TXSTAbits.TRMT );
+}
+
+
+
+
+
+
+
+void initEUSART( unsigned long baudRate )
+{
+    INTCONbits.GIE = 0;
+
+
+    SPBRbits.u16 = (unsigned int)( (20000000 / (baudRate<<2)) - 1);
+
+
+
+    TXSTAbits.SYNC = 0;
+    BAUDCTLbits.BRG16 = 1;
+    TXSTAbits.BRGH = 1;
+
+    RCSTAbits.SPEN = 1;
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.CREN = 1;
+
+    PIE1bits.RCIE = 1;
+    PIE1bits.TXIE = 0;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+}
+
+int search (const char * x, const char * y)
+{
+    unsigned char contem = 0;
+    unsigned char f;
+    const char * aux;
+    aux = y;
+    do
+    { f = *x++;
+        if( f== *aux)
         {
-             case 0:
-                            for(char i = 0; i <= 3; i++)
-                            {
-                                for(char j = 0; j <= 19; j++)
-                                {
-                                    IHM.printpos(i, j, "\377");
-                                    delay(10);
-                                }
-                            }
-
-                            for(char i = 0; i <= 3; i++)
-                            {
-                                for(char j = 0; j <= 19; j++)
-                                {
-                                    IHM.printpos(i, j, " ");
-                                    delay(10);
-                                }
-                            }
-                            estado = 1;
-                            break;
-
-            case 1:
-                            IHM.printpos(1, 0, "      SEGGUIT       ");
-
-                            char lema[20] = "Mundo ao seu comando";
-                            char i = 0;
-                            char *ptr;
-
-                            for(ptr = lema; *ptr != 0; ptr++)
-                            {
-                                dispLCD_lincol( 2, i );
-                                dispLCD_dataReg( *ptr );
-                                i++;
-                                delay(50);
-                            }
-
-                            setT1(1500);
-                            estado = 2;
-                            break;
-
-             case 2:
-                            if(!statusT1())
-                                estado = 8;
-                            break;
-# 174 "main.c"
-             case 8:
-                            init_atuadores();
-                            IHM.print("1: INSERIR SEQUENCIA\n"
-                                      "2: BUSCAR SEQUENCIA\n"
-                                      "3: REPETIR ULT. SEQU\n"
-                                      "4: CONFIGURACOES    ");
-                            setT1(1000);
-                            estado = 9;
-                            break;
-
-            case 9:
-                            if(!statusT1())
-                                estado = 71;
-                            break;
-
-            case 71:
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '1': estado = 3; break;
-                                case '2': estado = 72; break;
-                                case '3': estado = 100; break;
-                                case '4': estado = 80; break;
-                            }
-                            break;
-
-             case 100:
-
-                            buscar_dado(10, 10, &init_cond);
-                            manipula_atuadores_init(init_cond);
-
-                            EEPROM.buscar(11, vetor_aux);
-                            pt = vetor_aux;
-
-                            if(*pt == 0xFF)
-                            {
-                                EEPROM.deletar(tecla % 0x30);
-                                vetor_aux[0] = 0;
-                            }
-
-
-                            for(char *ptr = vetor_aux; *ptr != 0; ptr++)
-                            {
-                                if(*ptr <= 0x64 || *ptr == 0xFE)
-                                {
-                                    decodifica(&*ptr);
-                                    fifo_add_control(*ptr);
-                                }
-                                else if (*ptr > 0x64 && *ptr <= 0xDC)
-                                {
-                                    decodifica(&*ptr);
-                                    fifo_add_tempo(*ptr);
-                                }
-                                else
-                                {
-                                    decodifica(&*ptr);
-                                    switch( *ptr )
-                                    {
-                                        case 'A':
-                                        case 'B':
-                                        case 'C':
-                                        case 'D':
-                                        case 'a':
-                                        case 'b':
-                                        case 'c':
-                                        case 'd':
-                                                *ptr &= ~0x20;
-                                                break;
-                                        }
-                                        alt_atuador(*ptr);
-                                        fifo_add( ler_atuador(*ptr) ? *ptr : *ptr|0x20 );
-                                    }
-                                fifo_print();
-                            }
-
-                            dispLCD_clr();
-                            estado = 16;
-                            break;
-
-             case 80:
-                            dispLCD_clr();
-                            dispLCD(0,0,"1: VERIFICAR MEMORIA");
-                            dispLCD(1,0,"2: LIMPAR MEMORIA   ");
-
-                            setT1(1000);
-                            estado = 81;
-                            break;
-
-             case 81:
-                            if(!statusT1())
-                                estado = 82;
-                            break;
-
-             case 82:
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '1': estado = 83; break;
-                                case '2': estado = 84; break;
-                                case '*': estado = 8; break;
-                            }
-                            break;
-
-             case 84:
-                            dispLCD(0, 0, " CERTEZA QUE DESEJA ");
-                            dispLCD(1, 0, "   DELETAR TODA A   ");
-                            dispLCD(2, 0, "      MEMORIA ?     ");
-                            dispLCD(3, 0, "# - SIM      * - NAO");
-
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '#': estado = 85; break;
-
-                                case '*': dispLCD_clr(); estado = 80; break;
-                            }
-                            break;
-
-             case 85:
-                            EEPROM.formatar();
-                            dispLCD_clr();
-                            for(char i = 0; i <= 3; i++)
-                            {
-                                for(char j = 0; j <= 19; j++)
-                                {
-                                    dispLCD(i, j, "\377");
-                                    delay(10);
-                                }
-                            }
-
-                            for(char i = 0; i <= 3; i++)
-                            {
-                                for(char j = 0; j <= 19; j++)
-                                {
-                                    dispLCD(i, j, " ");
-                                    delay(10);
-                                }
-                            }
-                            dispLCD(1, 0, "       DELETED      ");
-                            dispLCD(2, 0, "        MEMORY      ");
-
-                            setT1(1000);
-                            estado = 86;
-                            break;
-
-             case 86:
-                            if(!statusT1())
-                                estado = 80;
-                            break;
-
-             case 72:
-                            IHM.clr();
-                            IHM.print(" ESCOLHA A MEMORIA \n"
-                                      "QUE DESEJA EXECUTAR\n"
-                                      " 0   1   2   3   4 \n"
-                                      " 5   6   7   8   9 \n");
-                            estado = 73;
-
-             case 73:
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '0':
-                                case '1':
-                                case '2':
-                                case '3':
-                                case '4':
-                                case '5':
-                                case '6':
-                                case '7':
-                                case '8':
-                                case '9':
-                                           buscar_dado(10, tecla % 0x30, &init_cond);
-                                           manipula_atuadores_init(init_cond);
-
-                                           EEPROM.buscar(tecla % 0x30, vetor_aux);
-                                           pt = vetor_aux;
-
-                                           if(*pt == 0xFF)
-                                           {
-                                               EEPROM.deletar(tecla % 0x30);
-                                               vetor_aux[0] = 0;
-                                           }
-
-
-                                           for(char *ptr = vetor_aux; *ptr != 0; ptr++)
-                                           {
-                                                if(*ptr <= 0x64 || *ptr == 0xFE)
-                                                {
-                                                    decodifica(&*ptr);
-                                                    fifo_add_control(*ptr);
-                                                }
-                                                else if (*ptr > 0x64 && *ptr <= 0xDC)
-                                                {
-                                                    decodifica(&*ptr);
-                                                    fifo_add_tempo(*ptr);
-                                                }
-                                                else
-                                                {
-                                                    decodifica(&*ptr);
-                                                    switch( *ptr )
-                                                    {
-                                                        case 'A':
-                                                        case 'B':
-                                                        case 'C':
-                                                        case 'D':
-                                                        case 'a':
-                                                        case 'b':
-                                                        case 'c':
-                                                        case 'd':
-                                                                *ptr &= ~0x20;
-                                                                break;
-                                                    }
-                                                    alt_atuador(*ptr);
-                                                    fifo_add( ler_atuador(*ptr) ? *ptr : *ptr|0x20 );
-                                                }
-                                                fifo_print();
-                                           }
-
-                                           dispLCD_clr();
-                                           estado = 16;
-                                           break;
-
-                                case '*': estado = 8; break;
-                            }
-                            break;
-
-             case 3:
-                            IHM.clr();
-                            IHM.printpos(0, 0, "   AJUSTE O INICIO  ");
-                            IHM.printpos(1, 0, "     DO SISTEMA     ");
-                            estado = 6;
-                            break;
-
-            case 6:
-                            IHM.printpos(3,0,"   A   B   C   D    ");
-                            dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-');
-                            dispLCD_lincol(3, 8);dispLCD_dataReg(ler_atuador('B') ? '+' : '-');
-                            dispLCD_lincol(3, 12);dispLCD_dataReg(ler_atuador('C') ? '+' : '-');
-                            dispLCD_lincol(3, 16);dispLCD_dataReg(ler_atuador('D') ? '+' : '-');
-                            estado = 7;
-                            break;
-
-            case 7:
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case 'A': alt_atuador(tecla); dispLCD_lincol(3, 4); dispLCD_dataReg(ler_atuador('A') ? '+' : '-'); break;
-                                case 'B': alt_atuador(tecla); dispLCD_lincol(3, 8); dispLCD_dataReg(ler_atuador('B') ? '+' : '-'); break;
-                                case 'C': alt_atuador(tecla); dispLCD_lincol(3,12); dispLCD_dataReg(ler_atuador('C') ? '+' : '-'); break;
-                                case 'D': alt_atuador(tecla); dispLCD_lincol(3,16); dispLCD_dataReg(ler_atuador('D') ? '+' : '-'); break;
-                                case '#': estado = 10; break;
-                                case '*': estado = 8; break;
-                            }
-                            break;
-
-
-
-            case 10:
-                            init_cond = salva_atuadores_init();
-                            IHM.clr();
-                            IHM.printpos(0, 0, "  INSIRA OS PASSOS  ");
-                            estado = 14;
-                            break;
-
-             case 11:
-                            tecla = teclado_borda();
-                            switch( tecla )
-                            {
-                                case 'A':
-                                case 'B':
-                                case 'C':
-                                case 'D':
-                                            if( fifo_disponivel() )
-                                            {
-                                                alt_atuador(tecla);
-                                                fifo_add( ler_atuador(tecla) ? tecla : tecla|0x20 );
-                                                estado = 16;
-                                            }
-                                            break;
-                                case '6':
-                                            fifo_indicePrint_inc();
-                                            estado = 16;
-                                            break;
-                                case '4':
-                                            fifo_indicePrint_dec();
-                                            estado = 16;
-                                            break;
-
-                                case '*':
-                                            if(fifo_indice() == 2 )
-                                                estado = 3;
-                                            else
-                                            {
-                                                fifo_delete();
-                                                estado = 16;
-                                            }
-                                            break;
-
-                                case '#': estado = 74; break;
-
-                                case '0': estado = 41; break;
-
-                                case '9': estado = 90; break;
-                            }
-                            break;
-
-             case 16:
-                            fifo_print();
-                            estado = 14;
-                            break;
-
-             case 14:
-                            IHM.printpos(3,0,"<  /  >");
-                            IHM.printv(3, 1,( fifo_indice()-2 ), 2);
-                            IHM.printv(3, 4,( fifo_tam()-2 ), 2);
-                            estado = 11;
-                            break;
-
-             case 30:
-
-                            estado = 70;
-                            meAtuadores = 1;
-                            break;
-
-             case 70:
-                            if( meAtuadores == 3 && botao != 2 )
-                            {
-                                IHM.printpos(0, 0, "       [    ]       ");
-                                printExec(1, -1);
-                                printExec(9, 0);
-                                printExec(14, 1);
-                                IHM.printpos(2, 0, "<  /  > c:          ");
-                                IHM.printv(2, 4,( fifo_indice() - 2 ), 2);
-                                IHM.printv(2, 1, ( getIndicePassos() - 1 ), 2);
-                                IHM.printv(2, 11, ( getContCiclos() + 1 ), 5);
-
-                            }
-                            if(meAtuadores == 0)
-                            {
-                                estado = 16;
-                                IHM.clr();
-                            }
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '#':
-                                    botao = 1;
-                                    break;
-
-                                case '5':
-                                    botao = 2;
-                                    break;
-
-                                case '0':
-                                    botao = 0;
-                                    break;
-
-                                case '1':
-                                    if(botao == 2)
-                                        botao = 3;
-                                    break;
-                            }
-                            break;
-
-             case 40:
-                            tecla = teclado_borda();
-                            if(tecla >= '0' && tecla <= '9')
-                            {
-                                dignum_conc(tecla, &num);
-                                if(num > 120)
-                                    num = 120;
-                                estado = 41;
-                            }
-                            if(tecla == '*')
-                            {
-                                dignum_apagar(&num);
-                                estado = 41;
-                            }
-                            if(tecla == '#')
-                                estado = 42;
-                            break;
-
-             case 41:
-
-                            IHM.printpos(2, 0, "config tempo:      s");
-                            IHM.printv(2, 15, num, 3);
-                            estado = 40;
-                            break;
-
-             case 42:
-                            fifo_add_tempo(num);
-                            IHM.clr();
-                            estado = 16;
-                            break;
-# 598 "main.c"
-             case 52:
-                            tecla = teclado_borda();
-                            if(tecla >= '0' && tecla <= '9')
-                               {
-                                dignum_conc(tecla, &ciclos);
-                                if(ciclos > 10000)
-                                    ciclos = 10000;
-                                estado = 53;
-                                break;
-                               }
-                            switch(tecla)
-                               {
-                                   case 'A':
-                                   case 'B':
-                                   case 'C':
-                                   case 'D':
-                                       dispLCD_clr();
-                                       estado = 16;
-                                       break;
-                                   case '#':
-                                       estado = 54;
-                                       break;
-                                   case '*':
-                                       dignum_apagar(&ciclos);
-                                       estado = 53;
-                                       break;
-                               }
-                            break;
-
-             case 53:
-                            IHM.clr();
-                            IHM.printpos(0, 0, "Ciclos:             ");
-                            IHM.printv(0, 15, ciclos, 5);
-                            IHM.printpos(2, 0, "0 - Ciclo continuo  ");
-                            estado = 52;
-                            break;
-
-             case 74:
-                            salvar_dado(10, 10, init_cond);
-                            EEPROM.salvar(11, fifo_adrs() + 2);
-                            IHM.print("    DESEJA SALVAR   \n"
-                                      "     SEQUENCIA ?  \n\n"
-                                      "# - SIM      * - NAO");
-
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '#': estado = 75; break;
-                                case '*': dispLCD_clr(); estado = 53; break;
-                            }
-                            break;
-
-             case 75:
-                            IHM.clr();
-                            IHM.print(" ESCOLHA A MEMORIA\n"
-                                      " QUE DESEJA SALVAR\n"
-                                      " 0   1   2   3   4\n"
-                                      " 5   6   7   8   9  ");
-                            estado = 76;
-
-             case 76:
-                            tecla = teclado_borda();
-                            switch(tecla)
-                            {
-                                case '0':
-                                case '1':
-                                case '2':
-                                case '3':
-                                case '4':
-                                case '5':
-                                case '6':
-                                case '7':
-                                case '8':
-                                case '9':
-                                           salvar_dado(10, tecla % 0x30, init_cond);
-                                           EEPROM.salvar(tecla % 0x30, fifo_adrs() + 2);
-                                           estado = 77;
-                                           break;
-
-                                case '*': IHM.clr(); estado = 74; break;
-                            }
-                            break;
-
-             case 77:
-                            IHM.clr();
-                            for(char i = 0; i <= 3; i++)
-                            {
-                                for(char j = 0; j <= 19; j++)
-                                {
-                                    IHM.printpos(i, j, "\377");
-                                    delay(10);
-                                }
-                            }
-
-                            for(char i = 0; i <= 3; i++)
-                            {
-                                for(char j = 0; j <= 19; j++)
-                                {
-                                    IHM.printpos(i, j, " ");
-                                    delay(10);
-                                }
-                            }
-                            IHM.printpos(1, 0, "      SEQUENCIA     ");
-                            IHM.printpos(2, 0, "        SALVA       ");
-
-                            setT1(1000);
-                            estado = 78;
-                            break;
-
-             case 78:
-                            if(!statusT1())
-                                estado = 53;
-                            break;
-
-             case 90:
-                            IHM.printpos(2, 0, "config contrl:     %");
-                            IHM.printv(2, 15, num, 3);
-                            estado = 91;
-                            break;
-
-             case 91:
-                            tecla = teclado_borda();
-                            if(tecla >= '0' && tecla <= '9')
-                            {
-                                dignum_conc(tecla, &num);
-                                if(num > 100)
-                                    num = 100;
-                                estado = 90;
-                            }
-                            if(tecla == '*')
-                            {
-                                dignum_apagar(&num);
-                                estado = 90;
-                            }
-                            if(tecla == '#')
-                                estado = 92;
-                            break;
-
-             case 92:
-                            fifo_add_control(num);
-                            IHM.clr();
-                            estado = 16;
-                            break;
-
-             case 54:
-                            fifo_add_ciclo(ciclos);
-                            estado = 30;
-                            botao = 1;
-                            break;
+           contem = 1;
+           ++aux;
         }
-
-        serialIOscan();
-
-        switch(meAtuadores)
+        else if (contem)
         {
-            case 0: break;
-
-            case 1:
-                            resetIndicePassos();
-                            resetContCiclos();
-                            meAtuadores = 2;
-                            break;
-
-            case 2:
-                            auxPasso = fifo_lerPos(getIndicePassos());
-
-                            if(botao == 1 || botao == 3 || botao == 0)
-                                meAtuadores = 3;
-                            break;
-
-            case 3:
-                            if(auxPasso <= 0x64 || auxPasso == 0xFE)
-                            {
-                                decodifica(&auxPasso);
-                                MCP4725((long)((4095L * auxPasso)/100));
-                                meAtuadores = 6;
-                            }
-                            else if( auxPasso > 0x64 && auxPasso <= 0xDC )
-                            {
-                                auxPasso -= 0x64;
-                                setT1(auxPasso * 1000 );
-                                meAtuadores = 4;
-                            }
-                            else
-                            {
-                                decodifica(&auxPasso);
-                                set_passo(auxPasso, vetorOut);
-                                meAtuadores = 5;
-                            }
-                            break;
-
-            case 4:
-                            if(!statusT1())
-                                meAtuadores = 6;
-                            break;
-
-            case 5:
-                            if(ler_sensor(auxPasso, vetorIn))
-                                meAtuadores = 6;
-                            break;
-
-            case 6:
-                            if(botao == 3)
-                            {
-                                botao = 2;
-                            }
-                            meAtuadores = 7;
-
-                            break;
-
-            case 7:
-                            addIndicePassos();
-                            if(getIndicePassos() < fifo_indice())
-                                meAtuadores = 2;
-                            else
-                            {
-                                addContCiclos();
-                                meAtuadores = 8;
-                            }
-                            break;
-
-            case 8:
-                            if((botao != 0) && ((getContCiclos() < getCiclos()) || (getCiclos() == 0)))
-                            {
-                                resetIndicePassos();
-                                meAtuadores = 2;
-                            }
-                            else
-                            {
-                                meAtuadores = 0;
-                            }
-                            break;
+            aux = y;
+            contem = 0;
+        }
+        if(!*aux)
+        {
+            contem = 1;
+            break;
         }
     }
-    return;
+
+    while(f);
+    return(contem );
 }

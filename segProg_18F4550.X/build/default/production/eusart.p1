@@ -1,49 +1,119 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3190 `(v ~T0 @X0 0 tf2`uc`*uc ]
-[v F3194 `(v ~T0 @X0 0 tf2`uc`*uc ]
-[v F3198 `(v ~T0 @X0 0 tf1`uc ]
-[v F3201 `(v ~T0 @X0 0 tf1`*uc ]
-[v F3204 `(v ~T0 @X0 0 tf ]
-"22 ./eeprom.h
-[; ;./eeprom.h: 22: {
-[s S367 `*F3190 1 `*F3194 1 `*F3198 1 `*F3201 1 `*F3204 1 ]
-[n S367 . salvar buscar deletar livre formatar ]
+[v F3174 `(uc ~T0 @X0 0 tf ]
+[v F3176 `(uc ~T0 @X0 0 tf ]
+[v F3178 `(uc ~T0 @X0 0 tf ]
+[v F3180 `(v ~T0 @X0 0 tf ]
+[v F3182 `(v ~T0 @X0 0 tf1`uc ]
+[v F3185 `(uc ~T0 @X0 0 tf ]
+[v F3187 `(v ~T0 @X0 0 tf1`ul ]
+[v F3190 `(i ~T0 @X0 0 tf2`*Cuc`*Cuc ]
+"15 ./eusart.h
+[; ;./eusart.h: 15: {
+[s S367 `*F3174 1 `*F3176 1 `*F3178 1 `*F3180 1 `*F3182 1 `*F3185 1 `*F3187 1 `*F3190 1 ]
+[n S367 eusartT rx rxSTATUS rxERROR rxResetERROR tx txSTATUS init search_string ]
+"4
+[; ;./eusart.h: 4: unsigned char rxEUSART( void );
+[v _rxEUSART `(uc ~T0 @X0 0 ef ]
+"5
+[; ;./eusart.h: 5: unsigned char rxStatusEUSART( void );
+[v _rxStatusEUSART `(uc ~T0 @X0 0 ef ]
+"6
+[; ;./eusart.h: 6: unsigned char rxErrorEUSART( void );
+[v _rxErrorEUSART `(uc ~T0 @X0 0 ef ]
+"7
+[; ;./eusart.h: 7: void rxResetErrorEUSART( void );
+[v _rxResetErrorEUSART `(v ~T0 @X0 0 ef ]
+"8
+[; ;./eusart.h: 8: void txEUSART( unsigned char d );
+[v _txEUSART `(v ~T0 @X0 0 ef1`uc ]
+"9
+[; ;./eusart.h: 9: unsigned char txStatusEUSART( void );
+[v _txStatusEUSART `(uc ~T0 @X0 0 ef ]
 "10
-[; ;./eeprom.h: 10: void salvar_receita (char adrs,unsigned char *data );
-[v _salvar_receita `(v ~T0 @X0 0 ef2`uc`*uc ]
+[; ;./eusart.h: 10: void initEUSART( unsigned long baudRate );
+[v _initEUSART `(v ~T0 @X0 0 ef1`ul ]
 "11
-[; ;./eeprom.h: 11: void buscar_receita (char adrs,unsigned char *data );
-[v _buscar_receita `(v ~T0 @X0 0 ef2`uc`*uc ]
-"12
-[; ;./eeprom.h: 12: void deletar_receita (char receita);
-[v _deletar_receita `(v ~T0 @X0 0 ef1`uc ]
-"13
-[; ;./eeprom.h: 13: void receita_livre ( unsigned char * rec);
-[v _receita_livre `(v ~T0 @X0 0 ef1`*uc ]
-"14
-[; ;./eeprom.h: 14: void formatar_receitas (void);
-[v _formatar_receitas `(v ~T0 @X0 0 ef ]
-"4929 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4929: extern volatile unsigned char EEADR __attribute__((address(0xFA9)));
-[v _EEADR `Vuc ~T0 @X0 0 e@4009 ]
-"4855
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4855:     struct {
-[s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S193 . RD WR WREN WRERR FREE . CFGS EEPGD ]
-"4865
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4865:     struct {
-[s S194 :6 `uc 1 :1 `uc 1 ]
-[n S194 . . EEFS ]
-"4854
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4854: typedef union {
-[u S192 `S193 1 `S194 1 ]
-[n S192 . . . ]
-"4870
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4870: extern volatile EECON1bits_t EECON1bits __attribute__((address(0xFA6)));
-[v _EECON1bits `VS192 ~T0 @X0 0 e@4006 ]
-"4922
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4922: extern volatile unsigned char EEDATA __attribute__((address(0xFA8)));
-[v _EEDATA `Vuc ~T0 @X0 0 e@4008 ]
+[; ;./eusart.h: 11: int search (const char * x, const char * y);
+[v _search `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"5414 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5414: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"4474
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4474:     struct {
+[s S178 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S178 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF SPPIF ]
+"4484
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4484:     struct {
+[s S179 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S179 . . TX1IF RC1IF . PSPIF ]
+"4473
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4473: typedef union {
+[u S177 `S178 1 `S179 1 ]
+[n S177 . . . ]
+"4492
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4492: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS177 ~T0 @X0 0 e@3998 ]
+"4947
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4947:     struct {
+[s S196 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S196 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"4957
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4957:     struct {
+[s S197 :3 `uc 1 :1 `uc 1 ]
+[n S197 . . ADEN ]
+"4961
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4961:     struct {
+[s S198 :5 `uc 1 :1 `uc 1 ]
+[n S198 . . SRENA ]
+"4965
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4965:     struct {
+[s S199 :6 `uc 1 :1 `uc 1 ]
+[n S199 . . RC8_9 ]
+"4969
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4969:     struct {
+[s S200 :6 `uc 1 :1 `uc 1 ]
+[n S200 . . RC9 ]
+"4973
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4973:     struct {
+[s S201 :1 `uc 1 ]
+[n S201 . RCD8 ]
+"4946
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4946: typedef union {
+[u S195 `S196 1 `S197 1 `S198 1 `S199 1 `S200 1 `S201 1 ]
+[n S195 . . . . . . . ]
+"4977
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4977: extern volatile RCSTAbits_t RCSTAbits __attribute__((address(0xFAB)));
+[v _RCSTAbits `VS195 ~T0 @X0 0 e@4011 ]
+[v F3150 `(v ~T0 @X0 1 tf1`ul ]
+"183 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18.h
+[v __delay `JF3150 ~T0 @X0 0 e ]
+[p i __delay ]
+"5402 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5402: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"5157
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5157:     struct {
+[s S210 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S210 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"5167
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5167:     struct {
+[s S211 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S211 . TX9D1 TRMT1 BRGH1 SENDB1 SYNC1 TXEN1 TX91 CSRC1 ]
+"5177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5177:     struct {
+[s S212 :6 `uc 1 :1 `uc 1 ]
+[n S212 . . TX8_9 ]
+"5181
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5181:     struct {
+[s S213 :1 `uc 1 ]
+[n S213 . TXD8 ]
+"5156
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5156: typedef union {
+[u S209 `S210 1 `S211 1 `S212 1 `S213 1 ]
+[n S209 . . . . . ]
+"5185
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 5185: extern volatile TXSTAbits_t TXSTAbits __attribute__((address(0xFAC)));
+[v _TXSTAbits `VS209 ~T0 @X0 0 e@4012 ]
 "8588
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8588:     struct {
 [s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -63,9 +133,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8614
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8614: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS359 ~T0 @X0 0 e@4082 ]
-"4915
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4915: extern volatile unsigned char EECON2 __attribute__((address(0xFA7)));
-[v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
+"32 eusart.c
+[; ;eusart.c: 32:     {
+[s S369 `uc 1 `uc 1 ]
+[n S369 . LO HI ]
+"37
+[; ;eusart.c: 37:     {
+[s S370 `ui 1 ]
+[n S370 . u16 ]
+"30
+[; ;eusart.c: 30: {
+[u S368 `S369 1 `S370 1 ]
+[n S368 . . . ]
+"41
+[; ;eusart.c: 41: extern volatile SPBRbits_t SPBRbits __attribute__((address(0x099)));
+[v _SPBRbits `VS368 ~T0 @X0 0 e@153 ]
+"6157 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6157:     struct {
+[s S252 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S252 . ABDEN WUE . BRG16 TXCKP RXDTP RCIDL ABDOVF ]
+"6167
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6167:     struct {
+[s S253 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S253 . . SCKP . RCMT ]
+"6173
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6173:     struct {
+[s S254 :5 `uc 1 :1 `uc 1 ]
+[n S254 . . RXCKP ]
+"6177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6177:     struct {
+[s S255 :1 `uc 1 :1 `uc 1 ]
+[n S255 . . W4E ]
+"6156
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6156: typedef union {
+[u S251 `S252 1 `S253 1 `S254 1 `S255 1 ]
+[n S251 . . . . . ]
+"6182
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 6182: extern volatile BAUDCTLbits_t BAUDCTLbits __attribute__((address(0xFB8)));
+[v _BAUDCTLbits `VS251 ~T0 @X0 0 e@4024 ]
+"4390
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4390:     struct {
+[s S175 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S175 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE SPPIE ]
+"4400
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4400:     struct {
+[s S176 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S176 . . TX1IE RC1IE . PSPIE ]
+"4389
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4389: typedef union {
+[u S174 `S175 1 `S176 1 ]
+[n S174 . . . ]
+"4408
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4408: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS174 ~T0 @X0 0 e@3997 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -576,381 +696,402 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"28 ./eeprom.h
-[; ;./eeprom.h: 28: } EEPROM = { salvar_receita, buscar_receita, deletar_receita, receita_livre, formatar_receitas };
-[v _EEPROM `S367 ~T0 @X0 1 e ]
-[i _EEPROM
+"27 ./config.h
+[p x PLLDIV = 5 ]
+"28
+[p x CPUDIV = OSC1_PLL2 ]
+"29
+[p x USBDIV = 1 ]
+"31
+[p x FOSC = HS ]
+"32
+[p x FCMEN = OFF ]
+"33
+[p x IESO = OFF ]
+"35
+[p x PWRT = ON ]
+"36
+[p x BOR = OFF ]
+"37
+[p x BORV = 3 ]
+"38
+[p x VREGEN = OFF ]
+"40
+[p x WDT = OFF ]
+"41
+[p x WDTPS = 32768 ]
+"43
+[p x CCP2MX = ON ]
+"44
+[p x PBADEN = OFF ]
+"45
+[p x LPT1OSC = OFF ]
+"46
+[p x MCLRE = OFF ]
+"48
+[p x STVREN = OFF ]
+"49
+[p x LVP = OFF ]
+"50
+[p x ICPRT = OFF ]
+"51
+[p x XINST = OFF ]
+"53
+[p x CP0 = OFF ]
+"54
+[p x CP1 = OFF ]
+"55
+[p x CP2 = OFF ]
+"56
+[p x CP3 = OFF ]
+"58
+[p x CPB = OFF ]
+"59
+[p x CPD = OFF ]
+"61
+[p x WRT0 = OFF ]
+"62
+[p x WRT1 = OFF ]
+"63
+[p x WRT2 = OFF ]
+"64
+[p x WRT3 = OFF ]
+"66
+[p x WRTC = OFF ]
+"67
+[p x WRTB = OFF ]
+"68
+[p x WRTD = OFF ]
+"70
+[p x EBTR0 = OFF ]
+"71
+[p x EBTR1 = OFF ]
+"72
+[p x EBTR2 = OFF ]
+"73
+[p x EBTR3 = OFF ]
+"75
+[p x EBTRB = OFF ]
+"26 eusart.c
+[; ;eusart.c: 26: struct eusartT eusart = { rxEUSART, rxStatusEUSART , rxErrorEUSART , rxResetErrorEUSART , txEUSART , txStatusEUSART , initEUSART, search};
+[v _eusart `S367 ~T0 @X0 1 e ]
+[i _eusart
 :U ..
 :U ..
-&U _salvar_receita
-&U _buscar_receita
-&U _deletar_receita
-&U _receita_livre
-&U _formatar_receitas
+&U _rxEUSART
+&U _rxStatusEUSART
+&U _rxErrorEUSART
+&U _rxResetErrorEUSART
+&U _txEUSART
+&U _txStatusEUSART
+&U _initEUSART
+&U _search
 ..
 ..
 ]
-"14 eeprom.c
-[; ;eeprom.c: 14: char EEPROM_read( unsigned char addr )
-[v _EEPROM_read `(uc ~T0 @X0 1 ef1`uc ]
-"15
-[; ;eeprom.c: 15: {
+"50
+[; ;eusart.c: 50: unsigned char rxEUSART( void )
+[v _rxEUSART `(uc ~T0 @X0 1 ef ]
+"51
+[; ;eusart.c: 51: {
 {
-[e :U _EEPROM_read ]
-"14
-[; ;eeprom.c: 14: char EEPROM_read( unsigned char addr )
-[v _addr `uc ~T0 @X0 1 r1 ]
-"15
-[; ;eeprom.c: 15: {
+[e :U _rxEUSART ]
 [f ]
-"17
-[; ;eeprom.c: 17:     EEADR = addr;
-[e = _EEADR _addr ]
-"18
-[; ;eeprom.c: 18:     EECON1bits.EEPGD = 0;
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"19
-[; ;eeprom.c: 19:     EECON1bits.RD = 1;
-[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-"20
-[; ;eeprom.c: 20:     return( EEDATA );
-[e ) -> _EEDATA `uc ]
-[e $UE 368  ]
-"22
-[; ;eeprom.c: 22: }
-[e :UE 368 ]
+"52
+[; ;eusart.c: 52:     return( RCREG );
+[e ) _RCREG ]
+[e $UE 371  ]
+"53
+[; ;eusart.c: 53: }
+[e :UE 371 ]
 }
-"24
-[; ;eeprom.c: 24: void EEPROM_write( unsigned char addr, unsigned char data )
-[v _EEPROM_write `(v ~T0 @X0 1 ef2`uc`uc ]
-"25
-[; ;eeprom.c: 25: {
+"62
+[; ;eusart.c: 62: unsigned char rxStatusEUSART( void )
+[v _rxStatusEUSART `(uc ~T0 @X0 1 ef ]
+"63
+[; ;eusart.c: 63: {
 {
-[e :U _EEPROM_write ]
-"24
-[; ;eeprom.c: 24: void EEPROM_write( unsigned char addr, unsigned char data )
-[v _addr `uc ~T0 @X0 1 r1 ]
-[v _data `uc ~T0 @X0 1 r2 ]
-"25
-[; ;eeprom.c: 25: {
+[e :U _rxStatusEUSART ]
 [f ]
-"26
-[; ;eeprom.c: 26:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"27
-[; ;eeprom.c: 27:     EEADR = addr;
-[e = _EEADR _addr ]
-"28
-[; ;eeprom.c: 28:     EEDATA = data;
-[e = _EEDATA _data ]
-"29
-[; ;eeprom.c: 29:     EECON1bits.EEPGD = 0;
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"30
-[; ;eeprom.c: 30:     EECON1bits.WREN = 1;
-[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-"31
-[; ;eeprom.c: 31:     EECON2 = 0x55;
-[e = _EECON2 -> -> 85 `i `uc ]
-"32
-[; ;eeprom.c: 32:     EECON2 = 0xAA;
-[e = _EECON2 -> -> 170 `i `uc ]
-"33
-[; ;eeprom.c: 33:     EECON1bits.WR = 1;
-[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-"35
-[; ;eeprom.c: 35:     while( EECON1bits.WR );
-[e $U 370  ]
-[e :U 371 ]
-[e :U 370 ]
-[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 371  ]
-[e :U 372 ]
-"37
-[; ;eeprom.c: 37:     EECON1bits.WREN = 0;
-[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-"38
-[; ;eeprom.c: 38:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"39
-[; ;eeprom.c: 39: }
-[e :UE 369 ]
+"64
+[; ;eusart.c: 64:     return( PIR1bits.RCIF );
+[e ) . . _PIR1bits 0 5 ]
+[e $UE 372  ]
+"65
+[; ;eusart.c: 65: }
+[e :UE 372 ]
 }
-"41
-[; ;eeprom.c: 41: int end_receita (int x)
-[v _end_receita `(i ~T0 @X0 1 ef1`i ]
-"42
-[; ;eeprom.c: 42: {
+"76
+[; ;eusart.c: 76: unsigned char rxErrorEUSART( void )
+[v _rxErrorEUSART `(uc ~T0 @X0 1 ef ]
+"77
+[; ;eusart.c: 77: {
 {
-[e :U _end_receita ]
-"41
-[; ;eeprom.c: 41: int end_receita (int x)
-[v _x `i ~T0 @X0 1 r1 ]
-"42
-[; ;eeprom.c: 42: {
+[e :U _rxErrorEUSART ]
 [f ]
-"43
-[; ;eeprom.c: 43:     return(x*16);
-[e ) * _x -> 16 `i ]
+"78
+[; ;eusart.c: 78:     if( RCSTAbits.FERR )
+[e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 374  ]
+"79
+[; ;eusart.c: 79:         return( 1 );
+[e ) -> -> 1 `i `uc ]
 [e $UE 373  ]
-"44
-[; ;eeprom.c: 44: }
+[e $U 375  ]
+"80
+[; ;eusart.c: 80:     else if( RCSTAbits.OERR )
+[e :U 374 ]
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 376  ]
+"81
+[; ;eusart.c: 81:         return( 2 );
+[e ) -> -> 2 `i `uc ]
+[e $UE 373  ]
+[e $U 377  ]
+"82
+[; ;eusart.c: 82:     else
+[e :U 376 ]
+"83
+[; ;eusart.c: 83:         return( 0 );
+[e ) -> -> 0 `i `uc ]
+[e $UE 373  ]
+[e :U 377 ]
+[e :U 375 ]
+"84
+[; ;eusart.c: 84: }
 [e :UE 373 ]
 }
-"46
-[; ;eeprom.c: 46: void salvar_receita (char adrs, unsigned char *data )
-[v _salvar_receita `(v ~T0 @X0 1 ef2`uc`*uc ]
-"47
-[; ;eeprom.c: 47: {
+"92
+[; ;eusart.c: 92: void rxResetErrorEUSART( void )
+[v _rxResetErrorEUSART `(v ~T0 @X0 1 ef ]
+"93
+[; ;eusart.c: 93: {
 {
-[e :U _salvar_receita ]
-"46
-[; ;eeprom.c: 46: void salvar_receita (char adrs, unsigned char *data )
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-"47
-[; ;eeprom.c: 47: {
+[e :U _rxResetErrorEUSART ]
 [f ]
-"48
-[; ;eeprom.c: 48:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"49
-[; ;eeprom.c: 49:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"50
-[; ;eeprom.c: 50:     for( char i=0 ; i<16; i++)
+"94
+[; ;eusart.c: 94:     if( RCSTAbits.FERR )
+[e $ ! != -> . . _RCSTAbits 0 2 `i -> 0 `i 379  ]
+"95
+[; ;eusart.c: 95:     {
 {
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 375  ]
-[e $U 376  ]
-[e :U 375 ]
-"51
-[; ;eeprom.c: 51:          EEPROM_write( (aux+i), *(data+i) );
-[e ( _EEPROM_write (2 , -> + _aux -> _i `i `uc *U + _data * -> -> _i `i `x -> -> # *U _data `i `x ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 375  ]
-[e :U 376 ]
+"96
+[; ;eusart.c: 96:         RCSTAbits.SPEN = 0;
+[e = . . _RCSTAbits 0 7 -> -> 0 `i `uc ]
+"97
+[; ;eusart.c: 97:         _delay((unsigned long)((100)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"98
+[; ;eusart.c: 98:         RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"99
+[; ;eusart.c: 99:     }
 }
-"53
-[; ;eeprom.c: 53: }
-[e :UE 374 ]
-}
-"55
-[; ;eeprom.c: 55: void buscar_receita (char adrs, unsigned char * data )
-[v _buscar_receita `(v ~T0 @X0 1 ef2`uc`*uc ]
-"56
-[; ;eeprom.c: 56: {
-{
-[e :U _buscar_receita ]
-"55
-[; ;eeprom.c: 55: void buscar_receita (char adrs, unsigned char * data )
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-"56
-[; ;eeprom.c: 56: {
-[f ]
-"57
-[; ;eeprom.c: 57:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"58
-[; ;eeprom.c: 58:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"59
-[; ;eeprom.c: 59:     for( char i=0; i<16; i++ )
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 379  ]
-[e $U 380  ]
 [e :U 379 ]
-"60
-[; ;eeprom.c: 60:        *(data+i) = EEPROM_read(aux+i);
-[e = *U + _data * -> -> _i `i `x -> -> # *U _data `i `x -> ( _EEPROM_read (1 -> + _aux -> _i `i `uc `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 379  ]
-[e :U 380 ]
+"100
+[; ;eusart.c: 100:     if( RCSTAbits.OERR )
+[e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 380  ]
+"101
+[; ;eusart.c: 101:     {
+{
+"102
+[; ;eusart.c: 102:         RCSTAbits.CREN = 0;
+[e = . . _RCSTAbits 0 4 -> -> 0 `i `uc ]
+"103
+[; ;eusart.c: 103:         _delay((unsigned long)((100)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"104
+[; ;eusart.c: 104:         RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"105
+[; ;eusart.c: 105:     }
 }
-"61
-[; ;eeprom.c: 61: }
+[e :U 380 ]
+"106
+[; ;eusart.c: 106: }
 [e :UE 378 ]
 }
-"63
-[; ;eeprom.c: 63: void salvar_dado (char adrs, char col, unsigned char data)
-[v _salvar_dado `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"64
-[; ;eeprom.c: 64: {
+"115
+[; ;eusart.c: 115: void txEUSART( unsigned char d )
+[v _txEUSART `(v ~T0 @X0 1 ef1`uc ]
+"116
+[; ;eusart.c: 116: {
 {
-[e :U _salvar_dado ]
-"63
-[; ;eeprom.c: 63: void salvar_dado (char adrs, char col, unsigned char data)
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _col `uc ~T0 @X0 1 r2 ]
-[v _data `uc ~T0 @X0 1 r3 ]
-"64
-[; ;eeprom.c: 64: {
+[e :U _txEUSART ]
+"115
+[; ;eusart.c: 115: void txEUSART( unsigned char d )
+[v _d `uc ~T0 @X0 1 r1 ]
+"116
+[; ;eusart.c: 116: {
 [f ]
-"65
-[; ;eeprom.c: 65:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"66
-[; ;eeprom.c: 66:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"67
-[; ;eeprom.c: 67:     EEPROM_write((aux+col), data);
-[e ( _EEPROM_write (2 , -> + _aux -> _col `i `uc _data ]
-"68
-[; ;eeprom.c: 68: }
+"117
+[; ;eusart.c: 117:     TXREG = d;
+[e = _TXREG _d ]
+"118
+[; ;eusart.c: 118: }
+[e :UE 381 ]
+}
+"126
+[; ;eusart.c: 126: unsigned char txStatusEUSART( void )
+[v _txStatusEUSART `(uc ~T0 @X0 1 ef ]
+"127
+[; ;eusart.c: 127: {
+{
+[e :U _txStatusEUSART ]
+[f ]
+"128
+[; ;eusart.c: 128:     return( !TXSTAbits.TRMT );
+[e ) -> -> ! != -> . . _TXSTAbits 0 1 `i -> 0 `i `i `uc ]
+[e $UE 382  ]
+"129
+[; ;eusart.c: 129: }
 [e :UE 382 ]
 }
-"70
-[; ;eeprom.c: 70: void buscar_dado (char adrs, char col, unsigned char *data)
-[v _buscar_dado `(v ~T0 @X0 1 ef3`uc`uc`*uc ]
-"71
-[; ;eeprom.c: 71: {
+"137
+[; ;eusart.c: 137: void initEUSART( unsigned long baudRate )
+[v _initEUSART `(v ~T0 @X0 1 ef1`ul ]
+"138
+[; ;eusart.c: 138: {
 {
-[e :U _buscar_dado ]
-"70
-[; ;eeprom.c: 70: void buscar_dado (char adrs, char col, unsigned char *data)
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _col `uc ~T0 @X0 1 r2 ]
-[v _data `*uc ~T0 @X0 1 r3 ]
-"71
-[; ;eeprom.c: 71: {
+[e :U _initEUSART ]
+"137
+[; ;eusart.c: 137: void initEUSART( unsigned long baudRate )
+[v _baudRate `ul ~T0 @X0 1 r1 ]
+"138
+[; ;eusart.c: 138: {
 [f ]
-"72
-[; ;eeprom.c: 72:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"73
-[; ;eeprom.c: 73:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"74
-[; ;eeprom.c: 74:     *data = EEPROM_read((aux+col));
-[e = *U _data -> ( _EEPROM_read (1 -> + _aux -> _col `i `uc `uc ]
-"75
-[; ;eeprom.c: 75: }
+"139
+[; ;eusart.c: 139:     INTCONbits.GIE = 0;
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+"142
+[; ;eusart.c: 142:     SPBRbits.u16 = (unsigned int)( (20000000 / (baudRate<<2)) - 1);
+[e = . . _SPBRbits 1 0 -> - / -> -> 20000000 `l `ul << _baudRate -> 2 `i -> -> -> 1 `i `l `ul `ui ]
+"146
+[; ;eusart.c: 146:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"147
+[; ;eusart.c: 147:     BAUDCTLbits.BRG16 = 1;
+[e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
+"148
+[; ;eusart.c: 148:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"150
+[; ;eusart.c: 150:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"151
+[; ;eusart.c: 151:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"152
+[; ;eusart.c: 152:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"154
+[; ;eusart.c: 154:     PIE1bits.RCIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"155
+[; ;eusart.c: 155:     PIE1bits.TXIE = 0;
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"156
+[; ;eusart.c: 156:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"157
+[; ;eusart.c: 157:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"158
+[; ;eusart.c: 158: }
 [e :UE 383 ]
 }
-"77
-[; ;eeprom.c: 77: void deletar_receita (char receita)
-[v _deletar_receita `(v ~T0 @X0 1 ef1`uc ]
-"78
-[; ;eeprom.c: 78: {
+"160
+[; ;eusart.c: 160: int search (const char * x, const char * y)
+[v _search `(i ~T0 @X0 1 ef2`*Cuc`*Cuc ]
+"161
+[; ;eusart.c: 161: {
 {
-[e :U _deletar_receita ]
-"77
-[; ;eeprom.c: 77: void deletar_receita (char receita)
-[v _receita `uc ~T0 @X0 1 r1 ]
-"78
-[; ;eeprom.c: 78: {
+[e :U _search ]
+"160
+[; ;eusart.c: 160: int search (const char * x, const char * y)
+[v _x `*Cuc ~T0 @X0 1 r1 ]
+[v _y `*Cuc ~T0 @X0 1 r2 ]
+"161
+[; ;eusart.c: 161: {
 [f ]
-"79
-[; ;eeprom.c: 79:    int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"80
-[; ;eeprom.c: 80:    aux = end_receita(receita);
-[e = _aux ( _end_receita (1 -> _receita `i ]
-"81
-[; ;eeprom.c: 81:    for( char i=0 ; i<16; i++)
+"162
+[; ;eusart.c: 162:     unsigned char contem = 0;
+[v _contem `uc ~T0 @X0 1 a ]
+[e = _contem -> -> 0 `i `uc ]
+"163
+[; ;eusart.c: 163:     unsigned char f;
+[v _f `uc ~T0 @X0 1 a ]
+"164
+[; ;eusart.c: 164:     const char * aux;
+[v _aux `*Cuc ~T0 @X0 1 a ]
+"165
+[; ;eusart.c: 165:     aux = y;
+[e = _aux _y ]
+"166
+[; ;eusart.c: 166:     do
+[e :U 387 ]
+"167
+[; ;eusart.c: 167:     { f = *x++;
 {
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 385  ]
-[e $U 386  ]
-[e :U 385 ]
-"82
-[; ;eeprom.c: 82:         EEPROM_write((aux+i),0);
-[e ( _EEPROM_write (2 , -> + _aux -> _i `i `uc -> -> 0 `i `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 385  ]
-[e :U 386 ]
+[e = _f -> *U ++ _x * -> -> 1 `i `x -> -> # *U _x `i `x `uc ]
+"168
+[; ;eusart.c: 168:         if( f== *aux)
+[e $ ! == -> _f `i -> *U _aux `i 388  ]
+"169
+[; ;eusart.c: 169:         {
+{
+"170
+[; ;eusart.c: 170:            contem = 1;
+[e = _contem -> -> 1 `i `uc ]
+"171
+[; ;eusart.c: 171:            ++aux;
+[e =+ _aux * -> -> 1 `i `x -> -> # *U _aux `i `x ]
+"172
+[; ;eusart.c: 172:         }
 }
-"83
-[; ;eeprom.c: 83: }
-[e :UE 384 ]
+[e $U 389  ]
+"173
+[; ;eusart.c: 173:         else if (contem)
+[e :U 388 ]
+[e $ ! != -> _contem `i -> 0 `i 390  ]
+"174
+[; ;eusart.c: 174:         {
+{
+"175
+[; ;eusart.c: 175:             aux = y;
+[e = _aux _y ]
+"176
+[; ;eusart.c: 176:             contem = 0;
+[e = _contem -> -> 0 `i `uc ]
+"177
+[; ;eusart.c: 177:         }
 }
-"85
-[; ;eeprom.c: 85: void receita_livre ( unsigned char * rec)
-[v _receita_livre `(v ~T0 @X0 1 ef1`*uc ]
-"86
-[; ;eeprom.c: 86: {
-{
-[e :U _receita_livre ]
-"85
-[; ;eeprom.c: 85: void receita_livre ( unsigned char * rec)
-[v _rec `*uc ~T0 @X0 1 r1 ]
-"86
-[; ;eeprom.c: 86: {
-[f ]
-"87
-[; ;eeprom.c: 87:    int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"88
-[; ;eeprom.c: 88:    for(int i=0;i<16;i++)
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 389  ]
-[e $U 390  ]
-[e :U 389 ]
-"89
-[; ;eeprom.c: 89:    {
-{
-"90
-[; ;eeprom.c: 90:        aux = end_receita(i);
-[e = _aux ( _end_receita (1 _i ]
-"91
-[; ;eeprom.c: 91:        if(EEPROM_read(aux) == 0)
-[e $ ! == -> ( _EEPROM_read (1 -> _aux `uc `i -> 0 `i 392  ]
-"92
-[; ;eeprom.c: 92:           if(i<10)
-[e $ ! < _i -> 10 `i 393  ]
-"93
-[; ;eeprom.c: 93:               *(rec + i) = '0'+i;
-[e = *U + _rec * -> _i `x -> -> # *U _rec `i `x -> + -> 48 `ui -> _i `ui `uc ]
-[e $U 394  ]
-"94
-[; ;eeprom.c: 94:           else
-[e :U 393 ]
-"95
-[; ;eeprom.c: 95:               *(rec + i) = 'A'-10+i;
-[e = *U + _rec * -> _i `x -> -> # *U _rec `i `x -> + - -> 65 `ui -> -> 10 `i `ui -> _i `ui `uc ]
-[e :U 394 ]
-[e :U 392 ]
-"96
-[; ;eeprom.c: 96:    }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 389  ]
 [e :U 390 ]
-}
-"98
-[; ;eeprom.c: 98: }
-[e :UE 388 ]
-}
-"100
-[; ;eeprom.c: 100: void formatar_receitas (void)
-[v _formatar_receitas `(v ~T0 @X0 1 ef ]
-"101
-[; ;eeprom.c: 101: {
+[e :U 389 ]
+"178
+[; ;eusart.c: 178:         if(!*aux)
+[e $ ! ! != -> *U _aux `i -> 0 `i 391  ]
+"179
+[; ;eusart.c: 179:         {
 {
-[e :U _formatar_receitas ]
-[f ]
-"102
-[; ;eeprom.c: 102:     for( char i = 0;i<256;i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 256 `i 396  ]
-[e $U 397  ]
-[e :U 396 ]
-"103
-[; ;eeprom.c: 103:            EEPROM_write(i,0);
-[e ( _EEPROM_write (2 , -> _i `uc -> -> 0 `i `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 256 `i 396  ]
-[e :U 397 ]
+"180
+[; ;eusart.c: 180:             contem = 1;
+[e = _contem -> -> 1 `i `uc ]
+"181
+[; ;eusart.c: 181:             break;
+[e $U 386  ]
+"182
+[; ;eusart.c: 182:         }
 }
-"105
-[; ;eeprom.c: 105: }
-[e :UE 395 ]
+[e :U 391 ]
+"183
+[; ;eusart.c: 183:     }
+}
+[e $ != -> _f `i -> 0 `i 387  ]
+[e :U 386 ]
+"186
+[; ;eusart.c: 186:     return(contem );
+[e ) -> _contem `i ]
+[e $UE 384  ]
+"187
+[; ;eusart.c: 187: }
+[e :UE 384 ]
 }

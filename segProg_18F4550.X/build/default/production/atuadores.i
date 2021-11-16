@@ -4,7 +4,7 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "atuadores.c" 2
 # 1 "./fifo.h" 1
@@ -47,7 +47,7 @@ void manipula_atuadores_init(char aux);
 
 void decodifica( unsigned char *d );
 void codifica( unsigned char tipo, unsigned char *dado );
-# 1 "atuadores.c" 2
+# 2 "atuadores.c" 2
 # 53 "atuadores.c"
 void set_passo(char passo, char* ptr)
 {

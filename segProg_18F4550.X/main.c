@@ -52,6 +52,8 @@
 #include "eeprom.h"
 #include "MCP4725.h"
 #include "spi_i2c.h"
+#include "eusart.h"
+#include "wifi.h"
 
 void __interrupt() irq(void)
 {
@@ -73,6 +75,7 @@ void main(void)
     timer1_init();
     I2C_init(20000000);
     MCP4725(0);
+    wifi_init(115200);
     
 //    char *texto;
     char tecla = 0;

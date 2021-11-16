@@ -1,71 +1,63 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3190 `(v ~T0 @X0 0 tf2`uc`*uc ]
-[v F3194 `(v ~T0 @X0 0 tf2`uc`*uc ]
-[v F3198 `(v ~T0 @X0 0 tf1`uc ]
-[v F3201 `(v ~T0 @X0 0 tf1`*uc ]
-[v F3204 `(v ~T0 @X0 0 tf ]
-"22 ./eeprom.h
-[; ;./eeprom.h: 22: {
-[s S367 `*F3190 1 `*F3194 1 `*F3198 1 `*F3201 1 `*F3204 1 ]
-[n S367 . salvar buscar deletar livre formatar ]
-"10
-[; ;./eeprom.h: 10: void salvar_receita (char adrs,unsigned char *data );
-[v _salvar_receita `(v ~T0 @X0 0 ef2`uc`*uc ]
-"11
-[; ;./eeprom.h: 11: void buscar_receita (char adrs,unsigned char *data );
-[v _buscar_receita `(v ~T0 @X0 0 ef2`uc`*uc ]
-"12
-[; ;./eeprom.h: 12: void deletar_receita (char receita);
-[v _deletar_receita `(v ~T0 @X0 0 ef1`uc ]
+[v F3211 `(v ~T0 @X0 0 tf1`l ]
+[v F3214 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F3217 `(uc ~T0 @X0 0 tf1`*uc ]
+[v F3220 `(v ~T0 @X0 0 tf1`uc ]
+[v F3223 `(v ~T0 @X0 0 tf2`*Cuc`*Cuc ]
+[v F3227 `(v ~T0 @X0 0 tf ]
+[v F3229 `(v ~T0 @X0 0 tf ]
+[v F3231 `(v ~T0 @X0 0 tf ]
+[v F3233 `(v ~T0 @X0 0 tf ]
+[v F3235 `(v ~T0 @X0 0 tf ]
+"27 ./wifi.h
+[; ;./wifi.h: 27: {
+[s S368 `*F3211 1 `*F3214 1 `*F3217 1 `*F3220 1 `*F3223 1 `*F3227 1 `*F3229 1 `*F3231 1 `*F3233 1 `*F3235 1 ]
+[n S368 . init send receive mode connect ip autoconnect scan config_servidor cipsend ]
 "13
-[; ;./eeprom.h: 13: void receita_livre ( unsigned char * rec);
-[v _receita_livre `(v ~T0 @X0 0 ef1`*uc ]
+[; ;./wifi.h: 13: void wifi_init( long br );
+[v _wifi_init `(v ~T0 @X0 0 ef1`l ]
 "14
-[; ;./eeprom.h: 14: void formatar_receitas (void);
-[v _formatar_receitas `(v ~T0 @X0 0 ef ]
-"4929 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4929: extern volatile unsigned char EEADR __attribute__((address(0xFA9)));
-[v _EEADR `Vuc ~T0 @X0 0 e@4009 ]
-"4855
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4855:     struct {
-[s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S193 . RD WR WREN WRERR FREE . CFGS EEPGD ]
-"4865
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4865:     struct {
-[s S194 :6 `uc 1 :1 `uc 1 ]
-[n S194 . . EEFS ]
-"4854
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4854: typedef union {
-[u S192 `S193 1 `S194 1 ]
-[n S192 . . . ]
-"4870
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4870: extern volatile EECON1bits_t EECON1bits __attribute__((address(0xFA6)));
-[v _EECON1bits `VS192 ~T0 @X0 0 e@4006 ]
-"4922
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4922: extern volatile unsigned char EEDATA __attribute__((address(0xFA8)));
-[v _EEDATA `Vuc ~T0 @X0 0 e@4008 ]
-"8588
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8588:     struct {
-[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S360 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"8598
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8598:     struct {
-[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S361 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"8608
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8608:     struct {
-[s S362 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . . GIEL GIEH ]
-"8587
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8587: typedef union {
-[u S359 `S360 1 `S361 1 `S362 1 ]
-[n S359 . . . . ]
-"8614
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8614: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS359 ~T0 @X0 0 e@4082 ]
-"4915
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 4915: extern volatile unsigned char EECON2 __attribute__((address(0xFA7)));
-[v _EECON2 `Vuc ~T0 @X0 0 e@4007 ]
+[; ;./wifi.h: 14: void wifi_send( const char * msg );
+[v _wifi_send `(v ~T0 @X0 0 ef1`*Cuc ]
+"15
+[; ;./wifi.h: 15: unsigned char wifi_receive( unsigned char * rcv );
+[v _wifi_receive `(uc ~T0 @X0 0 ef1`*uc ]
+"16
+[; ;./wifi.h: 16: void Wifi_mode(unsigned char d );
+[v _Wifi_mode `(v ~T0 @X0 0 ef1`uc ]
+"17
+[; ;./wifi.h: 17: void Wifi_connect( const char * ssid, const char * pass );
+[v _Wifi_connect `(v ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"18
+[; ;./wifi.h: 18: void Wifi_ip( void );
+[v _Wifi_ip `(v ~T0 @X0 0 ef ]
+"19
+[; ;./wifi.h: 19: void Wifi_autoconnect( void );
+[v _Wifi_autoconnect `(v ~T0 @X0 0 ef ]
+"20
+[; ;./wifi.h: 20: void Wifi_scan (void);
+[v _Wifi_scan `(v ~T0 @X0 0 ef ]
+"21
+[; ;./wifi.h: 21: void Wifi_config_servidor( void );
+[v _Wifi_config_servidor `(v ~T0 @X0 0 ef ]
+"22
+[; ;./wifi.h: 22: void Wifi_cipsend( void );
+[v _Wifi_cipsend `(v ~T0 @X0 0 ef ]
+[v F3172 `(uc ~T0 @X0 0 tf ]
+[v F3174 `(uc ~T0 @X0 0 tf ]
+[v F3176 `(uc ~T0 @X0 0 tf ]
+[v F3178 `(v ~T0 @X0 0 tf ]
+[v F3180 `(v ~T0 @X0 0 tf1`uc ]
+[v F3183 `(uc ~T0 @X0 0 tf ]
+[v F3185 `(v ~T0 @X0 0 tf1`ul ]
+[v F3188 `(i ~T0 @X0 0 tf2`*Cuc`*Cuc ]
+"15 ./eusart.h
+[; ;./eusart.h: 15: {
+[s S367 `*F3172 1 `*F3174 1 `*F3176 1 `*F3178 1 `*F3180 1 `*F3183 1 `*F3185 1 `*F3188 1 ]
+[n S367 eusartT rx rxSTATUS rxERROR rxResetERROR tx txSTATUS init search_string ]
+"26
+[; ;./eusart.h: 26: extern struct eusartT eusart;
+[v _eusart `S367 ~T0 @X0 0 e ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -576,381 +568,443 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"28 ./eeprom.h
-[; ;./eeprom.h: 28: } EEPROM = { salvar_receita, buscar_receita, deletar_receita, receita_livre, formatar_receitas };
-[v _EEPROM `S367 ~T0 @X0 1 e ]
-[i _EEPROM
+"11 ./wifi.h
+[; ;./wifi.h: 11: unsigned char d = 0;
+[v _d `uc ~T0 @X0 1 e ]
+[i _d
+-> -> 0 `i `uc
+]
+"38
+[; ;./wifi.h: 38: }wifi = {wifi_init, wifi_send, wifi_receive, Wifi_mode, Wifi_connect, Wifi_ip, Wifi_autoconnect, Wifi_scan, Wifi_config_servidor, Wifi_cipsend};
+[v _wifi `S368 ~T0 @X0 1 e ]
+[i _wifi
 :U ..
 :U ..
-&U _salvar_receita
-&U _buscar_receita
-&U _deletar_receita
-&U _receita_livre
-&U _formatar_receitas
+&U _wifi_init
+&U _wifi_send
+&U _wifi_receive
+&U _Wifi_mode
+&U _Wifi_connect
+&U _Wifi_ip
+&U _Wifi_autoconnect
+&U _Wifi_scan
+&U _Wifi_config_servidor
+&U _Wifi_cipsend
 ..
 ..
 ]
-"14 eeprom.c
-[; ;eeprom.c: 14: char EEPROM_read( unsigned char addr )
-[v _EEPROM_read `(uc ~T0 @X0 1 ef1`uc ]
-"15
-[; ;eeprom.c: 15: {
+"12 wifi.c
+[; ;wifi.c: 12: void wifi_init( long br)
+[v _wifi_init `(v ~T0 @X0 1 ef1`l ]
+"13
+[; ;wifi.c: 13: {
 {
-[e :U _EEPROM_read ]
+[e :U _wifi_init ]
+"12
+[; ;wifi.c: 12: void wifi_init( long br)
+[v _br `l ~T0 @X0 1 r1 ]
+"13
+[; ;wifi.c: 13: {
+[f ]
 "14
-[; ;eeprom.c: 14: char EEPROM_read( unsigned char addr )
-[v _addr `uc ~T0 @X0 1 r1 ]
-"15
-[; ;eeprom.c: 15: {
-[f ]
-"17
-[; ;eeprom.c: 17:     EEADR = addr;
-[e = _EEADR _addr ]
-"18
-[; ;eeprom.c: 18:     EECON1bits.EEPGD = 0;
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"19
-[; ;eeprom.c: 19:     EECON1bits.RD = 1;
-[e = . . _EECON1bits 0 0 -> -> 1 `i `uc ]
-"20
-[; ;eeprom.c: 20:     return( EEDATA );
-[e ) -> _EEDATA `uc ]
-[e $UE 368  ]
-"22
-[; ;eeprom.c: 22: }
-[e :UE 368 ]
-}
-"24
-[; ;eeprom.c: 24: void EEPROM_write( unsigned char addr, unsigned char data )
-[v _EEPROM_write `(v ~T0 @X0 1 ef2`uc`uc ]
-"25
-[; ;eeprom.c: 25: {
-{
-[e :U _EEPROM_write ]
-"24
-[; ;eeprom.c: 24: void EEPROM_write( unsigned char addr, unsigned char data )
-[v _addr `uc ~T0 @X0 1 r1 ]
-[v _data `uc ~T0 @X0 1 r2 ]
-"25
-[; ;eeprom.c: 25: {
-[f ]
-"26
-[; ;eeprom.c: 26:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"27
-[; ;eeprom.c: 27:     EEADR = addr;
-[e = _EEADR _addr ]
-"28
-[; ;eeprom.c: 28:     EEDATA = data;
-[e = _EEDATA _data ]
-"29
-[; ;eeprom.c: 29:     EECON1bits.EEPGD = 0;
-[e = . . _EECON1bits 0 7 -> -> 0 `i `uc ]
-"30
-[; ;eeprom.c: 30:     EECON1bits.WREN = 1;
-[e = . . _EECON1bits 0 2 -> -> 1 `i `uc ]
-"31
-[; ;eeprom.c: 31:     EECON2 = 0x55;
-[e = _EECON2 -> -> 85 `i `uc ]
-"32
-[; ;eeprom.c: 32:     EECON2 = 0xAA;
-[e = _EECON2 -> -> 170 `i `uc ]
-"33
-[; ;eeprom.c: 33:     EECON1bits.WR = 1;
-[e = . . _EECON1bits 0 1 -> -> 1 `i `uc ]
-"35
-[; ;eeprom.c: 35:     while( EECON1bits.WR );
-[e $U 370  ]
-[e :U 371 ]
-[e :U 370 ]
-[e $ != -> . . _EECON1bits 0 1 `i -> 0 `i 371  ]
-[e :U 372 ]
-"37
-[; ;eeprom.c: 37:     EECON1bits.WREN = 0;
-[e = . . _EECON1bits 0 2 -> -> 0 `i `uc ]
-"38
-[; ;eeprom.c: 38:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"39
-[; ;eeprom.c: 39: }
+[; ;wifi.c: 14:     eusart.init(br);
+[e ( *U . _eusart 6 (1 -> _br `ul ]
+"16
+[; ;wifi.c: 16: }
 [e :UE 369 ]
 }
-"41
-[; ;eeprom.c: 41: int end_receita (int x)
-[v _end_receita `(i ~T0 @X0 1 ef1`i ]
-"42
-[; ;eeprom.c: 42: {
+"18
+[; ;wifi.c: 18: void wifi_send( const char * msg )
+[v _wifi_send `(v ~T0 @X0 1 ef1`*Cuc ]
+"19
+[; ;wifi.c: 19: {
 {
-[e :U _end_receita ]
-"41
-[; ;eeprom.c: 41: int end_receita (int x)
-[v _x `i ~T0 @X0 1 r1 ]
-"42
-[; ;eeprom.c: 42: {
+[e :U _wifi_send ]
+"18
+[; ;wifi.c: 18: void wifi_send( const char * msg )
+[v _msg `*Cuc ~T0 @X0 1 r1 ]
+"19
+[; ;wifi.c: 19: {
 [f ]
-"43
-[; ;eeprom.c: 43:     return(x*16);
-[e ) * _x -> 16 `i ]
-[e $UE 373  ]
-"44
-[; ;eeprom.c: 44: }
-[e :UE 373 ]
-}
-"46
-[; ;eeprom.c: 46: void salvar_receita (char adrs, unsigned char *data )
-[v _salvar_receita `(v ~T0 @X0 1 ef2`uc`*uc ]
-"47
-[; ;eeprom.c: 47: {
+"20
+[; ;wifi.c: 20:     while( *msg )
+[e $U 371  ]
+[e :U 372 ]
+"21
+[; ;wifi.c: 21:     {
 {
-[e :U _salvar_receita ]
-"46
-[; ;eeprom.c: 46: void salvar_receita (char adrs, unsigned char *data )
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-"47
-[; ;eeprom.c: 47: {
-[f ]
-"48
-[; ;eeprom.c: 48:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"49
-[; ;eeprom.c: 49:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"50
-[; ;eeprom.c: 50:     for( char i=0 ; i<16; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 375  ]
-[e $U 376  ]
+"22
+[; ;wifi.c: 22:         while( eusart.txSTATUS() );
+[e $U 374  ]
 [e :U 375 ]
-"51
-[; ;eeprom.c: 51:          EEPROM_write( (aux+i), *(data+i) );
-[e ( _EEPROM_write (2 , -> + _aux -> _i `i `uc *U + _data * -> -> _i `i `x -> -> # *U _data `i `x ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 375  ]
+[e :U 374 ]
+[e $ != -> ( *U . _eusart 5 ..  `i -> 0 `i 375  ]
 [e :U 376 ]
+"23
+[; ;wifi.c: 23:         eusart.tx( *msg );
+[e ( *U . _eusart 4 (1 -> *U _msg `uc ]
+"24
+[; ;wifi.c: 24:         ++msg;
+[e =+ _msg * -> -> 1 `i `x -> -> # *U _msg `i `x ]
+"25
+[; ;wifi.c: 25:     }
 }
-"53
-[; ;eeprom.c: 53: }
-[e :UE 374 ]
+[e :U 371 ]
+"20
+[; ;wifi.c: 20:     while( *msg )
+[e $ != -> *U _msg `i -> 0 `i 372  ]
+[e :U 373 ]
+"26
+[; ;wifi.c: 26: }
+[e :UE 370 ]
 }
-"55
-[; ;eeprom.c: 55: void buscar_receita (char adrs, unsigned char * data )
-[v _buscar_receita `(v ~T0 @X0 1 ef2`uc`*uc ]
-"56
-[; ;eeprom.c: 56: {
+"28
+[; ;wifi.c: 28: unsigned char wifi_receive( unsigned char * rcv )
+[v _wifi_receive `(uc ~T0 @X0 1 ef1`*uc ]
+"29
+[; ;wifi.c: 29: {
 {
-[e :U _buscar_receita ]
-"55
-[; ;eeprom.c: 55: void buscar_receita (char adrs, unsigned char * data )
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-"56
-[; ;eeprom.c: 56: {
+[e :U _wifi_receive ]
+"28
+[; ;wifi.c: 28: unsigned char wifi_receive( unsigned char * rcv )
+[v _rcv `*uc ~T0 @X0 1 r1 ]
+"29
+[; ;wifi.c: 29: {
 [f ]
-"57
-[; ;eeprom.c: 57:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"58
-[; ;eeprom.c: 58:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"59
-[; ;eeprom.c: 59:     for( char i=0; i<16; i++ )
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 379  ]
-[e $U 380  ]
+"30
+[; ;wifi.c: 30:     unsigned char d = 0;
+[v _d `uc ~T0 @X0 1 a ]
+[e = _d -> -> 0 `i `uc ]
+"31
+[; ;wifi.c: 31:     unsigned char indice = 0;
+[v _indice `uc ~T0 @X0 1 a ]
+[e = _indice -> -> 0 `i `uc ]
+"32
+[; ;wifi.c: 32:     while( d != '\n' )
+[e $U 378  ]
 [e :U 379 ]
-"60
-[; ;eeprom.c: 60:        *(data+i) = EEPROM_read(aux+i);
-[e = *U + _data * -> -> _i `i `x -> -> # *U _data `i `x -> ( _EEPROM_read (1 -> + _aux -> _i `i `uc `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 379  ]
-[e :U 380 ]
-}
-"61
-[; ;eeprom.c: 61: }
-[e :UE 378 ]
-}
-"63
-[; ;eeprom.c: 63: void salvar_dado (char adrs, char col, unsigned char data)
-[v _salvar_dado `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"64
-[; ;eeprom.c: 64: {
+"33
+[; ;wifi.c: 33:     {
 {
-[e :U _salvar_dado ]
-"63
-[; ;eeprom.c: 63: void salvar_dado (char adrs, char col, unsigned char data)
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _col `uc ~T0 @X0 1 r2 ]
-[v _data `uc ~T0 @X0 1 r3 ]
-"64
-[; ;eeprom.c: 64: {
+"34
+[; ;wifi.c: 34:         if( eusart.rxSTATUS() )
+[e $ ! != -> ( *U . _eusart 1 ..  `i -> 0 `i 381  ]
+"35
+[; ;wifi.c: 35:         {
+{
+"36
+[; ;wifi.c: 36:             d = eusart.rx();
+[e = _d ( *U . _eusart 0 ..  ]
+"39
+[; ;wifi.c: 39:                 *(rcv+indice) = d;
+[e = *U + _rcv * -> -> _indice `i `x -> -> # *U _rcv `i `x _d ]
+"40
+[; ;wifi.c: 40:                 ++indice;
+[e =+ _indice -> -> 1 `i `uc ]
+"42
+[; ;wifi.c: 42:         }
+}
+[e :U 381 ]
+"43
+[; ;wifi.c: 43:     }
+}
+[e :U 378 ]
+"32
+[; ;wifi.c: 32:     while( d != '\n' )
+[e $ != -> _d `ui -> 10 `ui 379  ]
+[e :U 380 ]
+"44
+[; ;wifi.c: 44:     return( indice );
+[e ) _indice ]
+[e $UE 377  ]
+"45
+[; ;wifi.c: 45: }
+[e :UE 377 ]
+}
+"47
+[; ;wifi.c: 47: void Wifi_mode(unsigned char d )
+[v _Wifi_mode `(v ~T0 @X0 1 ef1`uc ]
+"48
+[; ;wifi.c: 48: {
+{
+[e :U _Wifi_mode ]
+"47
+[; ;wifi.c: 47: void Wifi_mode(unsigned char d )
+[v _d `uc ~T0 @X0 1 r1 ]
+"48
+[; ;wifi.c: 48: {
 [f ]
+"49
+[; ;wifi.c: 49:     if(d == 1)
+[e $ ! == -> _d `i -> 1 `i 383  ]
+"50
+[; ;wifi.c: 50:     {
+{
+"51
+[; ;wifi.c: 51:         wifi_send("AT+CWMODE=1\r\n");
+[e ( _wifi_send (1 :s 1C ]
+"52
+[; ;wifi.c: 52:     }
+}
+[e :U 383 ]
+"54
+[; ;wifi.c: 54:     if(d == 2)
+[e $ ! == -> _d `i -> 2 `i 384  ]
+"55
+[; ;wifi.c: 55:     {
+{
+"56
+[; ;wifi.c: 56:         wifi_send("AT+CWMODE=2\r\n");
+[e ( _wifi_send (1 :s 2C ]
+"58
+[; ;wifi.c: 58:     }
+}
+[e :U 384 ]
+"59
+[; ;wifi.c: 59:     if(d == 3)
+[e $ ! == -> _d `i -> 3 `i 385  ]
+"60
+[; ;wifi.c: 60:     {
+{
+"61
+[; ;wifi.c: 61:         wifi_send("AT+CWMODE=3\r\n");
+[e ( _wifi_send (1 :s 3C ]
+"63
+[; ;wifi.c: 63:     }
+}
+[e $U 386  ]
+"64
+[; ;wifi.c: 64:     else
+[e :U 385 ]
 "65
-[; ;eeprom.c: 65:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
+[; ;wifi.c: 65:         wifi_send("AT+CWMODE=0\r\n");
+[e ( _wifi_send (1 :s 4C ]
+[e :U 386 ]
 "66
-[; ;eeprom.c: 66:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
-"67
-[; ;eeprom.c: 67:     EEPROM_write((aux+col), data);
-[e ( _EEPROM_write (2 , -> + _aux -> _col `i `uc _data ]
-"68
-[; ;eeprom.c: 68: }
+[; ;wifi.c: 66: }
 [e :UE 382 ]
 }
-"70
-[; ;eeprom.c: 70: void buscar_dado (char adrs, char col, unsigned char *data)
-[v _buscar_dado `(v ~T0 @X0 1 ef3`uc`uc`*uc ]
-"71
-[; ;eeprom.c: 71: {
-{
-[e :U _buscar_dado ]
-"70
-[; ;eeprom.c: 70: void buscar_dado (char adrs, char col, unsigned char *data)
-[v _adrs `uc ~T0 @X0 1 r1 ]
-[v _col `uc ~T0 @X0 1 r2 ]
-[v _data `*uc ~T0 @X0 1 r3 ]
-"71
-[; ;eeprom.c: 71: {
-[f ]
 "72
-[; ;eeprom.c: 72:     int aux;
-[v _aux `i ~T0 @X0 1 a ]
+[; ;wifi.c: 72: void Wifi_connect( const char * ssid, const char * pass )
+[v _Wifi_connect `(v ~T0 @X0 1 ef2`*Cuc`*Cuc ]
 "73
-[; ;eeprom.c: 73:     aux = end_receita(adrs);
-[e = _aux ( _end_receita (1 -> _adrs `i ]
+[; ;wifi.c: 73: {
+{
+[e :U _Wifi_connect ]
+"72
+[; ;wifi.c: 72: void Wifi_connect( const char * ssid, const char * pass )
+[v _ssid `*Cuc ~T0 @X0 1 r1 ]
+[v _pass `*Cuc ~T0 @X0 1 r2 ]
+"73
+[; ;wifi.c: 73: {
+[f ]
 "74
-[; ;eeprom.c: 74:     *data = EEPROM_read((aux+col));
-[e = *U _data -> ( _EEPROM_read (1 -> + _aux -> _col `i `uc `uc ]
+[; ;wifi.c: 74:     unsigned char i = 10;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 10 `i `uc ]
+[v F3276 `uc ~T0 @X0 -> 40 `i s ]
+[i F3276
+:U ..
 "75
-[; ;eeprom.c: 75: }
-[e :UE 383 ]
-}
-"77
-[; ;eeprom.c: 77: void deletar_receita (char receita)
-[v _deletar_receita `(v ~T0 @X0 1 ef1`uc ]
-"78
-[; ;eeprom.c: 78: {
-{
-[e :U _deletar_receita ]
-"77
-[; ;eeprom.c: 77: void deletar_receita (char receita)
-[v _receita `uc ~T0 @X0 1 r1 ]
-"78
-[; ;eeprom.c: 78: {
-[f ]
-"79
-[; ;eeprom.c: 79:    int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"80
-[; ;eeprom.c: 80:    aux = end_receita(receita);
-[e = _aux ( _end_receita (1 -> _receita `i ]
-"81
-[; ;eeprom.c: 81:    for( char i=0 ; i<16; i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 385  ]
-[e $U 386  ]
-[e :U 385 ]
-"82
-[; ;eeprom.c: 82:         EEPROM_write((aux+i),0);
-[e ( _EEPROM_write (2 , -> + _aux -> _i `i `uc -> -> 0 `i `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 385  ]
-[e :U 386 ]
-}
-"83
-[; ;eeprom.c: 83: }
-[e :UE 384 ]
-}
-"85
-[; ;eeprom.c: 85: void receita_livre ( unsigned char * rec)
-[v _receita_livre `(v ~T0 @X0 1 ef1`*uc ]
-"86
-[; ;eeprom.c: 86: {
-{
-[e :U _receita_livre ]
-"85
-[; ;eeprom.c: 85: void receita_livre ( unsigned char * rec)
-[v _rec `*uc ~T0 @X0 1 r1 ]
-"86
-[; ;eeprom.c: 86: {
-[f ]
-"87
-[; ;eeprom.c: 87:    int aux;
-[v _aux `i ~T0 @X0 1 a ]
-"88
-[; ;eeprom.c: 88:    for(int i=0;i<16;i++)
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 16 `i 389  ]
-[e $U 390  ]
+[; ;wifi.c: 75:     unsigned char str[40] = "AT+CWJAP=\"";
+-> 65 `c
+-> 84 `c
+-> 43 `c
+-> 67 `c
+-> 87 `c
+-> 74 `c
+-> 65 `c
+-> 80 `c
+-> 61 `c
+-> 34 `c
+-> 0 `c
+..
+]
+[v _str `uc ~T0 @X0 -> 40 `i a ]
+[e = _str F3276 ]
+"76
+[; ;wifi.c: 76:     while( *ssid )
+[e $U 388  ]
 [e :U 389 ]
-"89
-[; ;eeprom.c: 89:    {
+"77
+[; ;wifi.c: 77:     {
 {
-"90
-[; ;eeprom.c: 90:        aux = end_receita(i);
-[e = _aux ( _end_receita (1 _i ]
-"91
-[; ;eeprom.c: 91:        if(EEPROM_read(aux) == 0)
-[e $ ! == -> ( _EEPROM_read (1 -> _aux `uc `i -> 0 `i 392  ]
-"92
-[; ;eeprom.c: 92:           if(i<10)
-[e $ ! < _i -> 10 `i 393  ]
-"93
-[; ;eeprom.c: 93:               *(rec + i) = '0'+i;
-[e = *U + _rec * -> _i `x -> -> # *U _rec `i `x -> + -> 48 `ui -> _i `ui `uc ]
-[e $U 394  ]
-"94
-[; ;eeprom.c: 94:           else
-[e :U 393 ]
-"95
-[; ;eeprom.c: 95:               *(rec + i) = 'A'-10+i;
-[e = *U + _rec * -> _i `x -> -> # *U _rec `i `x -> + - -> 65 `ui -> -> 10 `i `ui -> _i `ui `uc ]
-[e :U 394 ]
-[e :U 392 ]
-"96
-[; ;eeprom.c: 96:    }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 389  ]
-[e :U 390 ]
-}
-"98
-[; ;eeprom.c: 98: }
-[e :UE 388 ]
-}
-"100
-[; ;eeprom.c: 100: void formatar_receitas (void)
-[v _formatar_receitas `(v ~T0 @X0 1 ef ]
-"101
-[; ;eeprom.c: 101: {
-{
-[e :U _formatar_receitas ]
-[f ]
-"102
-[; ;eeprom.c: 102:     for( char i = 0;i<256;i++)
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 256 `i 396  ]
-[e $U 397  ]
-[e :U 396 ]
-"103
-[; ;eeprom.c: 103:            EEPROM_write(i,0);
-[e ( _EEPROM_write (2 , -> _i `uc -> -> 0 `i `uc ]
+"78
+[; ;wifi.c: 78:         str[i] = *ssid;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> *U _ssid `uc ]
+"79
+[; ;wifi.c: 79:         ssid++;
+[e ++ _ssid * -> -> 1 `i `x -> -> # *U _ssid `i `x ]
+"80
+[; ;wifi.c: 80:         i++;
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 256 `i 396  ]
-[e :U 397 ]
+"81
+[; ;wifi.c: 81:     }
 }
-"105
-[; ;eeprom.c: 105: }
+[e :U 388 ]
+"76
+[; ;wifi.c: 76:     while( *ssid )
+[e $ != -> *U _ssid `i -> 0 `i 389  ]
+[e :U 390 ]
+"82
+[; ;wifi.c: 82:     str[i] = '"'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"83
+[; ;wifi.c: 83:     str[i] = ','; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 44 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"84
+[; ;wifi.c: 84:     str[i] = '"'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"85
+[; ;wifi.c: 85:     while( *pass )
+[e $U 391  ]
+[e :U 392 ]
+"86
+[; ;wifi.c: 86:     {
+{
+"87
+[; ;wifi.c: 87:         str[i] = *pass;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> *U _pass `uc ]
+"88
+[; ;wifi.c: 88:         pass++;
+[e ++ _pass * -> -> 1 `i `x -> -> # *U _pass `i `x ]
+"89
+[; ;wifi.c: 89:         i++;
+[e ++ _i -> -> 1 `i `uc ]
+"90
+[; ;wifi.c: 90:     }
+}
+[e :U 391 ]
+"85
+[; ;wifi.c: 85:     while( *pass )
+[e $ != -> *U _pass `i -> 0 `i 392  ]
+[e :U 393 ]
+"91
+[; ;wifi.c: 91:     str[i] = '"'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"92
+[; ;wifi.c: 92:     str[i] = '\r'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 13 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"93
+[; ;wifi.c: 93:     str[i] = '\n'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 10 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"94
+[; ;wifi.c: 94:     str[i] = 0;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 0 `i `uc ]
+"95
+[; ;wifi.c: 95:     wifi_send( str );
+[e ( _wifi_send (1 -> &U _str `*Cuc ]
+"99
+[; ;wifi.c: 99: }
+[e :UE 387 ]
+}
+"101
+[; ;wifi.c: 101: void Wifi_scan (void)
+[v _Wifi_scan `(v ~T0 @X0 1 ef ]
+"102
+[; ;wifi.c: 102: {
+{
+[e :U _Wifi_scan ]
+[f ]
+"103
+[; ;wifi.c: 103:     wifi_send("AT+CWLAP\r\n");
+[e ( _wifi_send (1 :s 5C ]
+"104
+[; ;wifi.c: 104: }
+[e :UE 394 ]
+}
+"106
+[; ;wifi.c: 106: void Wifi_ip( void )
+[v _Wifi_ip `(v ~T0 @X0 1 ef ]
+"107
+[; ;wifi.c: 107: {
+{
+[e :U _Wifi_ip ]
+[f ]
+"108
+[; ;wifi.c: 108:     wifi_send("AT+CIFSR\r\n");
+[e ( _wifi_send (1 :s 6C ]
+"109
+[; ;wifi.c: 109: }
 [e :UE 395 ]
 }
+"111
+[; ;wifi.c: 111: void Wifi_autoconnect( void )
+[v _Wifi_autoconnect `(v ~T0 @X0 1 ef ]
+"112
+[; ;wifi.c: 112: {
+{
+[e :U _Wifi_autoconnect ]
+[f ]
+"113
+[; ;wifi.c: 113:     wifi_send("AT+CWAUTOCONN=0\r\n");
+[e ( _wifi_send (1 :s 7C ]
+"114
+[; ;wifi.c: 114: }
+[e :UE 396 ]
+}
+"115
+[; ;wifi.c: 115: void Wifi_config_servidor( void )
+[v _Wifi_config_servidor `(v ~T0 @X0 1 ef ]
+"116
+[; ;wifi.c: 116: {
+{
+[e :U _Wifi_config_servidor ]
+[f ]
+"117
+[; ;wifi.c: 117:     wifi_send("AT+CIPMODE=1\r\n");
+[e ( _wifi_send (1 :s 8C ]
+"118
+[; ;wifi.c: 118:     wifi_send("AT+CIPMUX=1\r\n");
+[e ( _wifi_send (1 :s 9C ]
+"119
+[; ;wifi.c: 119:     wifi_send("AT+CIPSERVER=1,333\r\n");
+[e ( _wifi_send (1 :s 10C ]
+"120
+[; ;wifi.c: 120: }
+[e :UE 397 ]
+}
+"122
+[; ;wifi.c: 122: void Wifi_cipsend( void )
+[v _Wifi_cipsend `(v ~T0 @X0 1 ef ]
+"123
+[; ;wifi.c: 123: {
+{
+[e :U _Wifi_cipsend ]
+[f ]
+"147
+[; ;wifi.c: 147:     wifi_send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n");
+[e ( _wifi_send (1 :s 11C ]
+"148
+[; ;wifi.c: 148:     wifi_send("AT+CIPSEND=8\r\n");
+[e ( _wifi_send (1 :s 12C ]
+"149
+[; ;wifi.c: 149:     wifi_send("ABCDEFGH");
+[e ( _wifi_send (1 :s 13C ]
+"150
+[; ;wifi.c: 150:     wifi_send("AT+CIPCLOSE\r\n");
+[e ( _wifi_send (1 :s 14C ]
+"151
+[; ;wifi.c: 151: }
+[e :UE 398 ]
+}
+[a 13C 65 66 67 68 69 70 71 72 0 ]
+[a 6C 65 84 43 67 73 70 83 82 13 10 0 ]
+[a 5C 65 84 43 67 87 76 65 80 13 10 0 ]
+[a 14C 65 84 43 67 73 80 67 76 79 83 69 13 10 0 ]
+[a 12C 65 84 43 67 73 80 83 69 78 68 61 56 13 10 0 ]
+[a 3C 65 84 43 67 87 77 79 68 69 61 51 13 10 0 ]
+[a 10C 65 84 43 67 73 80 83 69 82 86 69 82 61 49 44 51 51 51 13 10 0 ]
+[a 2C 65 84 43 67 87 77 79 68 69 61 50 13 10 0 ]
+[a 9C 65 84 43 67 73 80 77 85 88 61 49 13 10 0 ]
+[a 1C 65 84 43 67 87 77 79 68 69 61 49 13 10 0 ]
+[a 8C 65 84 43 67 73 80 77 79 68 69 61 49 13 10 0 ]
+[a 7C 65 84 43 67 87 65 85 84 79 67 79 78 78 61 48 13 10 0 ]
+[a 4C 65 84 43 67 87 77 79 68 69 61 48 13 10 0 ]
+[a 11C 65 84 43 67 73 80 83 84 65 82 84 61 34 84 67 80 34 44 34 49 57 50 46 49 54 56 46 52 46 49 34 44 34 51 51 51 34 13 10 0 ]
