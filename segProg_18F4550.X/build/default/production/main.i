@@ -5833,7 +5833,7 @@ void Wifi_ip( void );
 void Wifi_autoconnect( void );
 void Wifi_scan (void);
 void Wifi_config_servidor( void );
-void Wifi_cipsend( void );
+void Wifi_cipsend( unsigned char *tam, unsigned char *msg );
 
 
 
@@ -5848,7 +5848,7 @@ struct
     void (*autoconnect)( void );
     void (*scan) (void);
     void (*config_servidor)( void );
-    void (*cipsend)( void );
+    void (*cipsend)( unsigned char *tam, unsigned char *msg );
 }wifi = {wifi_init, wifi_send, wifi_receive, Wifi_mode, Wifi_connect, Wifi_ip, Wifi_autoconnect, Wifi_scan, Wifi_config_servidor, Wifi_cipsend};
 # 57 "main.c" 2
 
@@ -5872,8 +5872,8 @@ void main(void)
     timer1_init();
     I2C_init(20000000);
     MCP4725(0);
-    wifi_init(115200);
-
+    wifi.init(115200);
+    wifi.mode(1);
 
     char tecla = 0;
     char estado = 0;

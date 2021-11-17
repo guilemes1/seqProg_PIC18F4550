@@ -19,7 +19,7 @@ void Wifi_ip( void );
 void Wifi_autoconnect( void );
 void Wifi_scan (void);
 void Wifi_config_servidor( void );
-void Wifi_cipsend( void );
+void Wifi_cipsend( unsigned char *tam, unsigned char *msg );
 
 
 
@@ -34,7 +34,7 @@ struct
     void (*autoconnect)( void );
     void (*scan) (void);
     void (*config_servidor)( void );
-    void (*cipsend)( void );
+    void (*cipsend)( unsigned char *tam, unsigned char *msg );
 }wifi = {wifi_init, wifi_send, wifi_receive, Wifi_mode, Wifi_connect, Wifi_ip, Wifi_autoconnect, Wifi_scan, Wifi_config_servidor, Wifi_cipsend};
 
 #endif	/* WIFI_H */

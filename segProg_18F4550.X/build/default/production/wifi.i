@@ -5668,7 +5668,7 @@ void Wifi_ip( void );
 void Wifi_autoconnect( void );
 void Wifi_scan (void);
 void Wifi_config_servidor( void );
-void Wifi_cipsend( void );
+void Wifi_cipsend( unsigned char *tam, unsigned char *msg );
 
 
 
@@ -5683,7 +5683,7 @@ struct
     void (*autoconnect)( void );
     void (*scan) (void);
     void (*config_servidor)( void );
-    void (*cipsend)( void );
+    void (*cipsend)( unsigned char *tam, unsigned char *msg );
 }wifi = {wifi_init, wifi_send, wifi_receive, Wifi_mode, Wifi_connect, Wifi_ip, Wifi_autoconnect, Wifi_scan, Wifi_config_servidor, Wifi_cipsend};
 # 10 "wifi.c" 2
 
@@ -5691,7 +5691,6 @@ struct
 void wifi_init( long br)
 {
     eusart.init(br);
-
 }
 
 void wifi_send( const char * msg )
@@ -5713,11 +5712,11 @@ unsigned char wifi_receive( unsigned char * rcv )
         if( eusart.rxSTATUS() )
         {
             d = eusart.rx();
-
-
+            if( (d >= 'A' && d <= 'Z') || (d >='a' && d <= 'z'))
+            {
                 *(rcv+indice) = d;
                 ++indice;
-
+            }
         }
     }
     return( indice );
@@ -5733,20 +5732,16 @@ void Wifi_mode(unsigned char d )
     if(d == 2)
     {
         wifi_send("AT+CWMODE=2\r\n");
-
+        wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
     }
     if(d == 3)
     {
         wifi_send("AT+CWMODE=3\r\n");
-
+        wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
     }
     else
         wifi_send("AT+CWMODE=0\r\n");
 }
-
-
-
-
 
 void Wifi_connect( const char * ssid, const char * pass )
 {
@@ -5773,8 +5768,6 @@ void Wifi_connect( const char * ssid, const char * pass )
     str[i] = 0;
     wifi_send( str );
 
-
-
 }
 
 void Wifi_scan (void)
@@ -5793,16 +5786,41 @@ void Wifi_autoconnect( void )
 }
 void Wifi_config_servidor( void )
 {
-    wifi_send("AT+CIPMODE=1\r\n");
+    wifi_send("AT+CIPMODE=0\r\n");
     wifi_send("AT+CIPMUX=1\r\n");
     wifi_send("AT+CIPSERVER=1,333\r\n");
 }
 
-void Wifi_cipsend( void )
+void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
 {
-# 147 "wifi.c"
+    unsigned char d = 1;
+    unsigned char str[30] = "AT+CIPSEND=\"";
+    unsigned char i = 12;
+    unsigned char vtr[30] = "";
+
     wifi_send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n");
-    wifi_send("AT+CIPSEND=8\r\n");
-    wifi_send("ABCDEFGH");
+
+    while( *tam )
+    {
+        str[i] = *tam;
+        *tam++;
+        i++;
+    }
+    str[i] = '\r'; i++;
+    str[i] = '\n'; i++;
+    str[i] = 0;
+    wifi_send( str );
+
+    while( *msg )
+    {
+        vtr[d] = *msg;
+        *msg++;
+        d++;
+    }
+    vtr[d] = '\r'; d++;
+    vtr[d] = '\n'; d++;
+    vtr[d] = 0;
+    wifi_send(vtr);
+
     wifi_send("AT+CIPCLOSE\r\n");
 }

@@ -75,8 +75,8 @@ void main(void)
     timer1_init();
     I2C_init(20000000);
     MCP4725(0);
-    wifi_init(115200);
-    
+    wifi.init(115200);
+    wifi.mode(1);
 //    char *texto;
     char tecla = 0;
     char estado = INICIO;

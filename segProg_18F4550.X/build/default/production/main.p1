@@ -47,19 +47,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14
 [; ;./eeprom.h: 14: void formatar_receitas (void);
 [v _formatar_receitas `(v ~T0 @X0 0 ef ]
-[v F3421 `(v ~T0 @X0 0 tf1`l ]
-[v F3424 `(v ~T0 @X0 0 tf1`*Cuc ]
-[v F3427 `(uc ~T0 @X0 0 tf1`*uc ]
-[v F3430 `(v ~T0 @X0 0 tf1`uc ]
-[v F3433 `(v ~T0 @X0 0 tf2`*Cuc`*Cuc ]
-[v F3437 `(v ~T0 @X0 0 tf ]
+[v F3423 `(v ~T0 @X0 0 tf1`l ]
+[v F3426 `(v ~T0 @X0 0 tf1`*Cuc ]
+[v F3429 `(uc ~T0 @X0 0 tf1`*uc ]
+[v F3432 `(v ~T0 @X0 0 tf1`uc ]
+[v F3435 `(v ~T0 @X0 0 tf2`*Cuc`*Cuc ]
 [v F3439 `(v ~T0 @X0 0 tf ]
 [v F3441 `(v ~T0 @X0 0 tf ]
 [v F3443 `(v ~T0 @X0 0 tf ]
 [v F3445 `(v ~T0 @X0 0 tf ]
+[v F3447 `(v ~T0 @X0 0 tf2`*uc`*uc ]
 "27 ./wifi.h
 [; ;./wifi.h: 27: {
-[s S371 `*F3421 1 `*F3424 1 `*F3427 1 `*F3430 1 `*F3433 1 `*F3437 1 `*F3439 1 `*F3441 1 `*F3443 1 `*F3445 1 ]
+[s S371 `*F3423 1 `*F3426 1 `*F3429 1 `*F3432 1 `*F3435 1 `*F3439 1 `*F3441 1 `*F3443 1 `*F3445 1 `*F3447 1 ]
 [n S371 . init send receive mode connect ip autoconnect scan config_servidor cipsend ]
 "13
 [; ;./wifi.h: 13: void wifi_init( long br );
@@ -89,8 +89,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./wifi.h: 21: void Wifi_config_servidor( void );
 [v _Wifi_config_servidor `(v ~T0 @X0 0 ef ]
 "22
-[; ;./wifi.h: 22: void Wifi_cipsend( void );
-[v _Wifi_cipsend `(v ~T0 @X0 0 ef ]
+[; ;./wifi.h: 22: void Wifi_cipsend( unsigned char *tam, unsigned char *msg );
+[v _Wifi_cipsend `(v ~T0 @X0 0 ef2`*uc`*uc ]
 [t ~ __interrupt . k ]
 [t T36 __interrupt ]
 "8588 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4550.h
@@ -904,8 +904,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 77:     MCP4725(0);
 [e ( _MCP4725 (1 -> -> 0 `i `ui ]
 "78
-[; ;main.c: 78:     wifi_init(115200);
-[e ( _wifi_init (1 -> 115200 `l ]
+[; ;main.c: 78:     wifi.init(115200);
+[e ( *U . _wifi 0 (1 -> 115200 `l ]
+"79
+[; ;main.c: 79:     wifi.mode(1);
+[e ( *U . _wifi 3 (1 -> -> 1 `i `uc ]
 "81
 [; ;main.c: 81:     char tecla = 0;
 [v _tecla `uc ~T0 @X0 1 a ]
@@ -931,8 +934,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 88:     char contPassos = 0;
 [v _contPassos `uc ~T0 @X0 1 a ]
 [e = _contPassos -> -> 0 `i `uc ]
-[v F3472 `uc ~T0 @X0 -> -> 1 `i `ux s ]
-[i F3472
+[v F3482 `uc ~T0 @X0 -> -> 1 `i `ux s ]
+[i F3482
 :U ..
 "89
 [; ;main.c: 89:     char vetorIn[1] = { 0 };
@@ -940,9 +943,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _vetorIn `uc ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _vetorIn F3472 ]
-[v F3474 `uc ~T0 @X0 -> -> 1 `i `ux s ]
-[i F3474
+[e = _vetorIn F3482 ]
+[v F3484 `uc ~T0 @X0 -> -> 1 `i `ux s ]
+[i F3484
 :U ..
 "90
 [; ;main.c: 90:     char vetorOut[1] = { 0 };
@@ -950,7 +953,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _vetorOut `uc ~T0 @X0 -> -> 1 `i `ux a ]
-[e = _vetorOut F3474 ]
+[e = _vetorOut F3484 ]
 "91
 [; ;main.c: 91:     initSerialIO( vetorIn, vetorOut, 1 );
 [e ( _initSerialIO (3 , , &U _vetorIn &U _vetorOut -> -> 1 `i `uc ]
@@ -1089,8 +1092,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "136
 [; ;main.c: 136:                             IHM.printpos(1, 0, "      SEGGUIT       ");
 [e ( *U . _IHM 2 (3 , , -> -> 1 `i `uc -> -> 0 `i `uc :s 3C ]
-[v F3498 `uc ~T0 @X0 -> 20 `i s ]
-[i F3498
+[v F3508 `uc ~T0 @X0 -> 20 `i s ]
+[i F3508
 :U ..
 "138
 [; ;main.c: 138:                             char lema[20] = "Mundo ao seu comando";
@@ -1117,7 +1120,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _lema `uc ~T0 @X0 -> 20 `i a ]
-[e = _lema F3498 ]
+[e = _lema F3508 ]
 "139
 [; ;main.c: 139:                             char i = 0;
 [v _i `uc ~T0 @X0 1 a ]
