@@ -11,4 +11,6 @@ estados.h  \
 ihm.h  \
 eeprom.h  \
 MCP4725.h  \
-spi_i2c.h 
+spi_i2c.h  \
+eusart.h  \
+wifi.h 

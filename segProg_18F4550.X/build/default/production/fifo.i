@@ -4,7 +4,7 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
+# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "fifo.c" 2
 # 1 "./dispLCD4vias.h" 1
@@ -22,7 +22,8 @@ void dispLCD( unsigned char lin, unsigned char col, const char * str );
 void dispLCD_num( unsigned char lin, unsigned char col, int num, unsigned char tam );
 void dispLCD_clr( void );
 void dispLCD_str( const char * str );
-# 2 "fifo.c" 2
+# 1 "fifo.c" 2
+
 # 1 "./fifo.h" 1
 # 14 "./fifo.h"
 char ler_atuador(char tecla);
@@ -63,9 +64,11 @@ void manipula_atuadores_init(char aux);
 
 void decodifica( unsigned char *d );
 void codifica( unsigned char tipo, unsigned char *dado );
-# 3 "fifo.c" 2
+# 2 "fifo.c" 2
+
 # 1 "./estados.h" 1
-# 4 "fifo.c" 2
+# 3 "fifo.c" 2
+
 
 
 
