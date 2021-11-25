@@ -8,6 +8,7 @@
 #include <xc.h>
 #include "eusart.h"
 #include "wifi.h"
+#include "delay.h"
 
 void wifi_init( long br)
 {
@@ -48,39 +49,50 @@ void Wifi_mode(unsigned char d )
     if(d == 1) // modo de estação STA(cliente)
     {
         wifi_send("AT+CWMODE=1\r\n");
+
+        wifi_send("AT+CIPSERVER=0\r\n"); 
+        wifi_send("AT+CIPMUX=0\r\n"); 
+        wifi_send("AT+CIPMODE=1\r\n"); 
     }
 
     if(d == 2) // modo SoftAP(servidor)
     {
         wifi_send("AT+CWMODE=2\r\n");
-        wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
+        delay(1000);
+        wifi_send("AT+CWSAP=\"TCC\",\"87654321\",1,2,4,0\r\n");
+        delay(1000);
     }
     if(d == 3) // ambos(cliente + servidor)
     {
         wifi_send("AT+CWMODE=3\r\n");
         wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
     }
-    else // modo nulo
-        wifi_send("AT+CWMODE=0\r\n");
+//    else // modo nulo
+//        wifi_send("AT+CWMODE=0\r\n");
 }
+
+unsigned char *aux[10];
 
 void Wifi_connect( const char * ssid, const char * pass )
 {
     unsigned char i = 10;
-    unsigned char str[40] = "AT+CWJAP=\"";
+    unsigned char str[30] = "AT+CWJAP=\"";
     while( *ssid )
     {
         str[i] = *ssid;
-        ssid++;
+        *ssid++;
         i++;
     }
     str[i] = '"'; i++;
     str[i] = ','; i++;
     str[i] = '"'; i++;
+
+    *aux = *ssid;   
+    
     while( *pass )
     {
         str[i] = *pass;
-        pass++;
+        *pass++;
         i++;
     }
     str[i] = '"'; i++;
@@ -88,7 +100,7 @@ void Wifi_connect( const char * ssid, const char * pass )
     str[i] = '\n'; i++;
     str[i] = 0;
     wifi_send( str );
-   
+
 }
 
 void Wifi_scan (void)
@@ -107,19 +119,47 @@ void Wifi_autoconnect( void )
 }
 void Wifi_config_servidor( void )
 {
-    wifi_send("AT+CIPMODE=0\r\n"); 
+    delay(1000);
+
     wifi_send("AT+CIPMUX=1\r\n"); 
+    delay(1000);
+
     wifi_send("AT+CIPSERVER=1,333\r\n"); 
+    delay(1000);
+
+    wifi_send("AT+CIPMODE=0\r\n"); 
+    delay(1000);
 }
+void Wifi_config_cliente( void )
+{
+    wifi_send("AT+CIPSERVER=0\r\n"); 
+    wifi_send("AT+CIPMUX=0\r\n"); 
+    wifi_send("AT+CIPMODE=1\r\n"); 
+}
+
 //void Wifi_cipsend( void )
 void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
 {
-    unsigned char d = 1;
-    unsigned char str[30] = "AT+CIPSEND=\"";
-    unsigned char i = 12;
-    unsigned char vtr[30] = "";
+                            
+    unsigned char i = 11;                    unsigned char d = 1;        //unsigned char c = 0;
+    unsigned char str[20] = "AT+CIPSEND=\""; unsigned char vtr[10] = ""; //unsigned char cmd[40] = "AT+CIPSTART=\"TCP\"\"\"\"333\"\""; 
 
-    wifi_send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n"); 
+//    wifi_send("AT+CIPSERVER=0\r\n"); 
+//    wifi_send("AT+CIPMUX=0\r\n"); 
+//    wifi_send("AT+CIPMODE=1\r\n"); 
+
+wifi.send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n"); 
+
+//        while( *cmd )
+//    {
+//        cmd[c] = *aux;
+//        ++*aux;
+//        c++;
+//    }
+//    cmd[c] = '\r'; c++;
+//    cmd[c] = '\n'; c++;
+//    cmd[c] = 0;
+//    wifi_send( cmd );
 
     while( *tam )
     {

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c atuadores.c delay.c dispLCD4vias.c eeprom.c fifo.c MCP4725.c serialIO.c spi_i2c.c teclado.c timer1.c eusart.c wifi.c
+SOURCEFILES_QUOTED_IF_SPACED=MCP4725.c atuadores.c delay.c dispLCD4vias.c eeprom.c fifo.c main.c serialIO.c spi_i2c.c teclado.c timer1.c eusart.c wifi.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/atuadores.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/dispLCD4vias.p1 ${OBJECTDIR}/eeprom.p1 ${OBJECTDIR}/fifo.p1 ${OBJECTDIR}/MCP4725.p1 ${OBJECTDIR}/serialIO.p1 ${OBJECTDIR}/spi_i2c.p1 ${OBJECTDIR}/teclado.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/eusart.p1 ${OBJECTDIR}/wifi.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/atuadores.p1.d ${OBJECTDIR}/delay.p1.d ${OBJECTDIR}/dispLCD4vias.p1.d ${OBJECTDIR}/eeprom.p1.d ${OBJECTDIR}/fifo.p1.d ${OBJECTDIR}/MCP4725.p1.d ${OBJECTDIR}/serialIO.p1.d ${OBJECTDIR}/spi_i2c.p1.d ${OBJECTDIR}/teclado.p1.d ${OBJECTDIR}/timer1.p1.d ${OBJECTDIR}/eusart.p1.d ${OBJECTDIR}/wifi.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/MCP4725.p1 ${OBJECTDIR}/atuadores.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/dispLCD4vias.p1 ${OBJECTDIR}/eeprom.p1 ${OBJECTDIR}/fifo.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serialIO.p1 ${OBJECTDIR}/spi_i2c.p1 ${OBJECTDIR}/teclado.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/eusart.p1 ${OBJECTDIR}/wifi.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/MCP4725.p1.d ${OBJECTDIR}/atuadores.p1.d ${OBJECTDIR}/delay.p1.d ${OBJECTDIR}/dispLCD4vias.p1.d ${OBJECTDIR}/eeprom.p1.d ${OBJECTDIR}/fifo.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/serialIO.p1.d ${OBJECTDIR}/spi_i2c.p1.d ${OBJECTDIR}/teclado.p1.d ${OBJECTDIR}/timer1.p1.d ${OBJECTDIR}/eusart.p1.d ${OBJECTDIR}/wifi.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/atuadores.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/dispLCD4vias.p1 ${OBJECTDIR}/eeprom.p1 ${OBJECTDIR}/fifo.p1 ${OBJECTDIR}/MCP4725.p1 ${OBJECTDIR}/serialIO.p1 ${OBJECTDIR}/spi_i2c.p1 ${OBJECTDIR}/teclado.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/eusart.p1 ${OBJECTDIR}/wifi.p1
+OBJECTFILES=${OBJECTDIR}/MCP4725.p1 ${OBJECTDIR}/atuadores.p1 ${OBJECTDIR}/delay.p1 ${OBJECTDIR}/dispLCD4vias.p1 ${OBJECTDIR}/eeprom.p1 ${OBJECTDIR}/fifo.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/serialIO.p1 ${OBJECTDIR}/spi_i2c.p1 ${OBJECTDIR}/teclado.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/eusart.p1 ${OBJECTDIR}/wifi.p1
 
 # Source Files
-SOURCEFILES=main.c atuadores.c delay.c dispLCD4vias.c eeprom.c fifo.c MCP4725.c serialIO.c spi_i2c.c teclado.c timer1.c eusart.c wifi.c
+SOURCEFILES=MCP4725.c atuadores.c delay.c dispLCD4vias.c eeprom.c fifo.c main.c serialIO.c spi_i2c.c teclado.c timer1.c eusart.c wifi.c
 
 
 
@@ -94,13 +94,13 @@ MP_PROCESSOR_OPTION=18F4550
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/MCP4725.p1: MCP4725.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/MCP4725.p1.d 
+	@${RM} ${OBJECTDIR}/MCP4725.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCP4725.p1 MCP4725.c 
+	@-${MV} ${OBJECTDIR}/MCP4725.d ${OBJECTDIR}/MCP4725.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCP4725.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/atuadores.p1: atuadores.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -142,13 +142,13 @@ ${OBJECTDIR}/fifo.p1: fifo.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/fifo.d ${OBJECTDIR}/fifo.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/fifo.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/MCP4725.p1: MCP4725.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/MCP4725.p1.d 
-	@${RM} ${OBJECTDIR}/MCP4725.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCP4725.p1 MCP4725.c 
-	@-${MV} ${OBJECTDIR}/MCP4725.d ${OBJECTDIR}/MCP4725.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MCP4725.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/serialIO.p1: serialIO.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -199,13 +199,13 @@ ${OBJECTDIR}/wifi.p1: wifi.c  nbproject/Makefile-${CND_CONF}.mk
 	@${FIXDEPS} ${OBJECTDIR}/wifi.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/MCP4725.p1: MCP4725.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.p1.d 
-	@${RM} ${OBJECTDIR}/main.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
-	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/MCP4725.p1.d 
+	@${RM} ${OBJECTDIR}/MCP4725.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCP4725.p1 MCP4725.c 
+	@-${MV} ${OBJECTDIR}/MCP4725.d ${OBJECTDIR}/MCP4725.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCP4725.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/atuadores.p1: atuadores.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -247,13 +247,13 @@ ${OBJECTDIR}/fifo.p1: fifo.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/fifo.d ${OBJECTDIR}/fifo.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/fifo.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/MCP4725.p1: MCP4725.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/MCP4725.p1.d 
-	@${RM} ${OBJECTDIR}/MCP4725.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCP4725.p1 MCP4725.c 
-	@-${MV} ${OBJECTDIR}/MCP4725.d ${OBJECTDIR}/MCP4725.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MCP4725.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/main.p1.d 
+	@${RM} ${OBJECTDIR}/main.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
+	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/serialIO.p1: serialIO.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 

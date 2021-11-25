@@ -974,145 +974,145 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;eusart.c: 138: {
 [f ]
 "139
-[; ;eusart.c: 139:     TRISCbits.TRISC6 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;eusart.c: 139:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
 "140
 [; ;eusart.c: 140:     TRISCbits.TRISC7 = 1;
 [e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
-"142
-[; ;eusart.c: 142:     INTCONbits.GIE = 0;
+"141
+[; ;eusart.c: 141:     INTCONbits.GIE = 0;
 [e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-"145
-[; ;eusart.c: 145:     SPBRbits.u16 = (unsigned int)( (20000000 / (baudRate<<2)) - 1);
+"144
+[; ;eusart.c: 144:     SPBRbits.u16 = (unsigned int)( (20000000 / (baudRate<<2)) - 1);
 [e = . . _SPBRbits 1 0 -> - / -> -> 20000000 `l `ul << _baudRate -> 2 `i -> -> -> 1 `i `l `ul `ui ]
-"149
-[; ;eusart.c: 149:     TXSTAbits.SYNC = 0;
+"148
+[; ;eusart.c: 148:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"150
-[; ;eusart.c: 150:     BAUDCONbits.BRG16 = 1;
+"149
+[; ;eusart.c: 149:     BAUDCONbits.BRG16 = 1;
 [e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
-"151
-[; ;eusart.c: 151:     TXSTAbits.BRGH = 1;
+"150
+[; ;eusart.c: 150:     TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"153
-[; ;eusart.c: 153:     RCSTAbits.SPEN = 1;
+"152
+[; ;eusart.c: 152:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"154
-[; ;eusart.c: 154:     TXSTAbits.TXEN = 1;
+"153
+[; ;eusart.c: 153:     TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"155
-[; ;eusart.c: 155:     RCSTAbits.CREN = 1;
+"154
+[; ;eusart.c: 154:     RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"157
-[; ;eusart.c: 157:     PIE1bits.RCIE = 1;
+"156
+[; ;eusart.c: 156:     PIE1bits.RCIE = 1;
 [e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-"158
-[; ;eusart.c: 158:     PIE1bits.TXIE = 0;
+"157
+[; ;eusart.c: 157:     PIE1bits.TXIE = 0;
 [e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
-"159
-[; ;eusart.c: 159:     INTCONbits.PEIE = 1;
+"158
+[; ;eusart.c: 158:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-"160
-[; ;eusart.c: 160:     INTCONbits.GIE = 1;
+"159
+[; ;eusart.c: 159:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"161
-[; ;eusart.c: 161: }
+"160
+[; ;eusart.c: 160: }
 [e :UE 383 ]
 }
-"163
-[; ;eusart.c: 163: int search (const char * x, const char * y)
+"162
+[; ;eusart.c: 162: int search (const char * x, const char * y)
 [v _search `(i ~T0 @X0 1 ef2`*Cuc`*Cuc ]
-"164
-[; ;eusart.c: 164: {
+"163
+[; ;eusart.c: 163: {
 {
 [e :U _search ]
-"163
-[; ;eusart.c: 163: int search (const char * x, const char * y)
+"162
+[; ;eusart.c: 162: int search (const char * x, const char * y)
 [v _x `*Cuc ~T0 @X0 1 r1 ]
 [v _y `*Cuc ~T0 @X0 1 r2 ]
-"164
-[; ;eusart.c: 164: {
+"163
+[; ;eusart.c: 163: {
 [f ]
-"165
-[; ;eusart.c: 165:     unsigned char contem = 0;
+"164
+[; ;eusart.c: 164:     unsigned char contem = 0;
 [v _contem `uc ~T0 @X0 1 a ]
 [e = _contem -> -> 0 `i `uc ]
-"166
-[; ;eusart.c: 166:     unsigned char f;
+"165
+[; ;eusart.c: 165:     unsigned char f;
 [v _f `uc ~T0 @X0 1 a ]
-"167
-[; ;eusart.c: 167:     const char * aux;
+"166
+[; ;eusart.c: 166:     const char * aux;
 [v _aux `*Cuc ~T0 @X0 1 a ]
-"168
-[; ;eusart.c: 168:     aux = y;
+"167
+[; ;eusart.c: 167:     aux = y;
 [e = _aux _y ]
-"169
-[; ;eusart.c: 169:     do
+"168
+[; ;eusart.c: 168:     do
 [e :U 387 ]
-"170
-[; ;eusart.c: 170:     { f = *x++;
+"169
+[; ;eusart.c: 169:     { f = *x++;
 {
 [e = _f -> *U ++ _x * -> -> 1 `i `x -> -> # *U _x `i `x `uc ]
-"171
-[; ;eusart.c: 171:         if( f== *aux)
+"170
+[; ;eusart.c: 170:         if( f== *aux)
 [e $ ! == -> _f `i -> *U _aux `i 388  ]
-"172
-[; ;eusart.c: 172:         {
+"171
+[; ;eusart.c: 171:         {
 {
-"173
-[; ;eusart.c: 173:            contem = 1;
+"172
+[; ;eusart.c: 172:            contem = 1;
 [e = _contem -> -> 1 `i `uc ]
-"174
-[; ;eusart.c: 174:            ++aux;
+"173
+[; ;eusart.c: 173:            ++aux;
 [e =+ _aux * -> -> 1 `i `x -> -> # *U _aux `i `x ]
-"175
-[; ;eusart.c: 175:         }
+"174
+[; ;eusart.c: 174:         }
 }
 [e $U 389  ]
-"176
-[; ;eusart.c: 176:         else if (contem)
+"175
+[; ;eusart.c: 175:         else if (contem)
 [e :U 388 ]
 [e $ ! != -> _contem `i -> 0 `i 390  ]
-"177
-[; ;eusart.c: 177:         {
+"176
+[; ;eusart.c: 176:         {
 {
-"178
-[; ;eusart.c: 178:             aux = y;
+"177
+[; ;eusart.c: 177:             aux = y;
 [e = _aux _y ]
-"179
-[; ;eusart.c: 179:             contem = 0;
+"178
+[; ;eusart.c: 178:             contem = 0;
 [e = _contem -> -> 0 `i `uc ]
-"180
-[; ;eusart.c: 180:         }
+"179
+[; ;eusart.c: 179:         }
 }
 [e :U 390 ]
 [e :U 389 ]
-"181
-[; ;eusart.c: 181:         if(!*aux)
+"180
+[; ;eusart.c: 180:         if(!*aux)
 [e $ ! ! != -> *U _aux `i -> 0 `i 391  ]
-"182
-[; ;eusart.c: 182:         {
+"181
+[; ;eusart.c: 181:         {
 {
-"183
-[; ;eusart.c: 183:             contem = 1;
+"182
+[; ;eusart.c: 182:             contem = 1;
 [e = _contem -> -> 1 `i `uc ]
-"184
-[; ;eusart.c: 184:             break;
+"183
+[; ;eusart.c: 183:             break;
 [e $U 386  ]
-"185
-[; ;eusart.c: 185:         }
+"184
+[; ;eusart.c: 184:         }
 }
 [e :U 391 ]
-"186
-[; ;eusart.c: 186:     }
+"185
+[; ;eusart.c: 185:     }
 }
 [e $ != -> _f `i -> 0 `i 387  ]
 [e :U 386 ]
-"189
-[; ;eusart.c: 189:     return(contem );
+"188
+[; ;eusart.c: 188:     return(contem );
 [e ) -> _contem `i ]
 [e $UE 384  ]
-"190
-[; ;eusart.c: 190: }
+"189
+[; ;eusart.c: 189: }
 [e :UE 384 ]
 }

@@ -58,6 +58,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "26
 [; ;./eusart.h: 26: extern struct eusartT eusart;
 [v _eusart `S367 ~T0 @X0 0 e ]
+"4 ./delay.h
+[; ;./delay.h: 4: void delay( unsigned int t );
+[v _delay `(v ~T0 @X0 0 ef1`ui ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -593,236 +596,247 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"12 wifi.c
-[; ;wifi.c: 12: void wifi_init( long br)
+"13 wifi.c
+[; ;wifi.c: 13: void wifi_init( long br)
 [v _wifi_init `(v ~T0 @X0 1 ef1`l ]
-"13
-[; ;wifi.c: 13: {
+"14
+[; ;wifi.c: 14: {
 {
 [e :U _wifi_init ]
-"12
-[; ;wifi.c: 12: void wifi_init( long br)
-[v _br `l ~T0 @X0 1 r1 ]
 "13
-[; ;wifi.c: 13: {
-[f ]
+[; ;wifi.c: 13: void wifi_init( long br)
+[v _br `l ~T0 @X0 1 r1 ]
 "14
-[; ;wifi.c: 14:     eusart.init(br);
-[e ( *U . _eusart 6 (1 -> _br `ul ]
+[; ;wifi.c: 14: {
+[f ]
 "15
-[; ;wifi.c: 15: }
+[; ;wifi.c: 15:     eusart.init(br);
+[e ( *U . _eusart 6 (1 -> _br `ul ]
+"16
+[; ;wifi.c: 16: }
 [e :UE 369 ]
 }
-"17
-[; ;wifi.c: 17: void wifi_send( const char * msg )
-[v _wifi_send `(v ~T0 @X0 1 ef1`*Cuc ]
 "18
-[; ;wifi.c: 18: {
+[; ;wifi.c: 18: void wifi_send( const char * msg )
+[v _wifi_send `(v ~T0 @X0 1 ef1`*Cuc ]
+"19
+[; ;wifi.c: 19: {
 {
 [e :U _wifi_send ]
-"17
-[; ;wifi.c: 17: void wifi_send( const char * msg )
-[v _msg `*Cuc ~T0 @X0 1 r1 ]
 "18
-[; ;wifi.c: 18: {
-[f ]
+[; ;wifi.c: 18: void wifi_send( const char * msg )
+[v _msg `*Cuc ~T0 @X0 1 r1 ]
 "19
-[; ;wifi.c: 19:     while( *msg )
+[; ;wifi.c: 19: {
+[f ]
+"20
+[; ;wifi.c: 20:     while( *msg )
 [e $U 371  ]
 [e :U 372 ]
-"20
-[; ;wifi.c: 20:     {
-{
 "21
-[; ;wifi.c: 21:         while( eusart.txSTATUS() );
+[; ;wifi.c: 21:     {
+{
+"22
+[; ;wifi.c: 22:         while( eusart.txSTATUS() );
 [e $U 374  ]
 [e :U 375 ]
 [e :U 374 ]
 [e $ != -> ( *U . _eusart 5 ..  `i -> 0 `i 375  ]
 [e :U 376 ]
-"22
-[; ;wifi.c: 22:         eusart.tx( *msg );
-[e ( *U . _eusart 4 (1 -> *U _msg `uc ]
 "23
-[; ;wifi.c: 23:         ++msg;
-[e =+ _msg * -> -> 1 `i `x -> -> # *U _msg `i `x ]
+[; ;wifi.c: 23:         eusart.tx( *msg );
+[e ( *U . _eusart 4 (1 -> *U _msg `uc ]
 "24
-[; ;wifi.c: 24:     }
+[; ;wifi.c: 24:         ++msg;
+[e =+ _msg * -> -> 1 `i `x -> -> # *U _msg `i `x ]
+"25
+[; ;wifi.c: 25:     }
 }
 [e :U 371 ]
-"19
-[; ;wifi.c: 19:     while( *msg )
+"20
+[; ;wifi.c: 20:     while( *msg )
 [e $ != -> *U _msg `i -> 0 `i 372  ]
 [e :U 373 ]
-"25
-[; ;wifi.c: 25: }
+"26
+[; ;wifi.c: 26: }
 [e :UE 370 ]
 }
-"27
-[; ;wifi.c: 27: unsigned char wifi_receive( unsigned char * rcv )
-[v _wifi_receive `(uc ~T0 @X0 1 ef1`*uc ]
 "28
-[; ;wifi.c: 28: {
+[; ;wifi.c: 28: unsigned char wifi_receive( unsigned char * rcv )
+[v _wifi_receive `(uc ~T0 @X0 1 ef1`*uc ]
+"29
+[; ;wifi.c: 29: {
 {
 [e :U _wifi_receive ]
-"27
-[; ;wifi.c: 27: unsigned char wifi_receive( unsigned char * rcv )
-[v _rcv `*uc ~T0 @X0 1 r1 ]
 "28
-[; ;wifi.c: 28: {
-[f ]
+[; ;wifi.c: 28: unsigned char wifi_receive( unsigned char * rcv )
+[v _rcv `*uc ~T0 @X0 1 r1 ]
 "29
-[; ;wifi.c: 29:     unsigned char d = 0;
+[; ;wifi.c: 29: {
+[f ]
+"30
+[; ;wifi.c: 30:     unsigned char d = 0;
 [v _d `uc ~T0 @X0 1 a ]
 [e = _d -> -> 0 `i `uc ]
-"30
-[; ;wifi.c: 30:     unsigned char indice = 0;
+"31
+[; ;wifi.c: 31:     unsigned char indice = 0;
 [v _indice `uc ~T0 @X0 1 a ]
 [e = _indice -> -> 0 `i `uc ]
-"31
-[; ;wifi.c: 31:     while( d != '\n' )
+"32
+[; ;wifi.c: 32:     while( d != '\n' )
 [e $U 378  ]
 [e :U 379 ]
-"32
-[; ;wifi.c: 32:     {
-{
 "33
-[; ;wifi.c: 33:         if( eusart.rxSTATUS() )
-[e $ ! != -> ( *U . _eusart 1 ..  `i -> 0 `i 381  ]
+[; ;wifi.c: 33:     {
+{
 "34
-[; ;wifi.c: 34:         {
-{
+[; ;wifi.c: 34:         if( eusart.rxSTATUS() )
+[e $ ! != -> ( *U . _eusart 1 ..  `i -> 0 `i 381  ]
 "35
-[; ;wifi.c: 35:             d = eusart.rx();
-[e = _d ( *U . _eusart 0 ..  ]
-"36
-[; ;wifi.c: 36:             if( (d >= 'A' && d <= 'Z') || (d >='a' && d <= 'z'))
-[e $ ! || && >= -> _d `ui -> 65 `ui <= -> _d `ui -> 90 `ui && >= -> _d `ui -> 97 `ui <= -> _d `ui -> 122 `ui 382  ]
-"37
-[; ;wifi.c: 37:             {
+[; ;wifi.c: 35:         {
 {
+"36
+[; ;wifi.c: 36:             d = eusart.rx();
+[e = _d ( *U . _eusart 0 ..  ]
+"37
+[; ;wifi.c: 37:             if( (d >= 'A' && d <= 'Z') || (d >='a' && d <= 'z'))
+[e $ ! || && >= -> _d `ui -> 65 `ui <= -> _d `ui -> 90 `ui && >= -> _d `ui -> 97 `ui <= -> _d `ui -> 122 `ui 382  ]
 "38
-[; ;wifi.c: 38:                 *(rcv+indice) = d;
-[e = *U + _rcv * -> -> _indice `i `x -> -> # *U _rcv `i `x _d ]
+[; ;wifi.c: 38:             {
+{
 "39
-[; ;wifi.c: 39:                 ++indice;
-[e =+ _indice -> -> 1 `i `uc ]
+[; ;wifi.c: 39:                 *(rcv+indice) = d;
+[e = *U + _rcv * -> -> _indice `i `x -> -> # *U _rcv `i `x _d ]
 "40
-[; ;wifi.c: 40:             }
+[; ;wifi.c: 40:                 ++indice;
+[e =+ _indice -> -> 1 `i `uc ]
+"41
+[; ;wifi.c: 41:             }
 }
 [e :U 382 ]
-"41
-[; ;wifi.c: 41:         }
+"42
+[; ;wifi.c: 42:         }
 }
 [e :U 381 ]
-"42
-[; ;wifi.c: 42:     }
+"43
+[; ;wifi.c: 43:     }
 }
 [e :U 378 ]
-"31
-[; ;wifi.c: 31:     while( d != '\n' )
+"32
+[; ;wifi.c: 32:     while( d != '\n' )
 [e $ != -> _d `ui -> 10 `ui 379  ]
 [e :U 380 ]
-"43
-[; ;wifi.c: 43:     return( indice );
+"44
+[; ;wifi.c: 44:     return( indice );
 [e ) _indice ]
 [e $UE 377  ]
-"44
-[; ;wifi.c: 44: }
+"45
+[; ;wifi.c: 45: }
 [e :UE 377 ]
 }
-"46
-[; ;wifi.c: 46: void Wifi_mode(unsigned char d )
-[v _Wifi_mode `(v ~T0 @X0 1 ef1`uc ]
 "47
-[; ;wifi.c: 47: {
+[; ;wifi.c: 47: void Wifi_mode(unsigned char d )
+[v _Wifi_mode `(v ~T0 @X0 1 ef1`uc ]
+"48
+[; ;wifi.c: 48: {
 {
 [e :U _Wifi_mode ]
-"46
-[; ;wifi.c: 46: void Wifi_mode(unsigned char d )
-[v _d `uc ~T0 @X0 1 r1 ]
 "47
-[; ;wifi.c: 47: {
-[f ]
+[; ;wifi.c: 47: void Wifi_mode(unsigned char d )
+[v _d `uc ~T0 @X0 1 r1 ]
 "48
-[; ;wifi.c: 48:     if(d == 1)
-[e $ ! == -> _d `i -> 1 `i 384  ]
+[; ;wifi.c: 48: {
+[f ]
 "49
-[; ;wifi.c: 49:     {
-{
+[; ;wifi.c: 49:     if(d == 1)
+[e $ ! == -> _d `i -> 1 `i 384  ]
 "50
-[; ;wifi.c: 50:         wifi_send("AT+CWMODE=1\r\n");
-[e ( _wifi_send (1 :s 1C ]
+[; ;wifi.c: 50:     {
+{
 "51
-[; ;wifi.c: 51:     }
+[; ;wifi.c: 51:         wifi_send("AT+CWMODE=1\r\n");
+[e ( _wifi_send (1 :s 1C ]
+"53
+[; ;wifi.c: 53:         wifi_send("AT+CIPSERVER=0\r\n");
+[e ( _wifi_send (1 :s 2C ]
+"54
+[; ;wifi.c: 54:         wifi_send("AT+CIPMUX=0\r\n");
+[e ( _wifi_send (1 :s 3C ]
+"55
+[; ;wifi.c: 55:         wifi_send("AT+CIPMODE=1\r\n");
+[e ( _wifi_send (1 :s 4C ]
+"56
+[; ;wifi.c: 56:     }
 }
 [e :U 384 ]
-"53
-[; ;wifi.c: 53:     if(d == 2)
-[e $ ! == -> _d `i -> 2 `i 385  ]
-"54
-[; ;wifi.c: 54:     {
-{
-"55
-[; ;wifi.c: 55:         wifi_send("AT+CWMODE=2\r\n");
-[e ( _wifi_send (1 :s 2C ]
-"56
-[; ;wifi.c: 56:         wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
-[e ( _wifi_send (1 :s 3C ]
-"57
-[; ;wifi.c: 57:     }
-}
-[e :U 385 ]
 "58
-[; ;wifi.c: 58:     if(d == 3)
-[e $ ! == -> _d `i -> 3 `i 386  ]
+[; ;wifi.c: 58:     if(d == 2)
+[e $ ! == -> _d `i -> 2 `i 385  ]
 "59
 [; ;wifi.c: 59:     {
 {
 "60
-[; ;wifi.c: 60:         wifi_send("AT+CWMODE=3\r\n");
-[e ( _wifi_send (1 :s 4C ]
-"61
-[; ;wifi.c: 61:         wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
+[; ;wifi.c: 60:         wifi_send("AT+CWMODE=2\r\n");
 [e ( _wifi_send (1 :s 5C ]
+"61
+[; ;wifi.c: 61:         delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
 "62
-[; ;wifi.c: 62:     }
-}
-[e $U 387  ]
-"63
-[; ;wifi.c: 63:     else
-[e :U 386 ]
-"64
-[; ;wifi.c: 64:         wifi_send("AT+CWMODE=0\r\n");
+[; ;wifi.c: 62:         wifi_send("AT+CWSAP=\"TCC\",\"87654321\",1,2,4,0\r\n");
 [e ( _wifi_send (1 :s 6C ]
-[e :U 387 ]
+"63
+[; ;wifi.c: 63:         delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
+"64
+[; ;wifi.c: 64:     }
+}
+[e :U 385 ]
 "65
-[; ;wifi.c: 65: }
+[; ;wifi.c: 65:     if(d == 3)
+[e $ ! == -> _d `i -> 3 `i 386  ]
+"66
+[; ;wifi.c: 66:     {
+{
+"67
+[; ;wifi.c: 67:         wifi_send("AT+CWMODE=3\r\n");
+[e ( _wifi_send (1 :s 7C ]
+"68
+[; ;wifi.c: 68:         wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
+[e ( _wifi_send (1 :s 8C ]
+"69
+[; ;wifi.c: 69:     }
+}
+[e :U 386 ]
+"72
+[; ;wifi.c: 72: }
 [e :UE 383 ]
 }
-"67
-[; ;wifi.c: 67: void Wifi_connect( const char * ssid, const char * pass )
+"74
+[; ;wifi.c: 74: unsigned char *aux[10];
+[v _aux `*uc ~T0 @X0 -> 10 `i e ]
+"76
+[; ;wifi.c: 76: void Wifi_connect( const char * ssid, const char * pass )
 [v _Wifi_connect `(v ~T0 @X0 1 ef2`*Cuc`*Cuc ]
-"68
-[; ;wifi.c: 68: {
+"77
+[; ;wifi.c: 77: {
 {
 [e :U _Wifi_connect ]
-"67
-[; ;wifi.c: 67: void Wifi_connect( const char * ssid, const char * pass )
+"76
+[; ;wifi.c: 76: void Wifi_connect( const char * ssid, const char * pass )
 [v _ssid `*Cuc ~T0 @X0 1 r1 ]
 [v _pass `*Cuc ~T0 @X0 1 r2 ]
-"68
-[; ;wifi.c: 68: {
+"77
+[; ;wifi.c: 77: {
 [f ]
-"69
-[; ;wifi.c: 69:     unsigned char i = 10;
+"78
+[; ;wifi.c: 78:     unsigned char i = 10;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 10 `i `uc ]
-[v F3284 `uc ~T0 @X0 -> 40 `i s ]
-[i F3284
+[v F3287 `uc ~T0 @X0 -> 30 `i s ]
+[i F3287
 :U ..
-"70
-[; ;wifi.c: 70:     unsigned char str[40] = "AT+CWJAP=\"";
+"79
+[; ;wifi.c: 79:     unsigned char str[30] = "AT+CWJAP=\"";
 -> 65 `c
 -> 84 `c
 -> 43 `c
@@ -836,179 +850,217 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[v _str `uc ~T0 @X0 -> 40 `i a ]
-[e = _str F3284 ]
-"71
-[; ;wifi.c: 71:     while( *ssid )
-[e $U 389  ]
-[e :U 390 ]
-"72
-[; ;wifi.c: 72:     {
-{
-"73
-[; ;wifi.c: 73:         str[i] = *ssid;
-[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> *U _ssid `uc ]
-"74
-[; ;wifi.c: 74:         ssid++;
-[e ++ _ssid * -> -> 1 `i `x -> -> # *U _ssid `i `x ]
-"75
-[; ;wifi.c: 75:         i++;
-[e ++ _i -> -> 1 `i `uc ]
-"76
-[; ;wifi.c: 76:     }
-}
-[e :U 389 ]
-"71
-[; ;wifi.c: 71:     while( *ssid )
-[e $ != -> *U _ssid `i -> 0 `i 390  ]
-[e :U 391 ]
-"77
-[; ;wifi.c: 77:     str[i] = '"'; i++;
-[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-"78
-[; ;wifi.c: 78:     str[i] = ','; i++;
-[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 44 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-"79
-[; ;wifi.c: 79:     str[i] = '"'; i++;
-[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
+[v _str `uc ~T0 @X0 -> 30 `i a ]
+[e = _str F3287 ]
 "80
-[; ;wifi.c: 80:     while( *pass )
-[e $U 392  ]
-[e :U 393 ]
+[; ;wifi.c: 80:     while( *ssid )
+[e $U 388  ]
+[e :U 389 ]
 "81
 [; ;wifi.c: 81:     {
 {
 "82
-[; ;wifi.c: 82:         str[i] = *pass;
-[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> *U _pass `uc ]
+[; ;wifi.c: 82:         str[i] = *ssid;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> *U _ssid `uc ]
 "83
-[; ;wifi.c: 83:         pass++;
-[e ++ _pass * -> -> 1 `i `x -> -> # *U _pass `i `x ]
+[; ;wifi.c: 83:         *ssid++;
+[e *U ++ _ssid * -> -> 1 `i `x -> -> # *U _ssid `i `x ]
 "84
 [; ;wifi.c: 84:         i++;
 [e ++ _i -> -> 1 `i `uc ]
 "85
 [; ;wifi.c: 85:     }
 }
-[e :U 392 ]
+[e :U 388 ]
 "80
-[; ;wifi.c: 80:     while( *pass )
-[e $ != -> *U _pass `i -> 0 `i 393  ]
-[e :U 394 ]
+[; ;wifi.c: 80:     while( *ssid )
+[e $ != -> *U _ssid `i -> 0 `i 389  ]
+[e :U 390 ]
 "86
 [; ;wifi.c: 86:     str[i] = '"'; i++;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
 [e ++ _i -> -> 1 `i `uc ]
 "87
-[; ;wifi.c: 87:     str[i] = '\r'; i++;
-[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 13 `ui `uc ]
+[; ;wifi.c: 87:     str[i] = ','; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 44 `ui `uc ]
 [e ++ _i -> -> 1 `i `uc ]
 "88
-[; ;wifi.c: 88:     str[i] = '\n'; i++;
+[; ;wifi.c: 88:     str[i] = '"'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"90
+[; ;wifi.c: 90:     *aux = *ssid;
+[e = *U &U _aux -> *U _ssid `*uc ]
+"92
+[; ;wifi.c: 92:     while( *pass )
+[e $U 391  ]
+[e :U 392 ]
+"93
+[; ;wifi.c: 93:     {
+{
+"94
+[; ;wifi.c: 94:         str[i] = *pass;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> *U _pass `uc ]
+"95
+[; ;wifi.c: 95:         *pass++;
+[e *U ++ _pass * -> -> 1 `i `x -> -> # *U _pass `i `x ]
+"96
+[; ;wifi.c: 96:         i++;
+[e ++ _i -> -> 1 `i `uc ]
+"97
+[; ;wifi.c: 97:     }
+}
+[e :U 391 ]
+"92
+[; ;wifi.c: 92:     while( *pass )
+[e $ != -> *U _pass `i -> 0 `i 392  ]
+[e :U 393 ]
+"98
+[; ;wifi.c: 98:     str[i] = '"'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 34 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"99
+[; ;wifi.c: 99:     str[i] = '\r'; i++;
+[e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 13 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+"100
+[; ;wifi.c: 100:     str[i] = '\n'; i++;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 10 `ui `uc ]
 [e ++ _i -> -> 1 `i `uc ]
-"89
-[; ;wifi.c: 89:     str[i] = 0;
+"101
+[; ;wifi.c: 101:     str[i] = 0;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 0 `i `uc ]
-"90
-[; ;wifi.c: 90:     wifi_send( str );
+"102
+[; ;wifi.c: 102:     wifi_send( str );
 [e ( _wifi_send (1 -> &U _str `*Cuc ]
-"92
-[; ;wifi.c: 92: }
-[e :UE 388 ]
+"104
+[; ;wifi.c: 104: }
+[e :UE 387 ]
 }
-"94
-[; ;wifi.c: 94: void Wifi_scan (void)
+"106
+[; ;wifi.c: 106: void Wifi_scan (void)
 [v _Wifi_scan `(v ~T0 @X0 1 ef ]
-"95
-[; ;wifi.c: 95: {
+"107
+[; ;wifi.c: 107: {
 {
 [e :U _Wifi_scan ]
 [f ]
-"96
-[; ;wifi.c: 96:     wifi_send("AT+CWLAP\r\n");
-[e ( _wifi_send (1 :s 7C ]
-"97
-[; ;wifi.c: 97: }
-[e :UE 395 ]
+"108
+[; ;wifi.c: 108:     wifi_send("AT+CWLAP\r\n");
+[e ( _wifi_send (1 :s 9C ]
+"109
+[; ;wifi.c: 109: }
+[e :UE 394 ]
 }
-"99
-[; ;wifi.c: 99: void Wifi_ip( void )
+"111
+[; ;wifi.c: 111: void Wifi_ip( void )
 [v _Wifi_ip `(v ~T0 @X0 1 ef ]
-"100
-[; ;wifi.c: 100: {
+"112
+[; ;wifi.c: 112: {
 {
 [e :U _Wifi_ip ]
 [f ]
-"101
-[; ;wifi.c: 101:     wifi_send("AT+CIFSR\r\n");
-[e ( _wifi_send (1 :s 8C ]
-"102
-[; ;wifi.c: 102: }
-[e :UE 396 ]
+"113
+[; ;wifi.c: 113:     wifi_send("AT+CIFSR\r\n");
+[e ( _wifi_send (1 :s 10C ]
+"114
+[; ;wifi.c: 114: }
+[e :UE 395 ]
 }
-"104
-[; ;wifi.c: 104: void Wifi_autoconnect( void )
+"116
+[; ;wifi.c: 116: void Wifi_autoconnect( void )
 [v _Wifi_autoconnect `(v ~T0 @X0 1 ef ]
-"105
-[; ;wifi.c: 105: {
+"117
+[; ;wifi.c: 117: {
 {
 [e :U _Wifi_autoconnect ]
 [f ]
-"106
-[; ;wifi.c: 106:     wifi_send("AT+CWAUTOCONN=0\r\n");
-[e ( _wifi_send (1 :s 9C ]
-"107
-[; ;wifi.c: 107: }
-[e :UE 397 ]
+"118
+[; ;wifi.c: 118:     wifi_send("AT+CWAUTOCONN=0\r\n");
+[e ( _wifi_send (1 :s 11C ]
+"119
+[; ;wifi.c: 119: }
+[e :UE 396 ]
 }
-"108
-[; ;wifi.c: 108: void Wifi_config_servidor( void )
+"120
+[; ;wifi.c: 120: void Wifi_config_servidor( void )
 [v _Wifi_config_servidor `(v ~T0 @X0 1 ef ]
-"109
-[; ;wifi.c: 109: {
+"121
+[; ;wifi.c: 121: {
 {
 [e :U _Wifi_config_servidor ]
 [f ]
-"110
-[; ;wifi.c: 110:     wifi_send("AT+CIPMODE=0\r\n");
-[e ( _wifi_send (1 :s 10C ]
-"111
-[; ;wifi.c: 111:     wifi_send("AT+CIPMUX=1\r\n");
-[e ( _wifi_send (1 :s 11C ]
-"112
-[; ;wifi.c: 112:     wifi_send("AT+CIPSERVER=1,333\r\n");
+"122
+[; ;wifi.c: 122:     delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
+"124
+[; ;wifi.c: 124:     wifi_send("AT+CIPMUX=1\r\n");
 [e ( _wifi_send (1 :s 12C ]
-"113
-[; ;wifi.c: 113: }
+"125
+[; ;wifi.c: 125:     delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
+"127
+[; ;wifi.c: 127:     wifi_send("AT+CIPSERVER=1,333\r\n");
+[e ( _wifi_send (1 :s 13C ]
+"128
+[; ;wifi.c: 128:     delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
+"130
+[; ;wifi.c: 130:     wifi_send("AT+CIPMODE=0\r\n");
+[e ( _wifi_send (1 :s 14C ]
+"131
+[; ;wifi.c: 131:     delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
+"132
+[; ;wifi.c: 132: }
+[e :UE 397 ]
+}
+"133
+[; ;wifi.c: 133: void Wifi_config_cliente( void )
+[v _Wifi_config_cliente `(v ~T0 @X0 1 ef ]
+"134
+[; ;wifi.c: 134: {
+{
+[e :U _Wifi_config_cliente ]
+[f ]
+"135
+[; ;wifi.c: 135:     wifi_send("AT+CIPSERVER=0\r\n");
+[e ( _wifi_send (1 :s 15C ]
+"136
+[; ;wifi.c: 136:     wifi_send("AT+CIPMUX=0\r\n");
+[e ( _wifi_send (1 :s 16C ]
+"137
+[; ;wifi.c: 137:     wifi_send("AT+CIPMODE=1\r\n");
+[e ( _wifi_send (1 :s 17C ]
+"138
+[; ;wifi.c: 138: }
 [e :UE 398 ]
 }
-"115
-[; ;wifi.c: 115: void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
+"141
+[; ;wifi.c: 141: void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
 [v _Wifi_cipsend `(v ~T0 @X0 1 ef2`*uc`*uc ]
-"116
-[; ;wifi.c: 116: {
+"142
+[; ;wifi.c: 142: {
 {
 [e :U _Wifi_cipsend ]
-"115
-[; ;wifi.c: 115: void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
+"141
+[; ;wifi.c: 141: void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
 [v _tam `*uc ~T0 @X0 1 r1 ]
 [v _msg `*uc ~T0 @X0 1 r2 ]
-"116
-[; ;wifi.c: 116: {
+"142
+[; ;wifi.c: 142: {
 [f ]
-"117
-[; ;wifi.c: 117:     unsigned char d = 1;
+"144
+[; ;wifi.c: 144:     unsigned char i = 11; unsigned char d = 1;
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 11 `i `uc ]
 [v _d `uc ~T0 @X0 1 a ]
 [e = _d -> -> 1 `i `uc ]
-[v F3294 `uc ~T0 @X0 -> 30 `i s ]
-[i F3294
+[v F3299 `uc ~T0 @X0 -> 20 `i s ]
+[i F3299
 :U ..
-"118
-[; ;wifi.c: 118:     unsigned char str[30] = "AT+CIPSEND=\"";
+"145
+[; ;wifi.c: 145:     unsigned char str[20] = "AT+CIPSEND=\""; unsigned char vtr[10] = "";
 -> 65 `c
 -> 84 `c
 -> 43 `c
@@ -1024,119 +1076,118 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-[v _str `uc ~T0 @X0 -> 30 `i a ]
-[e = _str F3294 ]
-"119
-[; ;wifi.c: 119:     unsigned char i = 12;
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 12 `i `uc ]
-[v F3297 `uc ~T0 @X0 -> 30 `i s ]
-[i F3297
+[v _str `uc ~T0 @X0 -> 20 `i a ]
+[e = _str F3299 ]
+[v F3301 `uc ~T0 @X0 -> 10 `i s ]
+[i F3301
 :U ..
-"120
-[; ;wifi.c: 120:     unsigned char vtr[30] = "";
 -> 0 `c
 ..
 ]
-[v _vtr `uc ~T0 @X0 -> 30 `i a ]
-[e = _vtr F3297 ]
-"122
-[; ;wifi.c: 122:     wifi_send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n");
-[e ( _wifi_send (1 :s 13C ]
-"124
-[; ;wifi.c: 124:     while( *tam )
+[v _vtr `uc ~T0 @X0 -> 10 `i a ]
+[e = _vtr F3301 ]
+"151
+[; ;wifi.c: 151: wifi.send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n");
+[e ( *U . _wifi 1 (1 :s 18C ]
+"164
+[; ;wifi.c: 164:     while( *tam )
 [e $U 400  ]
 [e :U 401 ]
-"125
-[; ;wifi.c: 125:     {
+"165
+[; ;wifi.c: 165:     {
 {
-"126
-[; ;wifi.c: 126:         str[i] = *tam;
+"166
+[; ;wifi.c: 166:         str[i] = *tam;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux *U _tam ]
-"127
-[; ;wifi.c: 127:         *tam++;
+"167
+[; ;wifi.c: 167:         *tam++;
 [e *U ++ _tam * -> -> 1 `i `x -> -> # *U _tam `i `x ]
-"128
-[; ;wifi.c: 128:         i++;
+"168
+[; ;wifi.c: 168:         i++;
 [e ++ _i -> -> 1 `i `uc ]
-"129
-[; ;wifi.c: 129:     }
+"169
+[; ;wifi.c: 169:     }
 }
 [e :U 400 ]
-"124
-[; ;wifi.c: 124:     while( *tam )
+"164
+[; ;wifi.c: 164:     while( *tam )
 [e $ != -> *U _tam `i -> 0 `i 401  ]
 [e :U 402 ]
-"130
-[; ;wifi.c: 130:     str[i] = '\r'; i++;
+"170
+[; ;wifi.c: 170:     str[i] = '\r'; i++;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 13 `ui `uc ]
 [e ++ _i -> -> 1 `i `uc ]
-"131
-[; ;wifi.c: 131:     str[i] = '\n'; i++;
+"171
+[; ;wifi.c: 171:     str[i] = '\n'; i++;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 10 `ui `uc ]
 [e ++ _i -> -> 1 `i `uc ]
-"132
-[; ;wifi.c: 132:     str[i] = 0;
+"172
+[; ;wifi.c: 172:     str[i] = 0;
 [e = *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux -> -> 0 `i `uc ]
-"133
-[; ;wifi.c: 133:     wifi_send( str );
+"173
+[; ;wifi.c: 173:     wifi_send( str );
 [e ( _wifi_send (1 -> &U _str `*Cuc ]
-"135
-[; ;wifi.c: 135:     while( *msg )
+"175
+[; ;wifi.c: 175:     while( *msg )
 [e $U 403  ]
 [e :U 404 ]
-"136
-[; ;wifi.c: 136:     {
+"176
+[; ;wifi.c: 176:     {
 {
-"137
-[; ;wifi.c: 137:         vtr[d] = *msg;
+"177
+[; ;wifi.c: 177:         vtr[d] = *msg;
 [e = *U + &U _vtr * -> _d `ux -> -> # *U &U _vtr `ui `ux *U _msg ]
-"138
-[; ;wifi.c: 138:         *msg++;
+"178
+[; ;wifi.c: 178:         *msg++;
 [e *U ++ _msg * -> -> 1 `i `x -> -> # *U _msg `i `x ]
-"139
-[; ;wifi.c: 139:         d++;
+"179
+[; ;wifi.c: 179:         d++;
 [e ++ _d -> -> 1 `i `uc ]
-"140
-[; ;wifi.c: 140:     }
+"180
+[; ;wifi.c: 180:     }
 }
 [e :U 403 ]
-"135
-[; ;wifi.c: 135:     while( *msg )
+"175
+[; ;wifi.c: 175:     while( *msg )
 [e $ != -> *U _msg `i -> 0 `i 404  ]
 [e :U 405 ]
-"141
-[; ;wifi.c: 141:     vtr[d] = '\r'; d++;
+"181
+[; ;wifi.c: 181:     vtr[d] = '\r'; d++;
 [e = *U + &U _vtr * -> _d `ux -> -> # *U &U _vtr `ui `ux -> -> 13 `ui `uc ]
 [e ++ _d -> -> 1 `i `uc ]
-"142
-[; ;wifi.c: 142:     vtr[d] = '\n'; d++;
+"182
+[; ;wifi.c: 182:     vtr[d] = '\n'; d++;
 [e = *U + &U _vtr * -> _d `ux -> -> # *U &U _vtr `ui `ux -> -> 10 `ui `uc ]
 [e ++ _d -> -> 1 `i `uc ]
-"143
-[; ;wifi.c: 143:     vtr[d] = 0;
+"183
+[; ;wifi.c: 183:     vtr[d] = 0;
 [e = *U + &U _vtr * -> _d `ux -> -> # *U &U _vtr `ui `ux -> -> 0 `i `uc ]
-"144
-[; ;wifi.c: 144:     wifi_send(vtr);
+"184
+[; ;wifi.c: 184:     wifi_send(vtr);
 [e ( _wifi_send (1 -> &U _vtr `*Cuc ]
-"146
-[; ;wifi.c: 146:     wifi_send("AT+CIPCLOSE\r\n");
-[e ( _wifi_send (1 :s 14C ]
-"147
-[; ;wifi.c: 147: }
+"186
+[; ;wifi.c: 186:     wifi_send("AT+CIPCLOSE\r\n");
+[e ( _wifi_send (1 :s 19C ]
+"187
+[; ;wifi.c: 187: }
 [e :UE 399 ]
 }
-[a 8C 65 84 43 67 73 70 83 82 13 10 0 ]
-[a 7C 65 84 43 67 87 76 65 80 13 10 0 ]
-[a 14C 65 84 43 67 73 80 67 76 79 83 69 13 10 0 ]
-[a 4C 65 84 43 67 87 77 79 68 69 61 51 13 10 0 ]
-[a 12C 65 84 43 67 73 80 83 69 82 86 69 82 61 49 44 51 51 51 13 10 0 ]
-[a 2C 65 84 43 67 87 77 79 68 69 61 50 13 10 0 ]
-[a 11C 65 84 43 67 73 80 77 85 88 61 49 13 10 0 ]
+[a 10C 65 84 43 67 73 70 83 82 13 10 0 ]
+[a 9C 65 84 43 67 87 76 65 80 13 10 0 ]
+[a 19C 65 84 43 67 73 80 67 76 79 83 69 13 10 0 ]
+[a 7C 65 84 43 67 87 77 79 68 69 61 51 13 10 0 ]
+[a 13C 65 84 43 67 73 80 83 69 82 86 69 82 61 49 44 51 51 51 13 10 0 ]
+[a 5C 65 84 43 67 87 77 79 68 69 61 50 13 10 0 ]
+[a 12C 65 84 43 67 73 80 77 85 88 61 49 13 10 0 ]
 [a 1C 65 84 43 67 87 77 79 68 69 61 49 13 10 0 ]
-[a 9C 65 84 43 67 87 65 85 84 79 67 79 78 78 61 48 13 10 0 ]
-[a 6C 65 84 43 67 87 77 79 68 69 61 48 13 10 0 ]
-[a 10C 65 84 43 67 73 80 77 79 68 69 61 48 13 10 0 ]
-[a 3C 65 84 43 67 87 83 65 80 61 34 87 105 114 101 108 101 115 115 34 44 34 42 42 42 42 42 42 42 42 34 44 49 44 50 44 52 44 48 13 10 0 ]
-[a 5C 65 84 43 67 87 83 65 80 61 34 87 105 114 101 108 101 115 115 34 44 34 42 42 42 42 42 42 42 42 34 44 49 44 50 44 52 44 48 13 10 0 ]
-[a 13C 65 84 43 67 73 80 83 84 65 82 84 61 34 84 67 80 34 44 34 49 57 50 46 49 54 56 46 52 46 49 34 44 34 51 51 51 34 13 10 0 ]
+[a 4C 65 84 43 67 73 80 77 79 68 69 61 49 13 10 0 ]
+[a 17C 65 84 43 67 73 80 77 79 68 69 61 49 13 10 0 ]
+[a 3C 65 84 43 67 73 80 77 85 88 61 48 13 10 0 ]
+[a 16C 65 84 43 67 73 80 77 85 88 61 48 13 10 0 ]
+[a 2C 65 84 43 67 73 80 83 69 82 86 69 82 61 48 13 10 0 ]
+[a 15C 65 84 43 67 73 80 83 69 82 86 69 82 61 48 13 10 0 ]
+[a 11C 65 84 43 67 87 65 85 84 79 67 79 78 78 61 48 13 10 0 ]
+[a 14C 65 84 43 67 73 80 77 79 68 69 61 48 13 10 0 ]
+[a 6C 65 84 43 67 87 83 65 80 61 34 84 67 67 34 44 34 56 55 54 53 52 51 50 49 34 44 49 44 50 44 52 44 48 13 10 0 ]
+[a 8C 65 84 43 67 87 83 65 80 61 34 87 105 114 101 108 101 115 115 34 44 34 42 42 42 42 42 42 42 42 34 44 49 44 50 44 52 44 48 13 10 0 ]
+[a 18C 65 84 43 67 73 80 83 84 65 82 84 61 34 84 67 80 34 44 34 49 57 50 46 49 54 56 46 52 46 49 34 44 34 51 51 51 34 13 10 0 ]

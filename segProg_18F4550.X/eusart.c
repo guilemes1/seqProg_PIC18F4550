@@ -38,7 +38,7 @@ typedef union
         unsigned int u16;
     };
 } SPBRbits_t;
-extern volatile SPBRbits_t SPBRbits __at(0xFAF); //ALTERADO PARA PIC18F4550
+extern volatile SPBRbits_t SPBRbits __at(0xFAF);
 
 
 
@@ -136,9 +136,8 @@ unsigned char txStatusEUSART( void )
  */
 void initEUSART( unsigned long baudRate )
 {
-    TRISCbits.TRISC6 = 1;   //INSERIDO PARA PIC18F4550
-    TRISCbits.TRISC7 = 1;   //INSERIDO PARA PIC18F4550
-    
+    TRISCbits.TRISC6 = 0;
+    TRISCbits.TRISC7 = 1;
     INTCONbits.GIE = 0;
                             // Calcula valor para registradores que produzem
                             // a taxa de transmissão (Baud rate) de dados desejada.
@@ -147,7 +146,7 @@ void initEUSART( unsigned long baudRate )
    // SPBRbits.u16 = baudRate;
     
     TXSTAbits.SYNC = 0;     // Modo assíncrono.
-    BAUDCONbits.BRG16 = 1;  // Gerador de BaudRate de 16 bits. - ALTERADO PARA PIC18F4550
+    BAUDCONbits.BRG16 = 1;  // Gerador de BaudRate de 16 bits.
     TXSTAbits.BRGH = 1;     // Seleção de alto BaudRate.
     
     RCSTAbits.SPEN = 1;     // Habilita pinos para TX e RX.

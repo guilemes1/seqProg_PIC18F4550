@@ -76,7 +76,17 @@ void main(void)
     I2C_init(20000000);
     MCP4725(0);
     wifi.init(115200);
+    delay(1000);
     wifi.mode(1);
+    delay(1000);
+    wifi.connect("LEMES","28090210");
+    
+//    wifi.init(115200);
+//    wifi.mode(1);
+//    wifi.connect("LEMES","28090210");
+//    wifi.ip();
+//    wifi.cipsend(3,"Gui");
+    
 //    char *texto;
     char tecla = 0;
     char estado = INICIO;
@@ -108,7 +118,7 @@ void main(void)
 //    char next = 0;
 
     while(1)
-    {        
+    {      
          switch(estado)
         {        
              case INICIO:                                           //TELA DE INICIO(CARREGA BARRAS)
@@ -782,6 +792,7 @@ void main(void)
                             {
                                 decodifica(&auxPasso);
                                 set_passo(auxPasso, vetorOut);
+                                wifi.cipsend(1,vetorOut);
                                 meAtuadores = 5;
                             }
                             break;

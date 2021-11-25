@@ -5693,6 +5693,13 @@ struct
 }wifi = {wifi_init, wifi_send, wifi_receive, Wifi_mode, Wifi_connect, Wifi_ip, Wifi_autoconnect, Wifi_scan, Wifi_config_servidor, Wifi_cipsend};
 # 10 "wifi.c" 2
 
+# 1 "./delay.h" 1
+
+
+
+void delay( unsigned int t );
+# 11 "wifi.c" 2
+
 
 void wifi_init( long br)
 {
@@ -5733,39 +5740,50 @@ void Wifi_mode(unsigned char d )
     if(d == 1)
     {
         wifi_send("AT+CWMODE=1\r\n");
+
+        wifi_send("AT+CIPSERVER=0\r\n");
+        wifi_send("AT+CIPMUX=0\r\n");
+        wifi_send("AT+CIPMODE=1\r\n");
     }
 
     if(d == 2)
     {
         wifi_send("AT+CWMODE=2\r\n");
-        wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
+        delay(1000);
+        wifi_send("AT+CWSAP=\"TCC\",\"87654321\",1,2,4,0\r\n");
+        delay(1000);
     }
     if(d == 3)
     {
         wifi_send("AT+CWMODE=3\r\n");
         wifi_send("AT+CWSAP=\"Wireless\",\"********\",1,2,4,0\r\n");
     }
-    else
-        wifi_send("AT+CWMODE=0\r\n");
+
+
 }
+
+unsigned char *aux[10];
 
 void Wifi_connect( const char * ssid, const char * pass )
 {
     unsigned char i = 10;
-    unsigned char str[40] = "AT+CWJAP=\"";
+    unsigned char str[30] = "AT+CWJAP=\"";
     while( *ssid )
     {
         str[i] = *ssid;
-        ssid++;
+        *ssid++;
         i++;
     }
     str[i] = '"'; i++;
     str[i] = ','; i++;
     str[i] = '"'; i++;
+
+    *aux = *ssid;
+
     while( *pass )
     {
         str[i] = *pass;
-        pass++;
+        *pass++;
         i++;
     }
     str[i] = '"'; i++;
@@ -5792,20 +5810,37 @@ void Wifi_autoconnect( void )
 }
 void Wifi_config_servidor( void )
 {
-    wifi_send("AT+CIPMODE=0\r\n");
+    delay(1000);
+
     wifi_send("AT+CIPMUX=1\r\n");
+    delay(1000);
+
     wifi_send("AT+CIPSERVER=1,333\r\n");
+    delay(1000);
+
+    wifi_send("AT+CIPMODE=0\r\n");
+    delay(1000);
 }
+void Wifi_config_cliente( void )
+{
+    wifi_send("AT+CIPSERVER=0\r\n");
+    wifi_send("AT+CIPMUX=0\r\n");
+    wifi_send("AT+CIPMODE=1\r\n");
+}
+
 
 void Wifi_cipsend( unsigned char *tam, unsigned char *msg )
 {
-    unsigned char d = 1;
-    unsigned char str[30] = "AT+CIPSEND=\"";
-    unsigned char i = 12;
-    unsigned char vtr[30] = "";
 
-    wifi_send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n");
+    unsigned char i = 11; unsigned char d = 1;
+    unsigned char str[20] = "AT+CIPSEND=\""; unsigned char vtr[10] = "";
 
+
+
+
+
+wifi.send("AT+CIPSTART=\"TCP\",\"192.168.4.1\",\"333\"\r\n");
+# 164 "wifi.c"
     while( *tam )
     {
         str[i] = *tam;

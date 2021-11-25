@@ -5624,8 +5624,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 21 "eusart.c" 2
-
+# 22 "eusart.c" 2
 # 1 "./config.h" 1
 # 27 "./config.h"
 #pragma config PLLDIV = 5
@@ -5677,15 +5676,13 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config EBTR3 = OFF
 
 #pragma config EBTRB = OFF
-# 22 "eusart.c" 2
-
+# 23 "eusart.c" 2
 # 1 "./delay.h" 1
 
 
 
 void delay( unsigned int t );
-# 23 "eusart.c" 2
-
+# 24 "eusart.c" 2
 # 1 "./eusart.h" 1
 
 
@@ -5713,8 +5710,7 @@ struct eusartT
 };
 
 extern struct eusartT eusart;
-# 24 "eusart.c" 2
-
+# 25 "eusart.c" 2
 
 struct eusartT eusart = { rxEUSART, rxStatusEUSART , rxErrorEUSART , rxResetErrorEUSART , txEUSART , txStatusEUSART , initEUSART, search};
 
@@ -5799,9 +5795,8 @@ unsigned char txStatusEUSART( void )
 
 void initEUSART( unsigned long baudRate )
 {
-    TRISCbits.TRISC6 = 1;
+    TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 1;
-
     INTCONbits.GIE = 0;
 
 
