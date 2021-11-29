@@ -76,7 +76,7 @@ unsigned char serialIObyteShift( unsigned char dataIn )
 void serialIOscan( void )
 {
     unsigned char i,j;
-    j = lenSerialIO - 1;
+    j = lenSerialIO - 1;   //j = 0
     serialIOload();
     for( i=0; i<lenSerialIO; i++ )
     {
@@ -90,9 +90,9 @@ void initSerialIO( char * ptrIn, char * ptrOut, unsigned char length )
 {
     ADCON1 = 0xFF;
     
-    ptrSerialIn = ptrIn;
-    ptrSerialOut = ptrOut;
-    lenSerialIO = length;
+    ptrSerialIn = ptrIn;      //ponteiro aponta para primeira posicao do vetor ptrIn
+    ptrSerialOut = ptrOut;    //ponteiro aponta para primeira posicao do vetor ptrOut
+    lenSerialIO = length;     //lenSerialIO = 1
 // ************************** Serial IO Shift/Load
     PORTAbits.RA3 = 0;
 //    ANSELbits.ANS3 = 0;

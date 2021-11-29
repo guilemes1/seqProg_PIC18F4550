@@ -666,71 +666,71 @@
 "71 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"704
-[v main@j_979 j `uc  1 a 1 76 ]
-"695
-[v main@j_976 j `uc  1 a 1 74 ]
-"316
-[v main@j_934 j `uc  1 a 1 72 ]
-"307
-[v main@j_931 j `uc  1 a 1 70 ]
-"136
-[v main@j_904 j `uc  1 a 1 68 ]
-"127
-[v main@j j `uc  1 a 1 66 ]
-"369
-[v main@ptr_940 ptr `*.39uc  1 a 2 88 ]
 "702
-[v main@i_978 i `uc  1 a 1 75 ]
+[v main@j_979 j `uc  1 a 1 76 ]
 "693
-[v main@i_975 i `uc  1 a 1 73 ]
+[v main@j_976 j `uc  1 a 1 74 ]
 "314
-[v main@i_933 i `uc  1 a 1 71 ]
+[v main@j_934 j `uc  1 a 1 72 ]
 "305
-[v main@i_930 i `uc  1 a 1 69 ]
-"225
-[v main@ptr_915 ptr `*.39uc  1 a 2 86 ]
+[v main@j_931 j `uc  1 a 1 70 ]
 "134
-[v main@i_903 i `uc  1 a 1 67 ]
+[v main@j_904 j `uc  1 a 1 68 ]
 "125
+[v main@j j `uc  1 a 1 66 ]
+"367
+[v main@ptr_940 ptr `*.39uc  1 a 2 88 ]
+"700
+[v main@i_978 i `uc  1 a 1 75 ]
+"691
+[v main@i_975 i `uc  1 a 1 73 ]
+"312
+[v main@i_933 i `uc  1 a 1 71 ]
+"303
+[v main@i_930 i `uc  1 a 1 69 ]
+"223
+[v main@ptr_915 ptr `*.39uc  1 a 2 86 ]
+"132
+[v main@i_903 i `uc  1 a 1 67 ]
+"123
 [v main@i i `uc  1 a 1 65 ]
-"148
-[v main@lema lema `[20]uc  1 a 20 0 ]
-"150
-[v main@ptr ptr `*.39uc  1 a 2 63 ]
-"149
-[v main@i_909 i `uc  1 a 1 60 ]
-"94
-[v main@vetor_aux vetor_aux `[16]uc  1 a 16 22 ]
-"105
-[v main@num num `ui  1 a 2 84 ]
-"106
-[v main@ciclos ciclos `ui  1 a 2 80 ]
-"96
-[v main@pt pt `*.39uc  1 a 2 61 ]
-"91
-[v main@tecla tecla `uc  1 a 1 92 ]
-"92
-[v main@estado estado `uc  1 a 1 91 ]
-"103
-[v main@auxPasso auxPasso `uc  1 a 1 90 ]
-"107
-[v main@botao botao `uc  1 a 1 83 ]
-"95
-[v main@init_cond init_cond `uc  1 a 1 82 ]
-"102
-[v main@meAtuadores meAtuadores `uc  1 a 1 79 ]
-"100
-[v main@vetorOut vetorOut `[1]uc  1 a 1 78 ]
-"99
-[v main@vetorIn vetorIn `[1]uc  1 a 1 77 ]
-"104
-[v main@aux aux `uc  1 a 1 21 ]
-"98
-[v main@contPassos contPassos `uc  1 a 1 20 ]
 "146
+[v main@lema lema `[20]uc  1 a 20 0 ]
+"148
+[v main@ptr ptr `*.39uc  1 a 2 63 ]
+"147
+[v main@i_909 i `uc  1 a 1 60 ]
+"92
+[v main@vetor_aux vetor_aux `[16]uc  1 a 16 22 ]
+"103
+[v main@num num `ui  1 a 2 84 ]
+"104
+[v main@ciclos ciclos `ui  1 a 2 80 ]
+"94
+[v main@pt pt `*.39uc  1 a 2 61 ]
+"89
+[v main@tecla tecla `uc  1 a 1 92 ]
+"101
+[v main@auxPasso auxPasso `uc  1 a 1 91 ]
+"90
+[v main@estado estado `uc  1 a 1 90 ]
+"105
+[v main@botao botao `uc  1 a 1 83 ]
+"93
+[v main@init_cond init_cond `uc  1 a 1 82 ]
+"100
+[v main@meAtuadores meAtuadores `uc  1 a 1 79 ]
+"98
+[v main@vetorOut vetorOut `[1]uc  1 a 1 78 ]
+"97
+[v main@vetorIn vetorIn `[1]uc  1 a 1 77 ]
+"102
+[v main@aux aux `uc  1 a 1 21 ]
+"96
+[v main@contPassos contPassos `uc  1 a 1 20 ]
+"144
 [v main@F3513 F3513 `[20]uc  1 s 20 F3513 ]
-"843
+"842
 } 0
 "13 C:\Users\gustavo\Desktop\Guilherme\TCC\firmware\versões\seqProg\seqProg_PIC18F4550\segProg_18F4550.X\wifi.c
 [v _wifi_init wifi_init `(v  1 e 1 0 ]
@@ -1370,6 +1370,22 @@
 "78
 [v Wifi_connect@F3287 F3287 `[30]uc  1 s 30 F3287 ]
 "104
+} 0
+"141
+[v _Wifi_cipsend Wifi_cipsend `(v  1 e 1 0 ]
+{
+"145
+[v Wifi_cipsend@str str `[20]uc  1 a 20 7 ]
+[v Wifi_cipsend@vtr vtr `[10]uc  1 a 10 27 ]
+"144
+[v Wifi_cipsend@d d `uc  1 a 1 38 ]
+[v Wifi_cipsend@i i `uc  1 a 1 37 ]
+"141
+[v Wifi_cipsend@tam tam `*.39uc  1 p 2 3 ]
+[v Wifi_cipsend@msg msg `*.39uc  1 p 2 5 ]
+"144
+[v Wifi_cipsend@F3299 F3299 `[20]uc  1 s 20 F3299 ]
+"187
 } 0
 "18
 [v _wifi_send wifi_send `(v  1 e 1 0 ]

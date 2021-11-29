@@ -5897,8 +5897,13 @@ void main(void)
     delay(1000);
     wifi.mode(1);
     delay(1000);
-    wifi.connect("LEMES","28090210");
-# 91 "main.c"
+    wifi.connect("TCC","98765432");
+
+
+
+
+
+
     char tecla = 0;
     char estado = 0;
     char atuador;
@@ -5916,7 +5921,7 @@ void main(void)
     unsigned int num = 0;
     unsigned int ciclos = 0;
     char botao = 0;
-# 120 "main.c"
+# 118 "main.c"
     while(1)
     {
          switch(estado)
@@ -5965,7 +5970,7 @@ void main(void)
                             if(!statusT1())
                                 estado = 8;
                             break;
-# 184 "main.c"
+# 182 "main.c"
              case 8:
                             init_atuadores();
                             IHM.print("1: INSERIR SEQUENCIA\n"
@@ -6361,7 +6366,7 @@ void main(void)
                             IHM.clr();
                             estado = 16;
                             break;
-# 608 "main.c"
+# 606 "main.c"
              case 52:
                             tecla = teclado_borda();
                             if(tecla >= '0' && tecla <= '9')
@@ -6548,6 +6553,7 @@ void main(void)
                             else
                             {
                                 decodifica(&auxPasso);
+                                wifi.cipsend(1,auxPasso);
                                 set_passo(auxPasso, vetorOut);
                                 meAtuadores = 5;
                             }

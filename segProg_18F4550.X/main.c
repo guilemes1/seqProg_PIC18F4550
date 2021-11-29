@@ -79,12 +79,10 @@ void main(void)
     delay(1000);
     wifi.mode(1);
     delay(1000);
-    wifi.connect("LEMES","28090210");
-    
-//    wifi.init(115200);
-//    wifi.mode(1);
-//    wifi.connect("LEMES","28090210");
-//    wifi.ip();
+    wifi.connect("TCC","98765432");
+//    delay(1000);
+//    eusart.tx(0);
+//    wifi.config_servidor();
 //    wifi.cipsend(3,"Gui");
     
 //    char *texto;
@@ -791,8 +789,8 @@ void main(void)
                             else
                             {
                                 decodifica(&auxPasso);
+                                wifi.cipsend(1,auxPasso);          //eusart.tx(auxPasso);            
                                 set_passo(auxPasso, vetorOut);
-                                wifi.cipsend(1,vetorOut);
                                 meAtuadores = 5;
                             }
                             break;

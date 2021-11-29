@@ -35,7 +35,7 @@ unsigned char wifi_receive( unsigned char * rcv )
         {
             d = eusart.rx();
             if( (d >= 'A' && d <= 'Z') || (d >='a' && d <= 'z'))
-            {
+            {   
                 *(rcv+indice) = d;
                 ++indice;
             }
