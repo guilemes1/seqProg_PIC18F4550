@@ -16,9 +16,9 @@ char EEPROM_read( unsigned char addr )
 //    EEADRH = 0;                // habilita EEDAT
     EEADR = addr;              // endereço 
     EECON1bits.EEPGD = 0;      // acessa memoria de dado
+    EECON1bits.CFGS = 0;        //adicionado para PIC18F4550
     EECON1bits.RD = 1;         // inicia leitura de memoria
-    return( EEDATA );           // retorna 
-  
+    return( EEDATA );           // retorna  
 }
 
 void EEPROM_write( unsigned char addr, unsigned char data )
@@ -27,6 +27,7 @@ void EEPROM_write( unsigned char addr, unsigned char data )
     EEADR = addr;               // endereço 
     EEDATA = data;               // dados
     EECON1bits.EEPGD = 0;       // acessa memoria de dado
+    EECON1bits.CFGS = 0;        //adicionado para PIC18F4550
     EECON1bits.WREN = 1;        // habilita gravação
     EECON2 = 0x55;              // 
     EECON2 = 0xAA;

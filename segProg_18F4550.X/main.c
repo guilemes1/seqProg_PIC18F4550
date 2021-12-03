@@ -75,11 +75,11 @@ void main(void)
     timer1_init();
     I2C_init(20000000);
     MCP4725(0);
-    wifi.init(115200);
-    delay(1000);
-    wifi.mode(1);
-    delay(1000);
-    wifi.connect("TCC","98765432");
+//    wifi.init(115200);
+//    delay(1000);
+//    wifi.mode(1);
+//    delay(1000);
+//    wifi.connect("TCC","98765432");
 //    delay(1000);
 //    eusart.tx(0);
 //    wifi.config_servidor();
@@ -100,7 +100,8 @@ void main(void)
     char meAtuadores = -1;
     char auxPasso = 0; 
     char aux = 2;
-    unsigned int num = 0;    
+    unsigned int num = 0;               //Uso dea variavel para armazenar tempo inserido pelo usuario
+    unsigned int por = 0;               //Criacao da variavel para porcentagem inserida pelo usuario
     unsigned int ciclos = 0;
     char botao = 0;
 #define STOP    0
@@ -719,7 +720,7 @@ void main(void)
                      
              case TELA_EDITACONTROLE:
                             IHM.printpos(2, 0, "config contrl:     %");
-                            IHM.printv(2, 15, num, 3);
+                            IHM.printv(2, 15, por, 3);
                             estado = CONFIG_CONTROLE;
                             break;
                             
@@ -727,14 +728,14 @@ void main(void)
                             tecla = teclado_borda();             //VARIAVEL RECEBE O VALOR PRESSIONADO PELO USUARIO
                             if(tecla >= '0' && tecla <= '9')     //
                             {
-                                dignum_conc(tecla, &num);
-                                if(num > 100)
-                                    num = 100;
+                                dignum_conc(tecla, &por);
+                                if(por > 100)
+                                    por = 100;
                                 estado = TELA_EDITACONTROLE;                                
                             }
                             if(tecla == TECLA_DELETE)
                             {
-                                dignum_apagar(&num);
+                                dignum_apagar(&por);
                                 estado = TELA_EDITACONTROLE;
                             }
                             if(tecla == TECLA_ENTER)
@@ -742,7 +743,7 @@ void main(void)
                             break;
                             
              case INSERIR_CONTROLEFILA:
-                            fifo_add_control(num);
+                            fifo_add_control(por);
                             IHM.clr();
                             estado = TELA_PRINTFILA;
                             break;
@@ -789,7 +790,7 @@ void main(void)
                             else
                             {
                                 decodifica(&auxPasso);
-                                wifi.cipsend(1,auxPasso);          //eusart.tx(auxPasso);            
+//                                wifi.cipsend(1,auxPasso);          //eusart.tx(auxPasso);            
                                 set_passo(auxPasso, vetorOut);
                                 meAtuadores = 5;
                             }
